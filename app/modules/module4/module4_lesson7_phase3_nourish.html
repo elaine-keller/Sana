@@ -1,0 +1,160 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #185FA5; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #185FA5; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .blue-box { border: 0.5px solid #85B7EB; background: #E6F1FB; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .blue-text { font-size: 13px; color: #185FA5; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #185FA5; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  /* 80/20 visual */
+  .ratio-bar { display: flex; border-radius: var(--border-radius-md); overflow: hidden; height: 48px; margin-bottom: 0.75rem; }
+  .ratio-80 { background: #1D9E75; flex: 8; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 700; }
+  .ratio-20 { background: #D85A30; flex: 2; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 700; }
+
+  /* food order visual */
+  .order-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .order-pill { font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 20px; }
+  .op-1 { background: #C0DD97; color: #173404; }
+  .op-2 { background: #F4C0D1; color: #4B1528; }
+  .op-3 { background: #F5C4B3; color: #4A1B0C; }
+  .op-4 { background: #B5D4F4; color: #042C53; }
+  .op-5 { background: #FAC775; color: #412402; }
+  .order-arrow { color: var(--color-text-tertiary); font-size: 16px; }
+
+  /* phase flexibility */
+  .flex-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+  .flex-card { border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary); padding: 0.75rem; text-align: center; background: var(--color-background-secondary); }
+  .flex-phase { font-family: 'Playfair Display', serif; font-size: 20px; color: #185FA5; margin-bottom: 4px; }
+  .flex-name { font-size: 12px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; }
+  .flex-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+
+  @media (max-width: 460px) { .flex-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 4 — Lesson 7</p>
+    <h1 class="main-title">Phase 3 — Nourish (maintenance for life)</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">The last phase — but arguably the most important. This is not the finish line; it's the new starting point. The goal shifts from reversal to understanding your own body and maintaining metabolic health permanently.</p>
+
+  <hr class="divider">
+
+  <!-- BASICS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Phase 3 at a glance</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">⏱</span><span class="row-text"><strong style="color:var(--color-text-primary);">Duration:</strong> indefinite. This is your lifestyle, not a phase to complete.</span></div>
+      <div class="row-item"><span class="row-icon">🕐</span><span class="row-text"><strong style="color:var(--color-text-primary);">Fasting:</strong> intuitive. Some days longer, some shorter. By this point it's a natural habit — no strict window required.</span></div>
+      <div class="row-item"><span class="row-icon">🍽</span><span class="row-text"><strong style="color:var(--color-text-primary);">Snacks:</strong> optional by choice — not by necessity. 3 fixed meals is still the default. If you snack, you already know what to choose.</span></div>
+      <div class="row-item"><span class="row-icon">🎯</span><span class="row-text"><strong style="color:var(--color-text-primary);">Objective:</strong> find your personal carb tolerance, deepen metabolic flexibility, eat intuitively — without weighing, counting, or logging. No food group is eliminated; everything is moderated.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 80/20 -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The 80/20 rule — how to live in Phase 3</p>
+    <div class="ratio-bar">
+      <div class="ratio-80">80% — eat as clean as possible</div>
+      <div class="ratio-20">20% — enjoy life</div>
+    </div>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0;">The 80% is your daily baseline — real food, protein first, vegetables dominant, no naked carbs. The 20% is travel, celebrations, vacations, social occasions. This balance is permanent. You're not on a diet — you have a metabolic identity.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FOOD ORDER -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The most important Phase 3 rule — food order</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0 0 0.75rem;">In Phase 3 you're no longer restricted to specific combinations — but the order in which you eat still matters enormously. Eating in this sequence lowers your glucose response by 30–70%:</p>
+    <div class="order-row">
+      <span class="order-pill op-1">1 · Vegetables (fiber)</span>
+      <span class="order-arrow">→</span>
+      <span class="order-pill op-2">2 · Protein</span>
+      <span class="order-arrow">→</span>
+      <span class="order-pill op-3">3 · Fat</span>
+      <span class="order-arrow">→</span>
+      <span class="order-pill op-4">4 · Carbs</span>
+      <span class="order-arrow">→</span>
+      <span class="order-pill op-5">5 · Fruit</span>
+    </div>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Mixed plates:</strong> if protein and vegetables dominate, eating everything together is fine (e.g. tacos with meat = protein-dominant → okay together).</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Carb-dominant plates:</strong> even if there's protein in the dish (e.g. pasta with chicken), what dominates is carbs → eat a vegetable soup or salad first to create a fiber buffer.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Use common sense — the reset principles are now part of your intuition, not a rigid system.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MONITORING -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Ongoing monitoring — don't stop here</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">📊</span><span class="row-text">Run labs at least once a year (every 6 months if possible). Use the same markers from Module 3. Your body changes — especially with age, stress, and hormonal shifts.</span></div>
+      <div class="row-item"><span class="row-icon">📋</span><span class="row-text">Revisit the symptom questionnaire periodically. It's not just about symptoms — also reassess your goals. Where are you now? Where do you want to go?</span></div>
+      <div class="row-item"><span class="row-icon">📱</span><span class="row-text">Use your glucose monitor when in doubt — adding a new carb portion, testing a food, returning from vacation. The data always tells you the truth.</span></div>
+    </div>
+    <div class="amber-box">
+      <p class="amber-text">Having had IR makes you more prone to it returning. Ongoing awareness is not paranoia — it's the cost of keeping what you earned.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHASE FLUIDITY -->
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">Phase fluidity — moving between phases is normal and expected</p>
+    <div class="flex-grid" style="margin-bottom:1rem;">
+      <div class="flex-card">
+        <div class="flex-phase">1</div>
+        <div class="flex-name">Reset</div>
+        <div class="flex-desc">After vacations, illness, or losing connection with habits. A metabolic reboot — not a punishment.</div>
+      </div>
+      <div class="flex-card">
+        <div class="flex-phase">1.5</div>
+        <div class="flex-name">Weekday reset</div>
+        <div class="flex-desc">Phase 1 Mon–Fri, Phase 2 on weekends. Or alternate days freely.</div>
+      </div>
+      <div class="flex-card">
+        <div class="flex-phase">2</div>
+        <div class="flex-name">Return to burn</div>
+        <div class="flex-desc">If you feel better with tighter structure or if symptoms return. No shame — just data.</div>
+      </div>
+      <div class="flex-card">
+        <div class="flex-phase">2.5</div>
+        <div class="flex-name">Weekday burn</div>
+        <div class="flex-desc">Phase 2 Mon–Fri, Phase 3 on weekends. A sustainable middle ground for many.</div>
+      </div>
+      <div class="flex-card">
+        <div class="flex-phase">3</div>
+        <div class="flex-name">Nourish</div>
+        <div class="flex-desc">The permanent home. Return here after any temporary phase shift.</div>
+      </div>
+    </div>
+    <div class="note-box">
+      <p class="note-text">The goal is for everyone to eventually live in Phase 3. But the path is not linear — and moving between phases is the system working as designed, not a failure.</p>
+    </div>
+  </div>
+
+  <div class="blue-box">
+    <p class="blue-text">Phase 3 is yours to design. Take what worked in Phase 1, keep what worked in Phase 2, and layer in your own experiments. The reset gave you the tools — now use them your way.</p>
+  </div>
+
+</div>

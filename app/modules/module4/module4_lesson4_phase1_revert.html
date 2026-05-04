@@ -1,0 +1,187 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .red-box { border: 0.5px solid #F09595; background: #FCEBEB; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .red-text { font-size: 13px; color: #A32D2D; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  /* meal combination */
+  .meal-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
+  .meal-card { border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 0.9rem; background: var(--color-background-primary); }
+  .meal-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-primary); margin: 0 0 8px; }
+  .meal-pill { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin: 2px 2px 0 0; }
+  .mp-p { background: #F4C0D1; color: #4B1528; }
+  .mp-v { background: #C0DD97; color: #173404; }
+  .mp-f { background: #FAC775; color: #412402; }
+  .mp-c { background: #B5D4F4; color: #042C53; }
+  .mp-g { background: #F5C4B3; color: #4A1B0C; }
+  .meal-note { font-size: 11px; color: var(--color-text-secondary); margin: 6px 0 0; line-height: 1.4; }
+
+  /* eliminate pills */
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0.75rem; }
+  .pill { font-size: 12px; padding: 3px 10px; border-radius: 20px; }
+  .pill-out { background: #FCEBEB; color: #A32D2D; border: 0.5px solid #F09595; }
+  .pill-ok { background: #E1F5EE; color: #0F6E56; border: 0.5px solid #9FE1CB; }
+
+  /* keto flu grid */
+  .flu-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .flu-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.75rem; }
+  .flu-title { font-size: 12px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 4px; }
+  .flu-text { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin: 0; }
+
+  @media (max-width: 460px) { .meal-grid { grid-template-columns: 1fr; } .flu-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 4 — Lesson 4</p>
+    <h1 class="main-title">Phase 1 — Revert (deep dive)</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">The strictest phase — but also the most temporary. Two weeks of focused depletions to drop insulin, reduce inflammation, and begin fat burning. Think of it as a metabolic reboot, not a permanent diet.</p>
+
+  <hr class="divider">
+
+  <!-- BASICS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Phase 1 at a glance</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">⏱</span><span class="row-text"><strong style="color:var(--color-text-primary);">Duration:</strong> minimum 2 weeks, maximum 4 weeks. Don't stay longer — the program is designed to progress.</span></div>
+      <div class="row-item"><span class="row-icon">🕐</span><span class="row-text"><strong style="color:var(--color-text-primary);">Fasting:</strong> start at 12 hours minimum. If already experienced with IF, go to 14–16 hrs.</span></div>
+      <div class="row-item"><span class="row-icon">🍽</span><span class="row-text"><strong style="color:var(--color-text-primary);">Meals:</strong> 3 fixed meals per day. No snacking. If hypoglycemia symptoms appear (shakiness, hunger + anger, energy crash), eat a protein + vegetable snack. Gradually eliminate snacks as metabolic flexibility builds.</span></div>
+      <div class="row-item"><span class="row-icon">🎯</span><span class="row-text"><strong style="color:var(--color-text-primary);">Goal:</strong> deplete glycogen, lower insulin, enter mild nutritional ketosis (fat burning begins). This is where the most visible results happen — reduced inflammation and weight loss.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ELIMINATE -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">What's eliminated in Phase 1</p>
+    <div class="pill-row">
+      <span class="pill pill-out">All gluten</span>
+      <span class="pill pill-out">All dairy</span>
+      <span class="pill pill-out">All grains (including corn, quinoa, rice)</span>
+      <span class="pill pill-out">All alcohol</span>
+    </div>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Gluten hides in:</strong> sausages, deli meats, dressings, condiments, seasonings, beer. Read labels — the more processed, the more hidden gluten.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Dairy:</strong> many people have unknown sensitivities. Eliminating for 2 weeks reveals this. Can be reintroduced in Phase 2.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Grains:</strong> reducing them automatically reduces carbs. They can also be inflammatory to the gut.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Carbs still allowed:</strong> starchy vegetables (sweet potato, beet, corn, plantain, jicama) and legumes (beans, lentils, edamame). These are high in fiber so net carbs are lower.</span></div>
+    </div>
+    <div class="note-box">
+      <p class="note-text">If a permitted carb (like sweet potato) spikes your glucose significantly, swap it for something that doesn't — or reduce the portion. Use your glucose data to personalize. The goal is what works for your body.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MEAL COMBINATIONS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Phase 1 meal combination guide</p>
+    <div class="meal-grid">
+      <div class="meal-card">
+        <p class="meal-name">Breakfast</p>
+        <span class="meal-pill mp-p">Protein</span>
+        <span class="meal-pill mp-v">Vegetables</span>
+        <span class="meal-pill mp-f">Fruit (as dessert)</span>
+        <p class="meal-note">Keep it savory. Eat fruit last — as a dessert, not first. Start with eggs + vegetables, finish with berries.</p>
+      </div>
+      <div class="meal-card">
+        <p class="meal-name">Lunch</p>
+        <span class="meal-pill mp-p">Protein</span>
+        <span class="meal-pill mp-v">Vegetables</span>
+        <span class="meal-pill mp-g">Fat</span>
+        <span class="meal-pill mp-c">Carb (1 portion)</span>
+        <p class="meal-note">Your one carb portion for the day goes here. Pair it with everything else to slow absorption.</p>
+      </div>
+      <div class="meal-card">
+        <p class="meal-name">Dinner</p>
+        <span class="meal-pill mp-p">Protein</span>
+        <span class="meal-pill mp-v">Vegetables</span>
+        <span class="meal-pill mp-g">Fat</span>
+        <p class="meal-note">No carbs or fruit at dinner. Keep it simple and light. Most fat-burning happens overnight.</p>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin:0;">The ebook provides 8 menu ideas per combination. Mix and match freely — any breakfast option with any lunch option — as long as you stay within the correct meal category and portions. You don't have to follow it exactly; substitute any item with an equivalent from the food lists.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KETO FLU -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The "Keto Flu" — what to expect & how to manage it</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0 0 0.75rem;">Your body is switching fuel sources — from glucose to fat. This transition can cause temporary symptoms. <strong style="color:var(--color-text-primary);">Normal duration: 1–7 days.</strong> More common if you were previously eating a lot of carbs.</p>
+    <div class="pill-row">
+      <span class="pill" style="background:#FAEEDA; color:#854F0B; border:0.5px solid #FAC775;">Headache</span>
+      <span class="pill" style="background:#FAEEDA; color:#854F0B; border:0.5px solid #FAC775;">Dizziness</span>
+      <span class="pill" style="background:#FAEEDA; color:#854F0B; border:0.5px solid #FAC775;">Nausea</span>
+      <span class="pill" style="background:#FAEEDA; color:#854F0B; border:0.5px solid #FAC775;">Insomnia</span>
+      <span class="pill" style="background:#FAEEDA; color:#854F0B; border:0.5px solid #FAC775;">Irritability</span>
+      <span class="pill" style="background:#FAEEDA; color:#854F0B; border:0.5px solid #FAC775;">Anxiety</span>
+      <span class="pill" style="background:#FAEEDA; color:#854F0B; border:0.5px solid #FAC775;">Brain fog</span>
+    </div>
+    <p style="font-size:13px; font-weight:700; color:var(--color-text-primary); margin:0 0 0.5rem;">What to do:</p>
+    <div class="flu-grid">
+      <div class="flu-card">
+        <p class="flu-title">Hydration + electrolytes</p>
+        <p class="flu-text">Most important fix. Drink 2L water/day + unsweetened electrolytes. Or: sparkling water + a pinch of Himalayan salt. The body loses minerals when switching to fat-burning.</p>
+      </div>
+      <div class="flu-card">
+        <p class="flu-title">Magnesium</p>
+        <p class="flu-text">400mg magnesium daily — increase to 800mg if symptoms are significant. Rapidly restores mineral balance and eases symptoms.</p>
+      </div>
+      <div class="flu-card">
+        <p class="flu-title">Eat more vegetables & protein</p>
+        <p class="flu-text">This is not a starvation diet. If hungry, eat more protein and vegetables. More vegetables = more minerals. Don't force restriction.</p>
+      </div>
+      <div class="flu-card">
+        <p class="flu-title">MCT oil</p>
+        <p class="flu-text">1 tbsp MCT oil (medium-chain triglycerides) = instant energy for the brain and body. Helps bridge the transition while fat-burning is developing.</p>
+      </div>
+      <div class="flu-card">
+        <p class="flu-title">Reduce caffeine</p>
+        <p class="flu-text">Caffeine can worsen symptoms during transition. Reduce or avoid until feeling better.</p>
+      </div>
+      <div class="flu-card">
+        <p class="flu-title">Lighter exercise</p>
+        <p class="flu-text">Scale back intensity while adapting. Walking, light yoga, or stretching instead of high-intensity work. Resume normal exercise once symptoms pass.</p>
+      </div>
+    </div>
+    <div class="red-box" style="margin-top:0.75rem;">
+      <p class="red-text">If symptoms persist beyond 7 days without improvement → move to Phase 2 and return to Phase 1 later. The program is designed to support you, not punish you.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHEN TO MOVE ON -->
+  <div style="margin-bottom:1rem;">
+    <p class="section-label">When to stay in Phase 1 vs. move to Phase 2</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">↓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Stay in Phase 1 longer if:</strong> fasting insulin is still above 10, nocturnal hypoglycemia persists, you have 5+ kg to lose and symptoms haven't improved.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Move to Phase 2 early if:</strong> you get sick, you're pregnant, Phase 1 feels too demanding, or you don't need significant weight loss. You can always return.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Normal progression:</strong> after 2 weeks in Phase 1, advance to Phase 2. The design is intentional — Phase 2 is where you stay as long as needed to reach your goals.</span></div>
+    </div>
+  </div>
+
+  <div class="amber-box">
+    <p class="amber-text">The ebook has healthy dessert options that are Phase 1 approved — you can have one per day. Check the ebook for the full list.</p>
+  </div>
+
+</div>

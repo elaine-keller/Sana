@@ -1,0 +1,251 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+
+  /* plan selector */
+  .plan-selector { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .plan-card { border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 1rem; background: var(--color-background-secondary); }
+  .plan-title { font-size: 14px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 4px; }
+  .plan-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.55; margin: 0; }
+
+  /* equivalency tables */
+  .eq-section { margin-bottom: 1.5rem; }
+  .phase-label { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+  .phase-tag { font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
+  .tag-1 { background: #1D9E75; color: #fff; }
+  .tag-2 { background: #BA7517; color: #fff; }
+  .tag-3 { background: #185FA5; color: #fff; }
+  .eq-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
+  .eq-table th { font-size: 11px; font-weight: 700; padding: 7px 8px; text-align: center; color: #fff; }
+  .th-p { background: #D4537E; }
+  .th-v { background: #639922; }
+  .th-c { background: #378ADD; }
+  .th-f { background: #BA7517; }
+  .th-g { background: #D85A30; }
+  .eq-table td { padding: 8px; text-align: center; font-size: 13px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-secondary); }
+  .eq-table tr:last-child td { border-bottom: none; }
+  .eq-table tr:nth-child(even) td { background: var(--color-background-secondary); }
+  .plan-row-label { font-size: 11px; font-weight: 700; color: #D85A30; text-align: left !important; padding-left: 10px !important; }
+  .free-badge { display: inline-block; background: #E1F5EE; color: #0F6E56; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+
+  /* food rules */
+  .rules-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .rule-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.9rem 1rem; }
+  .rule-group { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin: 0 0 8px; }
+  .rule-group.protein { color: #993556; }
+  .rule-group.carb { color: #185FA5; }
+  .rule-group.fat { color: #D85A30; }
+  .rule-group.fruit { color: #BA7517; }
+  .rule-group.veg { color: #3B6D11; }
+  .rule-group.elim { color: #A32D2D; }
+  .rule-list { font-size: 12px; color: var(--color-text-secondary); line-height: 1.65; margin: 0; padding-left: 1rem; }
+
+  /* eliminate table */
+  .elim-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .elim-table th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 8px 10px; border-bottom: 1.5px solid var(--color-border-secondary); text-align: left; color: var(--color-text-secondary); }
+  .elim-table td { padding: 9px 10px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; color: var(--color-text-secondary); line-height: 1.5; }
+  .elim-table tr:last-child td { border-bottom: none; }
+  .elim-table tr:nth-child(even) td { background: var(--color-background-secondary); }
+  .phase-col { font-weight: 700; color: var(--color-text-primary); white-space: nowrap; }
+  .badge-elim { display: inline-block; background: #FCEBEB; color: #A32D2D; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 20px; margin: 2px 2px 0 0; }
+  .badge-mod { display: inline-block; background: #FAEEDA; color: #854F0B; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 20px; margin: 2px 2px 0 0; }
+  .badge-ok { display: inline-block; background: #E1F5EE; color: #0F6E56; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 20px; margin: 2px 2px 0 0; }
+
+  @media (max-width: 480px) { .plan-selector { grid-template-columns: 1fr; } .rules-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 4 — Lesson 3</p>
+    <h1 class="main-title">The Reset 5 nutrition plan — full detail</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">Not keto, not low-fat — the best of both. Sufficient protein, high fiber, moderate fat, controlled carbs, and timed eating. The equivalency system replaces calorie counting with a simple portion framework.</p>
+
+  <hr class="divider">
+
+  <!-- PLAN A vs B -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Which plan are you? — choose before starting</p>
+    <div class="plan-selector">
+      <div class="plan-card">
+        <p class="plan-title">Plan A — under 70 kg (154 lbs)</p>
+        <p class="plan-text">Lower caloric needs. Fewer carb and fat portions. All other principles identical to Plan B.</p>
+      </div>
+      <div class="plan-card">
+        <p class="plan-title">Plan B — over 70 kg (154 lbs)</p>
+        <p class="plan-text">Higher caloric needs. Slightly more carb and fat portions allowed. Otherwise the same method.</p>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin:0;">Special modifications for pregnancy, breastfeeding, and high-performance athletes are in the ebook.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EQUIVALENCY TABLES -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Daily portion equivalencies — all 3 phases</p>
+    <p style="font-size:12px; color:var(--color-text-secondary); margin:0 0 1rem; line-height:1.6; font-style:italic;">Portions per day. Protein and vegetables are unlimited in Phase 1. Detailed equivalency guide (what counts as 1 portion of each) is in the ebook.</p>
+
+    <div class="eq-section">
+      <div class="phase-label"><span class="phase-tag tag-1">Phase 1 — Revert</span> 2 weeks · 12h fast · No gluten, dairy, alcohol, grains</div>
+      <table class="eq-table">
+        <thead><tr><th class="th-p">Protein</th><th class="th-v">Vegetables</th><th class="th-c">Carb</th><th class="th-f">Fruit</th><th class="th-g">Fat</th></tr></thead>
+        <tbody>
+          <tr><td class="plan-row-label">Plan A</td><td><span class="free-badge">Unlimited</span></td><td><span class="free-badge">Unlimited</span></td><td>1</td><td>1</td><td>2</td></tr>
+          <tr><td class="plan-row-label">Plan B</td><td><span class="free-badge">Unlimited</span></td><td><span class="free-badge">Unlimited</span></td><td>2</td><td>1</td><td>2–3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="eq-section">
+      <div class="phase-label"><span class="phase-tag tag-2">Phase 2 — Burn</span> 2+ weeks until goals met · 14–16h fast · No gluten; dairy optional; 1 drink/week max</div>
+      <table class="eq-table">
+        <thead><tr><th class="th-p">Protein</th><th class="th-v">Vegetables</th><th class="th-c">Carb</th><th class="th-f">Fruit</th><th class="th-g">Fat</th></tr></thead>
+        <tbody>
+          <tr><td class="plan-row-label">Plan A</td><td>4</td><td>5</td><td>2</td><td>2</td><td>3</td></tr>
+          <tr><td class="plan-row-label">Plan B</td><td>4</td><td>5</td><td>2–3</td><td>2</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="eq-section">
+      <div class="phase-label"><span class="phase-tag tag-3">Phase 3 — Nourish</span> Indefinite · 14–16h fast · All groups allowed, moderate everything</div>
+      <table class="eq-table">
+        <thead><tr><th class="th-p">Protein</th><th class="th-v">Vegetables</th><th class="th-c">Carb</th><th class="th-f">Fruit</th><th class="th-g">Fat</th></tr></thead>
+        <tbody>
+          <tr><td class="plan-row-label">Plan A</td><td>4</td><td>5</td><td>3</td><td>2</td><td>4</td></tr>
+          <tr><td class="plan-row-label">Plan B</td><td>4</td><td>5</td><td>3</td><td>2–3</td><td>4</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box">
+      <p class="note-text">The golden rule across all phases: no carb or fruit ever goes alone. Always pair with protein, fat, or fiber. Naked carbs = glucose spike.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FOOD GROUP RULES -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Food group rules</p>
+    <div class="rules-grid">
+
+      <div class="rule-card">
+        <p class="rule-group protein">Protein</p>
+        <ul class="rule-list">
+          <li>Animal protein at breakfast and lunch minimum</li>
+          <li>Best choices: salmon, fish, chicken, turkey, eggs</li>
+          <li>Legumes (beans, lentils, chickpeas) count as protein + carb — adjust portions accordingly</li>
+          <li>Choose lean cuts most of the time</li>
+          <li>Avoid processed meats: deli, salami, hot dogs, artificial protein products</li>
+          <li>Organic when possible</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <p class="rule-group carb">Carbohydrates — 4 rules</p>
+        <ul class="rule-list">
+          <li>Eliminate sugar in all forms and anything made with flour (bread, pasta, cereal, pastries)</li>
+          <li>No liquid carbs — juice, sports drinks, sweetened coffees, sodas, honey, syrups</li>
+          <li>Limit to 1–2 carb servings per day, not spread throughout the day</li>
+          <li>Always dress your carbs — never eat them alone. Pair with protein, fat, or fiber</li>
+          <li>Best carb sources: starchy vegetables (sweet potato, beet, corn, jicama) and legumes — they come with fiber built in</li>
+          <li>Grains: eliminated in Phase 1. In Phase 2, max 2×/week at ½ cup</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <p class="rule-group fat">Fat — 4 rules</p>
+        <ul class="rule-list">
+          <li>Eliminate all vegetable / seed oils (canola, corn, soy, sunflower). Switch to extra virgin olive oil</li>
+          <li>Best sources: avocado, olives, coconut, nuts, seeds, egg yolk, fatty fish, natural meat fat</li>
+          <li>Moderate portions — goal is to use stored body fat, not dietary fat, for fuel</li>
+          <li>Bonus: 85% dark chocolate counts as a fat portion and helps stabilize glucose</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <p class="rule-group fruit">Fruit</p>
+        <ul class="rule-list">
+          <li>Always choose whole fruit — never juice</li>
+          <li>Best choices: berries / red fruits (highest fiber, lowest sugar spike)</li>
+          <li>Always pair with protein or fat (e.g. apple + almonds, berries + Greek yogurt)</li>
+          <li>Low-sugar fruits preferred: strawberries, blueberries, raspberries, kiwi, green apple</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <p class="rule-group veg">Vegetables</p>
+        <ul class="rule-list">
+          <li>75% of your plate should be vegetables at every meal</li>
+          <li>More colors = more nutrients; more leafy greens = more fiber</li>
+          <li>Target: 30g of fiber per day from vegetables</li>
+          <li>Easy ways to add more: vegetable soups, spinach in smoothies, roasted vegetables</li>
+          <li>Non-starchy vegetables are unlimited in all phases</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <p class="rule-group elim">Time / meal frequency</p>
+        <ul class="rule-list">
+          <li>3 fixed meals per day — no snacking between meals</li>
+          <li>Snacks only if hypoglycemia is still an issue at the start</li>
+          <li>Every bite triggers insulin — even healthy snacks prevent fat burning</li>
+          <li>Fasting windows covered in detail in the fasting lesson</li>
+          <li>Plan A/B weight cutoff: 70 kg (154 lbs)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ELIMINATION TABLE -->
+  <div style="margin-bottom:1rem;">
+    <p class="section-label">What's eliminated / moderated by phase</p>
+    <table class="elim-table">
+      <thead><tr><th>Phase</th><th>Gluten</th><th>Dairy</th><th>Alcohol</th><th>Grains</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="phase-col">Phase 1 — Revert</td>
+          <td><span class="badge-elim">Eliminate</span></td>
+          <td><span class="badge-elim">Eliminate</span></td>
+          <td><span class="badge-elim">Eliminate</span></td>
+          <td><span class="badge-elim">Eliminate</span></td>
+        </tr>
+        <tr>
+          <td class="phase-col">Phase 2 — Burn</td>
+          <td><span class="badge-elim">Still out</span></td>
+          <td><span class="badge-mod">Optional</span></td>
+          <td><span class="badge-mod">1×/week max</span></td>
+          <td><span class="badge-mod">2×/week max, ½ cup</span></td>
+        </tr>
+        <tr>
+          <td class="phase-col">Phase 3 — Nourish</td>
+          <td><span class="badge-mod">Moderate</span></td>
+          <td><span class="badge-mod">Moderate</span></td>
+          <td><span class="badge-mod">Moderate</span></td>
+          <td><span class="badge-mod">Moderate</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="amber-box">
+    <p class="amber-text">The ebook includes: full equivalency tables with portion sizes, weekly menus for each phase, a beverage guide, substitute foods list, a low-glycemic food list, and modifications for pregnancy, breastfeeding, and athletes.</p>
+  </div>
+
+</div>

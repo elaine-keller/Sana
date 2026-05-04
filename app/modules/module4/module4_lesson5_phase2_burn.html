@@ -1,0 +1,171 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400+700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #BA7517; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #BA7517; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #BA7517; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  /* combo tables */
+  .combo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
+  .combo-card { border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 1rem; background: var(--color-background-primary); }
+  .combo-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 10px; }
+  .combo-meal { margin-bottom: 8px; }
+  .combo-meal-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .meal-pill { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 20px; margin: 1px 2px 0 0; }
+  .mp-p { background: #F4C0D1; color: #4B1528; }
+  .mp-v { background: #C0DD97; color: #173404; }
+  .mp-f { background: #FAC775; color: #412402; }
+  .mp-c { background: #B5D4F4; color: #042C53; }
+  .mp-g { background: #F5C4B3; color: #4A1B0C; }
+
+  /* decision table */
+  .dec-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .dec-table th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 8px 10px; border-bottom: 1.5px solid var(--color-border-secondary); text-align: left; color: var(--color-text-secondary); }
+  .dec-table td { padding: 9px 10px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; color: var(--color-text-secondary); line-height: 1.5; font-size: 13px; }
+  .dec-table tr:last-child td { border-bottom: none; }
+  .dec-table tr:nth-child(even) td { background: var(--color-background-secondary); }
+  .dec-head { font-weight: 700; color: var(--color-text-primary); }
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+  .b-back { background: #FAEEDA; color: #854F0B; }
+  .b-stay { background: #E1F5EE; color: #0F6E56; }
+  .b-fwd { background: #E6F1FB; color: #185FA5; }
+
+  .rules-list { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; margin: 0; padding-left: 1.25rem; }
+
+  @media (max-width: 460px) { .combo-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 4 — Lesson 5</p>
+    <h1 class="main-title">Phase 2 — Burn (deep dive)</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">The phase where most people spend the most time — and feel most at home. More food variety, more flexibility, more fat burning. This is where the real metabolic reset takes root.</p>
+
+  <hr class="divider">
+
+  <!-- BASICS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Phase 2 at a glance</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">⏱</span><span class="row-text"><strong style="color:var(--color-text-primary);">Duration:</strong> minimum 2 weeks — stay as long as needed to reach goals. Weeks, months, even longer. This is the core of the reset.</span></div>
+      <div class="row-item"><span class="row-icon">🕐</span><span class="row-text"><strong style="color:var(--color-text-primary);">Fasting:</strong> 14–16 hours. Should be a consistent daily habit — not forced if you're not there yet. Do what works for you within that range.</span></div>
+      <div class="row-item"><span class="row-icon">📊</span><span class="row-text"><strong style="color:var(--color-text-primary);">Glucose monitoring:</strong> Phase 2 is the ideal time to use the CGM sensor. Phase 1 is very restricted so readings look artificially good. Phase 2 shows the real picture as you reintroduce more foods.</span></div>
+      <div class="row-item"><span class="row-icon">🎯</span><span class="row-text"><strong style="color:var(--color-text-primary);">Objective:</strong> continue fat burning, deepen metabolic flexibility, protect hormones (thyroid and cortisol), and stabilize energy while reintroducing more food variety.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- REINTRODUCTIONS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">What comes back in Phase 2</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Gluten:</strong> still largely avoided. Exception: occasional sourdough bread (masa madre) — covered in the ebook. Reduce, don't eliminate entirely if you choose.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Dairy:</strong> optional reintroduction. Start with goat or sheep cheese, jocoque, or Greek yogurt (high protein, low carb, low fat). Notice how you feel — if you don't feel different without it, keep it out.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Alcohol:</strong> maximum once per week, special occasions only. The beverage lesson covers what to choose. Alcohol slows all metabolic processes — use sparingly.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Grains:</strong> maximum 2×/week at ½ cup. Not daily; not at every meal.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- COMBINATIONS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Phase 2 meal combinations — choose Option 1 or Option 2 for the whole day</p>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <p class="combo-title">Option 1 — carb at breakfast</p>
+        <div class="combo-meal">
+          <div class="combo-meal-name">Breakfast</div>
+          <span class="meal-pill mp-p">Protein</span><span class="meal-pill mp-v">Vegetables</span><span class="meal-pill mp-g">Fat</span><span class="meal-pill mp-c">Carb</span>
+        </div>
+        <div class="combo-meal">
+          <div class="combo-meal-name">Lunch</div>
+          <span class="meal-pill mp-p">Protein</span><span class="meal-pill mp-v">Vegetables</span><span class="meal-pill mp-g">Fat</span><span class="meal-pill mp-f">Fruit (dessert)</span>
+        </div>
+        <div class="combo-meal">
+          <div class="combo-meal-name">Dinner</div>
+          <span class="meal-pill mp-p">Protein</span><span class="meal-pill mp-v">Vegetables</span><span class="meal-pill mp-g">Fat</span>
+        </div>
+      </div>
+      <div class="combo-card">
+        <p class="combo-title">Option 2 — carb at lunch</p>
+        <div class="combo-meal">
+          <div class="combo-meal-name">Breakfast</div>
+          <span class="meal-pill mp-p">Protein</span><span class="meal-pill mp-v">Vegetables</span><span class="meal-pill mp-g">Fat</span><span class="meal-pill mp-f">Fruit</span>
+        </div>
+        <div class="combo-meal">
+          <div class="combo-meal-name">Lunch</div>
+          <span class="meal-pill mp-p">Protein</span><span class="meal-pill mp-v">Vegetables</span><span class="meal-pill mp-g">Fat</span><span class="meal-pill mp-c">Carb</span>
+        </div>
+        <div class="combo-meal">
+          <div class="combo-meal-name">Dinner</div>
+          <span class="meal-pill mp-p">Protein</span><span class="meal-pill mp-v">Vegetables</span><span class="meal-pill mp-g">Fat (dark choc option)</span>
+        </div>
+      </div>
+    </div>
+    <div class="note-box">
+      <p class="note-text">Pick one option for the entire day — don't mix. You can switch options the next day. The carb and fruit portions are already distributed across the day — you can't "save" them for a different meal. Build your own menus using the equivalency lists in the ebook: choose your option → pick your equivalents for each slot → done.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- UNIVERSAL RULES -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">4 universal rules — apply to all phases</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">1</span><span class="row-text"><strong style="color:var(--color-text-primary);">Eat real food.</strong> The more natural and unprocessed, the less counting is needed. The goal is eventually eating intuitively — no weighing, measuring, or logging.</span></div>
+      <div class="row-item"><span class="row-icon">2</span><span class="row-text"><strong style="color:var(--color-text-primary);">Eat breakfast as savory as possible.</strong> Sweet breakfasts spike glucose immediately. Start with protein and vegetables; fruit is the dessert, not the opener.</span></div>
+      <div class="row-item"><span class="row-icon">3</span><span class="row-text"><strong style="color:var(--color-text-primary);">Protein is always the priority.</strong> Include it at every meal — especially breakfast and lunch. It stabilizes glucose, builds muscle, and creates satiety. If hypoglycemia is still present, add protein to dinner too.</span></div>
+      <div class="row-item"><span class="row-icon">4</span><span class="row-text"><strong style="color:var(--color-text-primary);">Minimize added cooking oil.</strong> Use the natural fat in your food (egg yolk, salmon, avocado, nuts) rather than pouring oil on top of everything. Save your fat portions for real food sources.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHASE PROGRESSION DECISION TABLE -->
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">When to go back, stay, or move forward</p>
+    <table class="dec-table">
+      <thead><tr><th>Decision</th><th>When</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-back">← Back to Phase 1</span></td>
+          <td>Glucose spikes above 140 consistently · You went off-plan for 5+ days (return for 5+ days) · Symptoms worsening or not improving · Still significant weight to lose and stalled</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-stay">↔ Stay in Phase 2</span></td>
+          <td>Energy is stable and improving · Still using glucose data to experiment · Fasting insulin still above 4–6 · Any hormonal diagnosis (hypothyroidism, PCOS, menopause, Hashimoto) · Still seeing progress, even slowly</td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#FAEEDA;color:#854F0B;">↕ Phase 1.5</span></td>
+          <td>Feel best on Phase 1 during the week + Phase 2 on weekends. Alternate freely based on how your body responds.</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-fwd">→ Move to Phase 3</span></td>
+          <td>Reached goal weight · Insulin reversed (4–6 range) · Most symptoms resolved · Lab markers at optimal levels · OR: have a trip and want more flexibility temporarily</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="amber-box">
+    <p class="amber-text">The metabolic reset technically completes at the end of Phase 2. Phase 3 is maintenance and lifestyle — equally important but a different purpose. Don't skip it.</p>
+  </div>
+
+</div>

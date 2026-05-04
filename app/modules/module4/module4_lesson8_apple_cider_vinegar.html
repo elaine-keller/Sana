@@ -1,0 +1,106 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .red-box { border: 0.5px solid #F09595; background: #FCEBEB; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .red-text { font-size: 13px; color: #A32D2D; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  .benefit-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-bottom: 1rem; }
+  .b-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.75rem; text-align: center; }
+  .b-num { font-family: 'Playfair Display', serif; font-size: 22px; color: #1D9E75; line-height: 1; margin-bottom: 5px; }
+  .b-title { font-size: 12px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 3px; }
+  .b-text { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+
+  @media (max-width: 460px) { .benefit-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 4 — Lesson 8</p>
+    <h1 class="main-title">Apple cider vinegar — the science & how to use it</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">A tool, not a law. ACV has real science behind it — but it's strategic and optional, not something to take obsessively every day at every meal.</p>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">3 proven benefits</p>
+    <div class="benefit-grid">
+      <div class="b-card">
+        <div class="b-num">1</div>
+        <div class="b-title">Reduces glucose spikes up to 30%</div>
+        <div class="b-text">The active compound is acetic acid — present in all vinegars, but ACV has the most evidence and additional benefits.</div>
+      </div>
+      <div class="b-card">
+        <div class="b-num">2</div>
+        <div class="b-title">Increases stomach acid</div>
+        <div class="b-text">Supports digestion and can actually help with acid reflux when used correctly — more acid in the right place, not the wrong place.</div>
+      </div>
+      <div class="b-card">
+        <div class="b-num">3</div>
+        <div class="b-title">Probiotic benefits</div>
+        <div class="b-text">Only in unfiltered, unpasteurized ACV "with the mother." The cloudy sediment at the bottom is the live culture.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">How to buy it</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Look for: <strong style="color:var(--color-text-primary);">"with the mother," unfiltered, unpasteurized, organic</strong> — the bottle should look slightly cloudy/murky at the bottom. That cloudiness is the probiotic.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Best known brand: <strong style="color:var(--color-text-primary);">Bragg</strong> (available at Costco). Many other good options are now widely available.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text">Avoid: balsamic vinegar (high in sugar — counteracts the glucose benefit). ACV gummies (they contain sugar — defeats the purpose). Capsules work but are less effective than liquid.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">How to take it</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Timing:</strong> ~20 minutes before your highest-carb meal of the day. If you forget, take it at the start of the meal — still works.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Amount:</strong> start with ½ tsp. Build up to 1–2 tbsp as tolerated. Never jump straight to 2–3 tbsp — the taste will put you off permanently.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">How to dilute:</strong> always mix in a glass of water. Use a straw to protect tooth enamel. Never take it straight as a shot.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Alternatives:</strong> add to salad dressing, soups, or recipes. Other vinegars (red wine, white) work for glucose reduction — just not the probiotic benefit.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Tasty option:</strong> lemonade with ACV, a few drops of stevia, and sparkling water — or add mint. Make it enjoyable, not a chore.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">If you have reflux or heartburn</p>
+    <div class="note-box">
+      <p class="note-text">ACV can actually help with reflux — counterintuitive but true. Reflux is often caused by too little stomach acid in the wrong place, not too much. However, if it burns your esophagus when you try it, heal first:</p>
+    </div>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">1</span><span class="row-text">For 2–3 weeks, take 1 tbsp of natural aloe vera pulp in half a glass of water on an empty stomach each morning. Available on Amazon or health food stores.</span></div>
+      <div class="row-item"><span class="row-icon">2</span><span class="row-text">Once the esophagus has calmed down, reintroduce ACV gradually — starting with ½ tsp diluted in water.</span></div>
+    </div>
+  </div>
+
+  <div class="amber-box">
+    <p class="amber-text">Use it strategically — not obsessively. Pick your highest-carb meal, use it there. You don't need it every day or at every meal. Food order and what you eat matters more than the vinegar.</p>
+  </div>
+  <div class="red-box">
+    <p class="red-text">If you start feeling burning in your esophagus after prolonged use, take a break. It's not that ACV is bad — your body needs a reset from it. Listen to the signal.</p>
+  </div>
+
+</div>

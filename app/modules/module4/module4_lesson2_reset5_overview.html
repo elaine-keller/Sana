@@ -1,0 +1,140 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #D85A30; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  /* fuel types */
+  .fuel-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
+  .fuel-card { border-radius: var(--border-radius-lg); padding: 1rem; border: 0.5px solid var(--color-border-tertiary); }
+  .fuel-card.carb { background: #FAEEDA; border-color: #FAC775; }
+  .fuel-card.fat { background: #E1F5EE; border-color: #9FE1CB; }
+  .fuel-title { font-size: 13px; font-weight: 700; margin: 0 0 4px; }
+  .fuel-title.carb { color: #854F0B; }
+  .fuel-title.fat { color: #0F6E56; }
+  .fuel-text { font-size: 12px; line-height: 1.55; margin: 0; color: var(--color-text-secondary); }
+
+  /* RESET acronym */
+  .reset-table { width: 100%; border-collapse: collapse; }
+  .reset-table td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; font-size: 14px; }
+  .reset-table tr:last-child td { border-bottom: none; }
+  .reset-table tr:nth-child(even) td { background: var(--color-background-secondary); }
+  .reset-letter { font-family: 'Playfair Display', serif; font-size: 28px; color: #1D9E75; font-weight: 400; line-height: 1; min-width: 36px; display: block; }
+  .reset-word { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 2px; }
+  .reset-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+
+  /* flex signs */
+  .flex-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .flex-item { display: flex; gap: 8px; align-items: flex-start; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.6rem 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .flex-dot { width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: #1D9E75; margin-top: 4px; }
+  .flex-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+
+  @media (max-width: 460px) { .fuel-grid { grid-template-columns: 1fr; } .flex-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 4 — Lesson 2</p>
+    <h1 class="main-title">The Reset 5 method — action plan overview</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">The functional approach — not treating symptoms, but reversing the root cause. The goal is to make cells more efficient so they need less insulin to balance blood sugar, and to teach the body to use fat as fuel.</p>
+
+  <hr class="divider">
+
+  <!-- WHY CONVENTIONAL TREATMENT FAILS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Why conventional treatment doesn't reverse IR</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Metformin</strong> — reduces symptoms but depletes vitamin B12 and other vitamins essential for metabolism, hormones, and nerve function. Long-term use has significant side effects.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Birth control pills</strong> — often prescribed for PCOS-related IR but suppress rather than regulate hormones.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">"Eat less, move more"</strong> — treats the body like a calculator. Calories matter, but hormones matter more. Insulin decides what happens with every calorie.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">High-carb diet for hypoglycemia</strong> — commonly advised but reinforces the glucose-insulin rollercoaster instead of breaking it.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Statins, BP meds, immunosuppressants</strong> — each addresses a downstream symptom without touching the metabolic root cause.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- METABOLIC FLEXIBILITY -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The real goal — metabolic flexibility</p>
+    <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1rem;">The body has two fuel sources. A metabolically flexible person can switch between them freely. Only <strong style="color:var(--color-text-primary);">12% of the population</strong> currently has this ability — but it can be trained.</p>
+
+    <div class="fuel-grid">
+      <div class="fuel-card carb">
+        <p class="fuel-title carb">Fuel 1 — Carbohydrates / glucose</p>
+        <p class="fuel-text">Used immediately after eating. Fast-burning, quick to deplete. Most people are stuck using only this source.</p>
+      </div>
+      <div class="fuel-card fat">
+        <p class="fuel-title fat">Fuel 2 — Body fat</p>
+        <p class="fuel-text">Used during fasting, between meals, and at rest. Nearly unlimited supply. Produces stable, long-lasting energy.</p>
+      </div>
+    </div>
+
+    <p class="section-label">Signs you have metabolic flexibility</p>
+    <div class="flex-grid" style="margin-bottom:1rem;">
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Can go several hours between meals without feeling unwell or irritable</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Insulin returns to baseline between meals — not chronically elevated</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Energy levels stay stable throughout the day</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Can burn stored body fat between meals and overnight</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Better exercise performance and muscle building capacity</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Can eat efficiently without gaining weight or retaining fluid</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- RESET ACRONYM -->
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">The Reset 5 — nutrition pillar spelled out</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); margin:0 0 0.75rem; line-height:1.6;">The word RESET maps directly to the nutrition principles. Each letter is a rule to follow:</p>
+    <div style="overflow-x:auto;">
+      <table class="reset-table">
+        <tbody>
+          <tr>
+            <td style="width:44px;"><span class="reset-letter">R</span></td>
+            <td><div class="reset-word">Reduce & rotate your carbohydrates</div><div class="reset-desc">Don't eliminate — manage. Learn to choose, combine, time, and portion carbs so they don't spike glucose.</div></td>
+          </tr>
+          <tr>
+            <td><span class="reset-letter">E</span></td>
+            <td><div class="reset-word">Choose protein</div><div class="reset-desc">Prioritize protein at every meal. It's the anchor of metabolic stability — satiating, muscle-preserving, and insulin-friendly.</div></td>
+          </tr>
+          <tr>
+            <td><span class="reset-letter">S</span></td>
+            <td><div class="reset-word">Always vegetables</div><div class="reset-desc">Add vegetables in fiber form at every meal. Fiber is the primary brake on glucose absorption.</div></td>
+          </tr>
+          <tr>
+            <td><span class="reset-letter">E</span></td>
+            <td><div class="reset-word">Balance fat</div><div class="reset-desc">Not too much, not too little — calibrated. Healthy fat slows digestion and prevents glucose spikes, but portions matter.</div></td>
+          </tr>
+          <tr>
+            <td><span class="reset-letter">T</span></td>
+            <td><div class="reset-word">Time — between meals and fasting windows</div><div class="reset-desc">Give the body time between meals for insulin to drop and fat burning to begin. This is the foundation of intermittent fasting.</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p class="note-text">The detailed nutrition plan (what to eat, when, how to combine, all 3 phases) comes in the next lesson. This lesson established the framework and the why behind it.</p>
+  </div>
+  <div class="amber-box">
+    <p class="amber-text">If you've been on metformin long-term, ask your doctor about checking vitamin B12, folate, and B6 levels — depletion is a documented side effect that's rarely mentioned at prescription time.</p>
+  </div>
+
+</div>
