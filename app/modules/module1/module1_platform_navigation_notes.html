@@ -1,0 +1,121 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .card-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.65; margin: 0; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.65rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+  .row-label { font-weight: 700; color: var(--color-text-primary); }
+  .section-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.9rem 1.1rem; margin-bottom: 0.6rem; }
+  .sc-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 4px; display: flex; gap: 8px; align-items: center; }
+  .sc-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #E1F5EE; color: #0F6E56; }
+  .sc-badge.new { background: #FAEEDA; color: #854F0B; }
+  .sc-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.55; margin: 0; }
+</style>
+
+<div class="notes">
+
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 1 — Lesson 3</p>
+    <h1 class="main-title">Platform tour — where everything lives</h1>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Getting in</p>
+    <div class="card">
+      <div class="row-item">
+        <span class="row-icon">→</span>
+        <span class="row-text"><span class="row-label">Login:</span> pamelaberrondo.com/login — use the email you registered with. Forgot password? Use the reset link on that page.</span>
+      </div>
+      <div class="row-item">
+        <span class="row-icon">→</span>
+        <span class="row-text"><span class="row-label">My Products:</span> landing page after login — shows everything you've purchased (course, audio podcast, any add-ons).</span>
+      </div>
+      <div class="row-item">
+        <span class="row-icon">→</span>
+        <span class="row-text"><span class="row-label">Download the app:</span> App Store or Google Play. Makes the whole experience much easier — have both the portal and the app.</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Sections of the portal</p>
+
+    <div class="section-card">
+      <div class="sc-title">6 course modules <span class="sc-badge">core content</span></div>
+      <div class="sc-text">Main videos, organized top to bottom. Watch in order. Each video can be marked complete — this tracks your progress and unlocks a completion certificate at the end. Module 4 (the Reset Method) is the longest and is broken into sub-topics: nutrition, Phase 1, Phase 2, Phase 3, menus, recipe book, drinks, etc.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="sc-title">Downloadable materials <span class="sc-badge">keep forever</span></div>
+      <div class="sc-text">All course downloads in one place: ebook (complete course), menus, recipe book, equivalencies guide, tracking sheets, and support resources. Download everything early — you only have 6 months of platform access, but the files are yours to keep.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="sc-title">Masterclasses <span class="sc-badge">deep dives</span></div>
+      <div class="sc-text">~2-hour standalone classes on the most-asked topics: cortisol, supplements, perimenopause/menopause, thyroid activity, and more. Each one is essentially its own mini-course — don't skip these.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="sc-title">Coach Rezeth <span class="sc-badge new">new — AI</span></div>
+      <div class="sc-text">An AI assistant trained on all program content. Available 24/7 for specific questions about the Reset (phases, food choices, fasting, etc.). Best for content questions — not for personal medical consultations. May have occasional errors, so verify important details against the program materials.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="sc-title">Q&A bank</div>
+      <div class="sc-text">200+ questions organized by topic (meal plan, phases, supplements, etc.). Browse by category or search directly. Great alternative if you prefer not to use the AI chat.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="sc-title">Past Q&A recordings</div>
+      <div class="sc-text">Long recordings from previous cohorts. Not required — but useful if you want more detailed guidance or feel you need extra support. Pamela suggests starting with the most recent ones (January).</div>
+    </div>
+
+    <div class="section-card">
+      <div class="sc-title">Community <span class="sc-badge new">new</span></div>
+      <div class="sc-text">Think of it like a private Facebook group. Read and accept the rules on first entry. The team posts daily tips, fun facts, and motivation. Members share results, recipe photos, and form sub-groups (by city, life stage, etc.). Live session reminders also come through here.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="sc-title">Exclusive benefits</div>
+      <div class="sc-text">Discounts on recommended brands, products, and exercise platforms. Check periodically — the list grows over time.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom: 1.5rem;">
+    <p class="section-label">Side panel — always visible</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Ebook download link</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Community link</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Extra downloadable resources</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Help / support zone</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Direct link to supplements (with discount)</span></div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p class="note-text">Mark each video complete as you finish it — this tracks your progress and is required to receive your completion certificate.</p>
+  </div>
+  <div class="amber-box">
+    <p class="amber-text">Platform access: 6 months only. Downloads are yours forever — save everything locally as soon as you can.</p>
+  </div>
+
+</div>
