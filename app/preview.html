@@ -150,8 +150,9 @@
     <div class="nav-section">
       <div class="nav-label">Recipes</div>
       <div class="nav-item" onclick="showView('recipes')"><span class="nav-icon">🍽</span> All recipes</div>
-      <div class="nav-item" onclick="showView('recipes', 1)"><span class="nav-icon">·</span> Phase 1</div>
-      <div class="nav-item" onclick="showView('recipes', 2)"><span class="nav-icon">·</span> Phase 2</div>
+      <div class="nav-item" onclick="showView('recipes', 1)"><span class="nav-icon">·</span> Metabolic Reboot</div>
+      <div class="nav-item" onclick="showView('recipes', 2)"><span class="nav-icon">·</span> Burn</div>
+      <div class="nav-item" onclick="showView('recipes', 3)"><span class="nav-icon">·</span> Maintain</div>
     </div>
 
     <div class="nav-section">
@@ -228,9 +229,9 @@
       <div id="view-recipes" style="display:none;">
         <div class="tabs">
           <button class="tab active" onclick="filterRecipes(null, this)">All</button>
-          <button class="tab" onclick="filterRecipes(1, this)">Phase 1</button>
-          <button class="tab" onclick="filterRecipes(2, this)">Phase 2</button>
-          <button class="tab" onclick="filterRecipes(3, this)">Phase 3</button>
+          <button class="tab" onclick="filterRecipes(1, this)">Metabolic Reboot</button>
+          <button class="tab" onclick="filterRecipes(2, this)">Burn</button>
+          <button class="tab" onclick="filterRecipes(3, this)">Maintain</button>
         </div>
         <div class="recipe-grid" id="recipe-grid"></div>
       </div>
@@ -275,7 +276,7 @@
             <div class="module-num">4</div>
             <div class="module-info">
               <div class="module-title">The Reset — nutrition plan</div>
-              <div class="module-sub">Reset5 method, 3 phases, apple cider vinegar</div>
+              <div class="module-sub">Reset5 method, Metabolic Reboot, Burn, Nourish phases</div>
               <div class="module-lessons">7 lessons</div>
             </div>
             <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
@@ -459,7 +460,8 @@
     const img = r.images && r.images[0]
       ? `${GITHUB}/photos/${r.images[0]}`
       : '';
-    const phases = (r.phases || []).map(p => `<span class="phase-badge">Phase ${p}</span>`).join('');
+    const phaseNames = { 1: 'Metabolic Reboot', 2: 'Burn', 3: 'Maintain' };
+    const phases = (r.phases || []).filter(p => phaseNames[p]).map(p => `<span class="phase-badge">${phaseNames[p]}</span>`).join('');
     return `
       <div class="recipe-card" onclick="showRecipe('${key.replace(/'/g,"\\'")}')">
         ${img ? `<img class="recipe-img" src="${img}" alt="${name}" loading="lazy">` : `<div class="recipe-img"></div>`}
@@ -479,7 +481,8 @@
     document.getElementById('topbar-title').textContent = name;
 
     const img = r.images && r.images[0] ? `${GITHUB}/photos/${r.images[0]}` : '';
-    const phases = (r.phases || []).map(p => `<span class="phase-badge">Phase ${p}</span>`).join('');
+    const phaseNames = { 1: 'Metabolic Reboot', 2: 'Burn', 3: 'Maintain' };
+    const phases = (r.phases || []).filter(p => phaseNames[p]).map(p => `<span class="phase-badge">${phaseNames[p]}</span>`).join('');
     const equiv = r.equiv || {};
 
     const equivHTML = `
