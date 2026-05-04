@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sana — Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-text-primary: #1A1A1A;
+      --color-text-secondary: #5A5A5A;
+      --color-background-primary: #FFFFFF;
+      --color-background-secondary: #F7F7F5;
+      --color-border-tertiary: #E8E8E4;
+      --color-border-secondary: #D8D8D2;
+      --border-radius-lg: 12px;
+      --border-radius-md: 8px;
+      --green: #1D9E75;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lato', sans-serif; background: #F2F1EE; color: var(--color-text-primary); }
+
+    /* ── LAYOUT ── */
+    .shell { display: flex; height: 100vh; overflow: hidden; }
+
+    /* Sidebar */
+    .sidebar { width: 260px; min-width: 260px; background: #fff; border-right: 1px solid var(--color-border-tertiary); display: flex; flex-direction: column; overflow-y: auto; }
+    .sidebar-logo { padding: 1.5rem 1.25rem 1rem; border-bottom: 1px solid var(--color-border-tertiary); }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--color-text-primary); letter-spacing: -0.02em; }
+    .logo-sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-top: 2px; }
+
+    .nav-section { padding: 1rem 0; border-bottom: 1px solid var(--color-border-tertiary); }
+    .nav-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-secondary); padding: 0 1.25rem 0.5rem; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.25rem; cursor: pointer; border-radius: 0; font-size: 13px; color: var(--color-text-secondary); transition: background 0.15s; }
+    .nav-item:hover { background: var(--color-background-secondary); }
+    .nav-item.active { background: #E8F7F2; color: var(--green); font-weight: 700; border-right: 2px solid var(--green); }
+    .nav-icon { font-size: 14px; min-width: 18px; }
+
+    .nav-module { padding: 0.35rem 1.25rem 0.35rem 2.5rem; cursor: pointer; font-size: 12px; color: var(--color-text-secondary); }
+    .nav-module:hover { color: var(--green); }
+    .nav-module.active { color: var(--green); font-weight: 700; }
+
+    /* Main */
+    .main { flex: 1; overflow-y: auto; }
+
+    /* Top bar */
+    .topbar { background: #fff; border-bottom: 1px solid var(--color-border-tertiary); padding: 0.75rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+    .topbar-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; }
+    .topbar-lang { display: flex; gap: 4px; }
+    .lang-btn { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--color-border-secondary); background: transparent; cursor: pointer; color: var(--color-text-secondary); }
+    .lang-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+    /* Content */
+    .content { padding: 2rem; max-width: 900px; }
+
+    /* ── HOME ── */
+    .home-hero { background: linear-gradient(135deg, #1D9E75 0%, #0F6E56 100%); border-radius: 16px; padding: 2.5rem; color: #fff; margin-bottom: 2rem; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 0.5rem; }
+    .hero-sub { font-size: 14px; opacity: 0.85; line-height: 1.6; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card { background: #fff; border-radius: 12px; padding: 1.25rem; text-align: center; border: 1px solid var(--color-border-tertiary); }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--green); }
+    .stat-label { font-size: 12px; color: var(--color-text-secondary); margin-top: 4px; }
+
+    .section-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 1rem; }
+
+    /* Recipe grid */
+    .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .recipe-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--color-border-tertiary); cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+    .recipe-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .recipe-img { width: 100%; height: 140px; object-fit: cover; background: var(--color-background-secondary); }
+    .recipe-body { padding: 0.75rem; }
+    .recipe-name { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; line-height: 1.4; }
+    .recipe-meta { font-size: 11px; color: var(--color-text-secondary); }
+    .phase-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-right: 4px; }
+
+    /* Module list */
+    .module-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .module-card { background: #fff; border-radius: 12px; padding: 1.25rem; border: 1px solid var(--color-border-tertiary); cursor: pointer; display: flex; align-items: center; gap: 1rem; transition: box-shadow 0.15s; }
+    .module-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .module-num { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--green); min-width: 40px; }
+    .module-info { flex: 1; }
+    .module-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .module-sub { font-size: 12px; color: var(--color-text-secondary); }
+    .module-lessons { font-size: 11px; color: var(--green); margin-top: 4px; }
+
+    /* Lesson view */
+    .lesson-frame { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid var(--color-border-tertiary); }
+
+    /* Recipe detail */
+    .recipe-detail { display: none; }
+    .recipe-detail.visible { display: block; }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 4px; margin-bottom: 1.5rem; background: var(--color-background-secondary); border-radius: 8px; padding: 4px; }
+    .tab { padding: 6px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; color: var(--color-text-secondary); border: none; background: none; }
+    .tab.active { background: #fff; color: var(--color-text-primary); font-weight: 700; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+
+    /* Equiv bar */
+    .equiv-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .equiv-item { background: var(--color-background-secondary); border: 1px solid var(--color-border-tertiary); border-radius: 8px; padding: 6px 12px; text-align: center; }
+    .equiv-val { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--green); }
+    .equiv-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-secondary); }
+
+    /* Phase badge */
+    .phase-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: #E8F7F2; color: var(--green); border: 1px solid #9FE1CB; margin-right: 4px; }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .sidebar { display: none; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ── SIDEBAR ── -->
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-text">Sana</div>
+      <div class="logo-sub">Mesa Sana · Wellness</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Home</div>
+      <div class="nav-item active" onclick="showView('home')"><span class="nav-icon">⌂</span> Dashboard</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Recipes</div>
+      <div class="nav-item" onclick="showView('recipes')"><span class="nav-icon">🍽</span> All recipes</div>
+      <div class="nav-item" onclick="showView('recipes', 1)"><span class="nav-icon">·</span> Phase 1</div>
+      <div class="nav-item" onclick="showView('recipes', 2)"><span class="nav-icon">·</span> Phase 2</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">My Program</div>
+      <div class="nav-item" onclick="showView('modules')"><span class="nav-icon">📖</span> Modules</div>
+      <div class="nav-module" onclick="showLesson('module2','intro')">Module 2 — Intro</div>
+      <div class="nav-module" onclick="showLesson('module2','lesson2')">Why everyone needs this</div>
+      <div class="nav-module" onclick="showLesson('module2','lesson3')">Dysglycemia</div>
+      <div class="nav-module" onclick="showLesson('module2','lesson4')">Related diseases</div>
+      <div class="nav-module" onclick="showLesson('module2','lesson5')">Why we are sick</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Tools</div>
+      <div class="nav-item" onclick="showView('libraries')"><span class="nav-icon">📚</span> Libraries</div>
+      <div class="nav-item" onclick="showView('nuggets')"><span class="nav-icon">💡</span> Nuggets</div>
+    </div>
+  </nav>
+
+  <!-- ── MAIN ── -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-lang">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- HOME -->
+      <div id="view-home">
+        <div class="home-hero">
+          <div class="hero-title">Bienvenida, Elaine</div>
+          <div class="hero-sub">Your personal wellness system — recipes, lessons, and knowledge, all in one place.</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num">164</div>
+            <div class="stat-label">Bilingual recipes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">203</div>
+            <div class="stat-label">Food photos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Lessons loaded</div>
+          </div>
+        </div>
+
+        <div class="section-title">Recent recipes</div>
+        <div class="recipe-grid" id="home-recipes"></div>
+      </div>
+
+      <!-- RECIPES -->
+      <div id="view-recipes" style="display:none;">
+        <div class="tabs">
+          <button class="tab active" onclick="filterRecipes(null, this)">All</button>
+          <button class="tab" onclick="filterRecipes(1, this)">Phase 1</button>
+          <button class="tab" onclick="filterRecipes(2, this)">Phase 2</button>
+          <button class="tab" onclick="filterRecipes(3, this)">Phase 3</button>
+        </div>
+        <div class="recipe-grid" id="recipe-grid"></div>
+      </div>
+
+      <!-- RECIPE DETAIL -->
+      <div id="view-recipe-detail" style="display:none;">
+        <div id="recipe-detail-content"></div>
+      </div>
+
+      <!-- MODULES -->
+      <div id="view-modules" style="display:none;">
+        <div class="section-title">My Program</div>
+        <div class="module-list">
+          <div class="module-card" onclick="showLesson('module2','intro')">
+            <div class="module-num">2</div>
+            <div class="module-info">
+              <div class="module-title">Theory — understand it to change it</div>
+              <div class="module-sub">Dysglycemia, insulin resistance, root causes</div>
+              <div class="module-lessons">5 lessons available</div>
+            </div>
+            <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LESSON -->
+      <div id="view-lesson" style="display:none;">
+        <div style="margin-bottom:1rem;">
+          <span onclick="showView('modules')" style="font-size:12px; color:var(--green); cursor:pointer;">← Back to modules</span>
+        </div>
+        <div class="lesson-frame" id="lesson-content"></div>
+      </div>
+
+      <!-- LIBRARIES -->
+      <div id="view-libraries" style="display:none;">
+        <div class="section-title">Libraries</div>
+        <div style="background:#fff; border-radius:12px; padding:2rem; border:1px solid var(--color-border-tertiary); color:var(--color-text-secondary); font-size:14px; line-height:1.7;">
+          Libraries coming soon — this is where curated knowledge collections will live (supplements, foods, protocols).
+        </div>
+      </div>
+
+      <!-- NUGGETS -->
+      <div id="view-nuggets" style="display:none;">
+        <div class="section-title">Nuggets</div>
+        <div style="background:#fff; border-radius:12px; padding:2rem; border:1px solid var(--color-border-tertiary); color:var(--color-text-secondary); font-size:14px; line-height:1.7;">
+          Nuggets coming soon — key insights and principles from the program, tagged and searchable.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const GITHUB = 'https://raw.githubusercontent.com/elaine-keller/Sana/main';
+  let recipes = {};
+  let currentLang = 'es';
+  let currentPhase = null;
+
+  // ── LOAD DATA ──
+  async function loadRecipes() {
+    try {
+      const r = await fetch(`${GITHUB}/data/recipes_bilingual.json`);
+      recipes = await r.json();
+      renderHomeRecipes();
+      renderRecipeGrid();
+    } catch(e) {
+      console.error('Could not load recipes:', e);
+    }
+  }
+
+  // ── VIEWS ──
+  function showView(name, phase) {
+    document.querySelectorAll('[id^="view-"]').forEach(el => el.style.display = 'none');
+    document.getElementById(`view-${name}`).style.display = 'block';
+    document.getElementById('topbar-title').textContent = {
+      home: 'Dashboard', recipes: 'Recipes', modules: 'My Program',
+      lesson: 'Lesson', libraries: 'Libraries', nuggets: 'Nuggets',
+      'recipe-detail': ''
+    }[name] || name;
+
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+
+    if (name === 'recipes') {
+      currentPhase = phase || null;
+      renderRecipeGrid();
+    }
+  }
+
+  // ── LESSONS ──
+  const lessonFiles = {
+    'module2-intro': 'module2/module2_intro.html',
+    'module2-lesson2': 'module2/module2_lesson2_why_everyone_needs_this.html',
+    'module2-lesson3': 'module2/module2_lesson3_dysglycemia.html',
+    'module2-lesson4': 'module2/module2_lesson4_related_diseases.html',
+    'module2-lesson5': 'module2/module2_lesson5_why_we_are_sick.html',
+  };
+
+  async function showLesson(module, lesson) {
+    showView('lesson');
+    const key = `${module}-${lesson}`;
+    const file = lessonFiles[key];
+    if (!file) return;
+    try {
+      const r = await fetch(`${GITHUB}/app/modules/${file}`);
+      const html = await r.text();
+      document.getElementById('lesson-content').innerHTML = html;
+    } catch(e) {
+      document.getElementById('lesson-content').innerHTML = '<p style="color:red">Could not load lesson.</p>';
+    }
+  }
+
+  // ── RECIPE GRID ──
+  function renderHomeRecipes() {
+    const keys = Object.keys(recipes).slice(0, 6);
+    document.getElementById('home-recipes').innerHTML = keys.map(k => recipeCardHTML(k, recipes[k])).join('');
+  }
+
+  function renderRecipeGrid() {
+    const keys = Object.keys(recipes).filter(k => {
+      if (!currentPhase) return true;
+      return recipes[k].phases && recipes[k].phases.includes(currentPhase);
+    });
+    document.getElementById('recipe-grid').innerHTML = keys.map(k => recipeCardHTML(k, recipes[k])).join('');
+  }
+
+  function recipeCardHTML(key, r) {
+    const name = currentLang === 'es' ? (r.name_es || key) : (r.name_en || key);
+    const img = r.images && r.images[0]
+      ? `${GITHUB}/photos/${r.images[0]}`
+      : '';
+    const phases = (r.phases || []).map(p => `<span class="phase-badge">Phase ${p}</span>`).join('');
+    return `
+      <div class="recipe-card" onclick="showRecipe('${key.replace(/'/g,"\\'")}')">
+        ${img ? `<img class="recipe-img" src="${img}" alt="${name}" loading="lazy">` : `<div class="recipe-img"></div>`}
+        <div class="recipe-body">
+          <div class="recipe-name">${name}</div>
+          <div class="recipe-meta">${phases}</div>
+        </div>
+      </div>`;
+  }
+
+  function showRecipe(key) {
+    const r = recipes[key];
+    if (!r) return;
+    showView('recipe-detail');
+
+    const name = currentLang === 'es' ? (r.name_es || key) : (r.name_en || key);
+    document.getElementById('topbar-title').textContent = name;
+
+    const img = r.images && r.images[0] ? `${GITHUB}/photos/${r.images[0]}` : '';
+    const phases = (r.phases || []).map(p => `<span class="phase-badge">Phase ${p}</span>`).join('');
+    const equiv = r.equiv || {};
+
+    const equivHTML = `
+      <div class="equiv-bar">
+        ${[['protein','Protein'],['veggie','Veggie'],['carb','Carb'],['fat','Fat'],['fruit','Fruit']]
+          .filter(([k]) => equiv[k] && equiv[k] !== '0')
+          .map(([k,l]) => `<div class="equiv-item"><div class="equiv-val">${equiv[k]}</div><div class="equiv-lbl">${l}</div></div>`).join('')}
+      </div>
+      <p style="font-size:12px; color:var(--color-text-secondary); margin-bottom:1.5rem;">${r[`equiv_note_${currentLang}`] || ''}${r[`equiv_modifier_${currentLang}`] ? ' · ' + r[`equiv_modifier_${currentLang}`] : ''}</p>`;
+
+    const ingredients = (r[`ingredients_${currentLang}`] || []).map(g => `
+      ${g.label ? `<p style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--green); margin:0.75rem 0 0.4rem;">${g.label}</p>` : ''}
+      <ul style="padding-left:1.25rem; margin:0;">
+        ${(g.items||[]).map(i => `<li style="font-size:13px; color:var(--color-text-secondary); padding:3px 0; line-height:1.5;">${i}</li>`).join('')}
+      </ul>`).join('');
+
+    const instructions = (r[`instructions_${currentLang}`] || []).map(g => `
+      ${g.label ? `<p style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--green); margin:0.75rem 0 0.4rem;">${g.label}</p>` : ''}
+      <ol style="padding-left:1.25rem; margin:0;">
+        ${(g.steps||[]).map(s => `<li style="font-size:13px; color:var(--color-text-secondary); padding:4px 0; line-height:1.6;">${s}</li>`).join('')}
+      </ol>`).join('');
+
+    document.getElementById('recipe-detail-content').innerHTML = `
+      <div style="margin-bottom:1rem;"><span onclick="showView('recipes')" style="font-size:12px; color:var(--green); cursor:pointer;">← Back to recipes</span></div>
+      ${img ? `<img src="${img}" style="width:100%; max-height:320px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem;">` : ''}
+      <h1 style="font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:0.5rem;">${name}</h1>
+      <div style="margin-bottom:1rem;">${phases}</div>
+      <p style="font-size:12px; color:var(--color-text-secondary); margin-bottom:1.5rem;">${r.servings ? r.servings + ' servings' : ''}</p>
+      ${equivHTML}
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+        <div>
+          <p style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-secondary); margin-bottom:0.75rem;">${currentLang === 'es' ? 'Ingredientes' : 'Ingredients'}</p>
+          ${ingredients}
+        </div>
+        <div>
+          <p style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-secondary); margin-bottom:0.75rem;">${currentLang === 'es' ? 'Procedimiento' : 'Instructions'}</p>
+          ${instructions}
+        </div>
+      </div>
+      ${r[`tip_${currentLang}`] ? `<div style="margin-top:1.5rem; border:0.5px solid #9FE1CB; background:#E1F5EE; border-radius:8px; padding:0.75rem 1rem; font-size:13px; color:#0F6E56; line-height:1.6;">* ${r[`tip_${currentLang}`]}</div>` : ''}
+    `;
+  }
+
+  function filterRecipes(phase, btn) {
+    currentPhase = phase;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    renderRecipeGrid();
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    renderRecipeGrid();
+    renderHomeRecipes();
+  }
+
+  loadRecipes();
+</script>
+</body>
+</html>
