@@ -1,0 +1,124 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.65rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .stat-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.9rem; text-align: center; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: #1D9E75; line-height: 1; margin-bottom: 5px; }
+  .stat-label { font-size: 12px; color: var(--color-text-secondary); line-height: 1.4; }
+  .disease-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 7px; margin-bottom: 1rem; }
+  .d-pill { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 20px; padding: 5px 10px; font-size: 12px; color: var(--color-text-secondary); text-align: center; }
+  .learn-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .learn-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.75rem 0.9rem; }
+  .learn-title { font-size: 12px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 3px; }
+  .learn-text { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin: 0; }
+  @media (max-width: 460px) { .stat-row { grid-template-columns: 1fr; } .disease-grid { grid-template-columns: repeat(2,1fr); } .learn-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 2 — Lesson 2</p>
+    <h1 class="main-title">Why everyone should know about this</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin: 0 0 1.5rem;">Diseases that once seemed rare are now everywhere — and most of them share a common root cause that almost nobody talks about.</p>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The common thread</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); margin: 0 0 0.75rem;">All of these conditions are caused or worsened by insulin resistance:</p>
+    <div class="disease-grid">
+      <div class="d-pill">Cancer</div>
+      <div class="d-pill">Diabetes</div>
+      <div class="d-pill">Infertility</div>
+      <div class="d-pill">Alzheimer's</div>
+      <div class="d-pill">Hypertension</div>
+      <div class="d-pill">Heart disease</div>
+    </div>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0;">These are no longer adult-only diseases — they're increasingly appearing in children too.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The scale of the problem</p>
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num">85%</div>
+        <div class="stat-label">of adults have insulin resistance</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10%</div>
+        <div class="stat-label">of children have it too</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">#1</div>
+        <div class="stat-label">cause of death in Mexico is diabetes</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0;">Most people have it and don't know. Insulin resistance is the biggest global health problem that almost no one has heard of.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">The good news</p>
+    <div class="note-box">
+      <p class="note-text">Insulin resistance is <strong style="font-weight:700;">completely preventable and reversible.</strong> That's the entire point of this program.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:1rem;">
+    <p class="section-label">What you'll learn to do in this course</p>
+    <div class="learn-grid">
+      <div class="learn-card">
+        <p class="learn-title">Understand your metabolism</p>
+        <p class="learn-text">What it is, how it works, and how to fix it.</p>
+      </div>
+      <div class="learn-card">
+        <p class="learn-title">Burn fat for fuel</p>
+        <p class="learn-text">Teach your body to use stored fat — not just glucose and carbs — as energy.</p>
+      </div>
+      <div class="learn-card">
+        <p class="learn-title">Stabilize energy all day</p>
+        <p class="learn-text">High energy during the day, restful sleep at night.</p>
+      </div>
+      <div class="learn-card">
+        <p class="learn-title">Balance blood sugar</p>
+        <p class="learn-text">The master key to hormonal health, mental health, and overall wellbeing.</p>
+      </div>
+      <div class="learn-card">
+        <p class="learn-title">Intermittent fasting</p>
+        <p class="learn-text">Progressive approach with the best strategy for women specifically.</p>
+      </div>
+      <div class="learn-card">
+        <p class="learn-title">Exercise for IR reversal</p>
+        <p class="learn-text">Which types work best and how to mix intensities for results.</p>
+      </div>
+      <div class="learn-card">
+        <p class="learn-title">Supplements</p>
+        <p class="learn-text">Which ones, what they do, and correct dosing.</p>
+      </div>
+      <div class="learn-card">
+        <p class="learn-title">Read your own labs</p>
+        <p class="learn-text">Interpret bloodwork independently to track progress and assess risk.</p>
+      </div>
+    </div>
+  </div>
+
+</div>

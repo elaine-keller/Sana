@@ -1,0 +1,234 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+  .pill-grid { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1rem; }
+  .pill { font-size: 12px; padding: 4px 11px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); }
+  .pill.red { background: #FCEBEB; color: #A32D2D; border-color: #F09595; }
+  .pill.amber { background: #FAEEDA; color: #854F0B; border-color: #FAC775; }
+  .pill.green { background: #E1F5EE; color: #0F6E56; border-color: #9FE1CB; }
+
+  /* comparison table */
+  .cmp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .cmp-table th { padding: 8px 10px; text-align: left; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 0.5px solid var(--color-border-secondary); }
+  .cmp-table td { padding: 8px 10px; vertical-align: top; line-height: 1.5; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-secondary); }
+  .cmp-table tr:last-child td { border-bottom: none; }
+  .th-normal { color: #0F6E56; }
+  .th-hypo { color: #185FA5; }
+  .th-ir { color: #854F0B; }
+  .row-head { font-weight: 700; font-size: 12px; color: var(--color-text-primary); white-space: nowrap; }
+
+  /* timeline */
+  .tl { position: relative; padding-left: 1.75rem; }
+  .tl::before { content:''; position:absolute; left:7px; top:8px; bottom:8px; width:1px; background: var(--color-border-secondary); }
+  .tl-item { position:relative; margin-bottom:1rem; }
+  .tl-dot { position:absolute; left:-1.5rem; top:5px; width:10px; height:10px; border-radius:50%; border:2px solid #1D9E75; background:var(--color-background-primary); }
+  .tl-dot.filled { background:#1D9E75; }
+  .tl-dot.amber { border-color:#BA7517; }
+  .tl-dot.red { border-color:#A32D2D; background:#A32D2D; }
+  .tl-step { font-size:11px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:#1D9E75; margin-bottom:2px; }
+  .tl-step.amber { color:#BA7517; }
+  .tl-step.red { color:#A32D2D; }
+  .tl-text { font-size:13px; color:var(--color-text-secondary); line-height:1.55; margin:0; }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 2 — Lesson 3</p>
+    <h1 class="main-title">Dysglycemia: insulin resistance & hypoglycemia</h1>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The core concept — dysglycemia</p>
+    <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1rem;">Dysglycemia = blood sugar imbalance. It has two sides:</p>
+    <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-bottom:1rem;">
+      <div style="background:var(--color-background-secondary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:0.9rem 1rem;">
+        <p style="font-size:12px; font-weight:700; color:#854F0B; margin:0 0 4px; text-transform:uppercase; letter-spacing:0.06em;">Hyperglycemia</p>
+        <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.55; margin:0;">Too much glucose in the blood. Caused by autoimmune attack (Type 1 / LADA) or lifestyle (Type 2 diabetes, insulin resistance). This course focuses on the lifestyle type.</p>
+      </div>
+      <div style="background:var(--color-background-secondary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:0.9rem 1rem;">
+        <p style="font-size:12px; font-weight:700; color:#185FA5; margin:0 0 4px; text-transform:uppercase; letter-spacing:0.06em;">Hypoglycemia</p>
+        <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.55; margin:0;">Too little glucose — below 70 mg/dL (severe below 55). Often a consequence of insulin resistance, not a separate disease. Can be functional (mild) or reactive (delayed, 2–4 hrs after eating).</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Glucose & insulin — how they work</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">1</span><span class="row-text">You eat carbohydrates → body breaks them down into <strong style="color:var(--color-text-primary); font-weight:700;">glucose</strong> (blood sugar).</span></div>
+      <div class="row-item"><span class="row-icon">2</span><span class="row-text">Blood glucose rises → pancreas releases <strong style="color:var(--color-text-primary); font-weight:700;">insulin</strong> in response.</span></div>
+      <div class="row-item"><span class="row-icon">3</span><span class="row-text">Insulin decides what happens to that energy: <em>use it now</em> or <em>store it</em>. This is why insulin is called the <strong style="color:var(--color-text-primary); font-weight:700;">fat-storage hormone</strong>.</span></div>
+      <div class="row-item"><span class="row-icon">4</span><span class="row-text">Insulin is anabolic — it builds. Too much of it means the body is in constant storage mode, not burning mode.</span></div>
+    </div>
+    <div class="note-box">
+      <p class="note-text">The problem is not glucose itself — it's the insulin response. Keep insulin stable and everything else follows.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">The blood sugar rollercoaster</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0 0 0.75rem;">Every refined-carb meal triggers a spike → crash cycle. The crash triggers stress hormones (cortisol, epinephrine) → cravings for quick energy → another spike. This loop runs all day and causes:</p>
+    <div class="pill-grid">
+      <span class="pill red">Anxiety</span>
+      <span class="pill red">Constant hunger</span>
+      <span class="pill red">Post-meal fatigue</span>
+      <span class="pill red">Energy crashes</span>
+      <span class="pill red">Mood swings</span>
+      <span class="pill red">Poor sleep</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">What insulin resistance actually is</p>
+    <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1rem;">Cells stop responding to insulin → body produces more and more insulin to compensate → energy can't enter cells. The body has to put that energy somewhere:</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">1</span><span class="row-text"><strong style="color:var(--color-text-primary); font-weight:700;">Muscles</strong> — stored as glycogen, but this tank is small and fills fast.</span></div>
+      <div class="row-item"><span class="row-icon">2</span><span class="row-text"><strong style="color:var(--color-text-primary); font-weight:700;">Liver</strong> — also limited. Overflow causes non-alcoholic fatty liver — now common in children.</span></div>
+      <div class="row-item"><span class="row-icon">3</span><span class="row-text"><strong style="color:var(--color-text-primary); font-weight:700;">Fat tissue</strong> — unlimited capacity. Energy gets stored as body fat, especially visceral (internal) fat.</span></div>
+    </div>
+    <div class="amber-box">
+      <p class="amber-text">Post-meal fatigue ("food coma") is not normal. It's a sign you ate more carbs than your body can currently handle — and a signal to change something.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Physical signs & symptoms of insulin resistance</p>
+    <p style="font-size:12px; color:var(--color-text-secondary); margin:0 0 0.6rem; font-style:italic;">Note: many people with IR have no visible signs — including slim/lean people ("skinny fat" / TOFI: thin outside, fat inside)</p>
+    <p style="font-size:12px; font-weight:700; color:var(--color-text-primary); margin:0 0 0.4rem;">Physical signs:</p>
+    <div class="pill-grid" style="margin-bottom:0.75rem;">
+      <span class="pill">Skin tags on neck</span>
+      <span class="pill">Dark skin folds (acanthosis)</span>
+      <span class="pill">Belly / trunk fat storage</span>
+      <span class="pill">Dark under-eyes</span>
+      <span class="pill">Skin discoloration</span>
+    </div>
+    <p style="font-size:12px; font-weight:700; color:var(--color-text-primary); margin:0 0 0.4rem;">Symptoms:</p>
+    <div class="pill-grid">
+      <span class="pill red">Fatigue after eating</span>
+      <span class="pill red">Insomnia / waking at night</span>
+      <span class="pill red">Night urination</span>
+      <span class="pill red">Frequent urination</span>
+      <span class="pill red">Brain fog</span>
+      <span class="pill red">Anxiety & depression</span>
+      <span class="pill red">Rage / mood volatility</span>
+      <span class="pill red">Headaches / dizziness</span>
+      <span class="pill red">Can't lose weight</span>
+      <span class="pill red">Water retention / bloating</span>
+      <span class="pill red">Insatiable hunger</span>
+      <span class="pill red">Fertility problems / PCOS</span>
+      <span class="pill red">High triglycerides</span>
+      <span class="pill red">Hypertension</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">How to tell them apart — comparison chart</p>
+    <div style="overflow-x:auto;">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="th-normal">Normal glucose</th>
+            <th class="th-hypo">Hypoglycemia</th>
+            <th class="th-ir">Insulin resistance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-head">Waking up</td>
+            <td>Rested, have energy</td>
+            <td>Dragging, hard to get up</td>
+            <td>Didn't feel rested even after 8–9 hrs</td>
+          </tr>
+          <tr>
+            <td class="row-head">Morning hunger</td>
+            <td>Normal appetite</td>
+            <td>No hunger at all</td>
+            <td>Craving something sweet immediately</td>
+          </tr>
+          <tr>
+            <td class="row-head">Between meals</td>
+            <td>Mild hunger, no uncontrollable cravings</td>
+            <td>Feel weak if delayed — can't function</td>
+            <td>Sweet/carb cravings all day</td>
+          </tr>
+          <tr>
+            <td class="row-head">After eating</td>
+            <td>Satisfied, energy unchanged</td>
+            <td>Energy recovers — feel better</td>
+            <td>Tired, need a nap, need stimulants</td>
+          </tr>
+          <tr>
+            <td class="row-head">Fullness</td>
+            <td>Feel full and satisfied</td>
+            <td>Salt/sugar cravings 1 hr later, 3–5pm crash</td>
+            <td>Can't feel full, need something sweet after</td>
+          </tr>
+          <tr>
+            <td class="row-head">Sleep</td>
+            <td>Fall asleep when ready</td>
+            <td>Fall asleep but wake mid-night</td>
+            <td>Hard to fall asleep</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Hypoglycemia — the other side</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary); font-weight:700;">Functional hypoglycemia</strong> — mild drop; shows up as being "hangry" (hungry + irritable). Eating makes you feel noticeably better.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary); font-weight:700;">Reactive hypoglycemia</strong> — crash happens 2–4 hours after eating. Delayed response means most people don't connect symptoms to what they ate. Causes headaches, dizziness, mood shifts.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary); font-weight:700;">Common triggers:</strong> excess refined carbs eaten alone, alcohol (especially at night), intense exercise without metabolic flexibility.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">The disease progression timeline</p>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-dot"></div><p class="tl-step">Step 1</p><p class="tl-text">Hyperinsulinemia — insulin spikes chronically in response to high glucose</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p class="tl-step">Step 2</p><p class="tl-text">Reactive hypoglycemia — delayed crashes after meals</p></div>
+      <div class="tl-item"><div class="tl-dot amber"></div><p class="tl-step amber">Step 3–4</p><p class="tl-text">Pre-insulin resistance — symptoms present, glucose unstable, but no formal diagnosis yet</p></div>
+      <div class="tl-item"><div class="tl-dot amber"></div><p class="tl-step amber">Step 5</p><p class="tl-text">Insulin resistance — full picture: energy not entering cells, fat storage dominant</p></div>
+      <div class="tl-item"><div class="tl-dot amber"></div><p class="tl-step amber">Step 6–7</p><p class="tl-text">Metabolic syndrome — complications begin accumulating</p></div>
+      <div class="tl-item"><div class="tl-dot red"></div><p class="tl-step red">Step 8</p><p class="tl-text">Type 2 diabetes — significant cell damage. This can take 30+ years, but the process can be stopped and reversed at any earlier stage.</p></div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p class="note-text">Timeline to reverse IR: plan for 6 months of commitment. Symptoms improve in 2–3 weeks. Full reversal typically takes 6–8 months. The body did not break overnight — healing takes time too.</p>
+  </div>
+
+</div>

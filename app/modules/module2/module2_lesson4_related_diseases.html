@@ -1,0 +1,188 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  /* Body type comparison */
+  .body-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
+  .body-card { border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 1rem; }
+  .body-card.apple { background: #FCEBEB; border-color: #F09595; }
+  .body-card.pear { background: #E1F5EE; border-color: #9FE1CB; }
+  .body-title { font-size: 14px; font-weight: 700; margin: 0 0 6px; }
+  .body-title.apple { color: #A32D2D; }
+  .body-title.pear { color: #0F6E56; }
+  .body-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.55; margin: 0; }
+  .body-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; margin-top: 7px; }
+  .tag-red { background: #F7C1C1; color: #791F1F; }
+  .tag-green { background: #9FE1CB; color: #085041; }
+
+  /* Fat cell types */
+  .fat-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .fat-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+  .fat-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 4px; }
+  .fat-sub { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; margin: 0 0 8px; }
+  .fat-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+  .fat-pill { font-size: 11px; padding: 2px 8px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); }
+
+  /* Disease cards grid */
+  .disease-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .dis-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.8rem 0.9rem; }
+  .dis-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 4px; }
+  .dis-text { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin: 0; }
+
+  /* Metabolic syndrome checklist */
+  .met-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; }
+  .met-item { display: flex; gap: 8px; align-items: center; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.5rem 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .met-dot { width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: #D85A30; }
+  .met-text { font-size: 12px; color: var(--color-text-secondary); }
+
+  @media (max-width: 460px) { .body-grid, .fat-grid, .disease-grid, .met-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 2 — Lesson 4</p>
+    <h1 class="main-title">Diseases related to insulin resistance</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">Insulin resistance is either the cause or the aggravator of most chronic diseases. Treating each symptom separately without addressing insulin is why so many people stay stuck.</p>
+
+  <hr class="divider">
+
+  <!-- WEIGHT & BODY FAT -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Weight & body fat</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">A healthy metabolism converts ~40% of carbohydrates into stored fat. With IR, this percentage is significantly higher — meaning the same meal stores more fat than it would in someone without IR.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">High insulin = storage mode. Fat cannot be burned when insulin is elevated — no matter how much you exercise. This is why exercise without addressing IR produces little visible change.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Fat is an endocrine organ — it produces hormones and generates inflammation. More body fat = more inflammation = more disease risk.</span></div>
+    </div>
+
+    <p style="font-size:13px; font-weight:700; color:var(--color-text-primary); margin:0 0 0.5rem;">Body type & metabolic risk (diagram 1)</p>
+    <div class="body-grid">
+      <div class="body-card apple">
+        <p class="body-title apple">Apple body type</p>
+        <p class="body-text">Fat accumulates in the upper body / abdomen. Fat is hard and dense (visceral fat — surrounds organs). Higher risk of IR, heart disease, diabetes. More common in men.</p>
+        <span class="body-tag tag-red">Higher metabolic risk</span>
+      </div>
+      <div class="body-card pear">
+        <p class="body-title pear">Pear body type</p>
+        <p class="body-text">Fat accumulates in hips, thighs, glutes. Fat is soft and jiggles (subcutaneous fat). Aesthetically more visible but metabolically much safer.</p>
+        <span class="body-tag tag-green">Lower metabolic risk</span>
+      </div>
+    </div>
+    <div class="amber-box">
+      <p class="amber-text">"Skinny fat" (TOFI) — normal weight but high visceral fat. Can have IR with zero visible excess weight. Body composition matters more than the number on the scale.</p>
+    </div>
+
+    <p style="font-size:13px; font-weight:700; color:var(--color-text-primary); margin:0 0 0.5rem;">Two ways fat cells grow (diagram 2)</p>
+    <div class="fat-grid">
+      <div class="fat-card">
+        <p class="fat-title">Hypertrophy — cells get bigger</p>
+        <p class="fat-sub">Existing fat cells fill up and expand. Eventually reach capacity → triggers IR as a defense mechanism. Weight gain is self-limiting but metabolic risk is higher.</p>
+        <div class="fat-pills"><span class="fat-pill">Higher IR risk</span><span class="fat-pill">Self-limiting weight gain</span></div>
+      </div>
+      <div class="fat-card">
+        <p class="fat-title">Hyperplasia — more cells created</p>
+        <p class="fat-sub">New small fat cells are created rather than enlarging existing ones. Cells stay smaller → maintain insulin sensitivity longer. Unlimited weight gain potential but lower IR risk.</p>
+        <div class="fat-pills"><span class="fat-pill">Lower IR risk</span><span class="fat-pill">Unlimited weight gain</span></div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin:0.75rem 0 0;">Which type you are is largely determined by genetics and epigenetics.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- RELATED DISEASES -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Major conditions linked to insulin resistance</p>
+    <div class="disease-grid">
+      <div class="dis-card">
+        <p class="dis-title">Type 2 diabetes</p>
+        <p class="dis-text">The direct endpoint of uncontrolled IR. Pancreas eventually can't produce enough insulin. 90% of diabetes cases are Type 2 — fully reversible with lifestyle change.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Cardiovascular disease</p>
+        <p class="dis-text">High insulin makes blood "sticky" → clot risk. Real cause of arterial blockage is insulin-driven inflammation, not cholesterol or saturated fat. IR raises triglycerides, raises LDL, lowers HDL.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Hypertension</p>
+        <p class="dis-text">The #1 cause is IR — not sodium. Insulin promotes salt and water retention, narrows blood flow space, and raises pressure. Reverse IR → blood pressure normalizes.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">PCOS & infertility</p>
+        <p class="dis-text">IR is the primary cause of polycystic ovary syndrome. Insulin blocks testosterone-to-estrogen conversion → no ovulation → infertility. Also reduces IVF/fertility treatment success rates. Affects men too: erectile dysfunction, low sperm count.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Gestational diabetes</p>
+        <p class="dis-text">All pregnant women develop some IR physiologically (to nourish the baby). Pre-existing IR raises risk of it becoming pathological. Also raises preeclampsia risk — the leading cause of maternal mortality. Baby inherits 40% higher IR/diabetes risk.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Cortisol & adrenal dysregulation</p>
+        <p class="dis-text">Cortisol raises blood glucose — even without food. Chronic stress = chronically elevated insulin. Repeated hypoglycemia exhausts adrenal glands (HPA axis dysfunction). The two hormones are inseparable.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Thyroid (including Hashimoto's)</p>
+        <p class="dis-text">Thyroid function depends on glucose/insulin balance — and vice versa. Blood sugar spikes can trigger Hashimoto's flares (skin rashes, swelling, panic attacks). Always address insulin first in thyroid conditions.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Menopause</p>
+        <p class="dis-text">IR dramatically worsens menopause symptoms — hot flashes, anxiety, mood swings, body aches. Stabilizing glucose is the first step to reducing symptoms before any other intervention.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Alzheimer's (Type 3 diabetes)</p>
+        <p class="dis-text">High insulin prevents the brain from clearing amyloid plaque → dementia. The brain uses 60% of the body's glucose. Blood sugar instability directly impairs cognition, memory, and focus. "Pre-Alzheimer's" exists — catch it early.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Cancer</p>
+        <p class="dis-text">Cancer cells feed almost exclusively on glucose and don't need oxygen. IR accelerates tumor growth. Most strongly linked types: breast, prostate, colorectal cancer. Reversing IR is prevention, not cure.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Migraines & neuropathy</p>
+        <p class="dis-text">People with IR have significantly more migraines. Stable insulin = fewer episodes. Nerve damage (neuropathy) is directly caused by excess glucose in the bloodstream over time.</p>
+      </div>
+      <div class="dis-card">
+        <p class="dis-title">Anxiety & depression</p>
+        <p class="dis-text">Blood sugar instability directly drives anxiety and mood disorders. Stabilizing glucose has a measurable effect on both. Lifestyle is not separate from mental health.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- METABOLIC SYNDROME -->
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">Metabolic syndrome — when 3 or more of these are present</p>
+    <div class="met-grid">
+      <div class="met-item"><div class="met-dot"></div><span class="met-text">Insulin resistance</span></div>
+      <div class="met-item"><div class="met-dot"></div><span class="met-text">High fasting glucose</span></div>
+      <div class="met-item"><div class="met-dot"></div><span class="met-text">Central / abdominal obesity</span></div>
+      <div class="met-item"><div class="met-dot"></div><span class="met-text">High triglycerides</span></div>
+      <div class="met-item"><div class="met-dot"></div><span class="met-text">High blood pressure</span></div>
+      <div class="met-item"><div class="met-dot"></div><span class="met-text">Type 2 diabetes</span></div>
+      <div class="met-item"><div class="met-dot"></div><span class="met-text">High uric acid</span></div>
+    </div>
+    <div class="note-box" style="margin-top:0.75rem;">
+      <p class="note-text">The problem: most doctors treat each symptom separately (a statin for cholesterol, metformin for IR, a blood pressure drug...) without ever treating the shared root cause — chronically elevated insulin.</p>
+    </div>
+  </div>
+
+  <div class="amber-box">
+    <p class="amber-text">The body reverses damage much faster than it accumulates it. The path from high glucose → diabetes takes 30+ years. The path back is measured in months, not decades.</p>
+  </div>
+
+</div>

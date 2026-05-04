@@ -1,0 +1,155 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  .cause-block { margin-bottom: 1.5rem; }
+  .cause-header { display: flex; gap: 12px; align-items: center; margin-bottom: 0.75rem; }
+  .cause-num { font-family: 'Playfair Display', serif; font-size: 24px; color: #D85A30; min-width: 32px; line-height: 1; }
+  .cause-title { font-size: 16px; font-weight: 700; color: var(--color-text-primary); margin: 0; }
+  .cause-sub { font-size: 12px; color: var(--color-text-secondary); margin: 0; }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0.75rem; }
+  .pill { font-size: 12px; padding: 3px 10px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); }
+  .pill-red { background: #FCEBEB; color: #A32D2D; border-color: #F09595; }
+  .pill-amber { background: #FAEEDA; color: #854F0B; border-color: #FAC775; }
+
+  .swap-box { display: flex; gap: 10px; align-items: center; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.5rem; }
+  .swap-from { font-size: 13px; color: #A32D2D; font-weight: 700; text-decoration: line-through; flex: 1; }
+  .swap-arrow { color: #1D9E75; font-size: 16px; }
+  .swap-to { font-size: 13px; color: #0F6E56; font-weight: 700; flex: 1; }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 2 — Lesson 5</p>
+    <h1 class="main-title">Why are we sick? The 5 root causes</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">85% of adults have insulin resistance. This lesson explains why — across five interconnected causes. Food is the biggest lever, but none of the others can be ignored.</p>
+
+  <hr class="divider">
+
+  <!-- CAUSE 1: DIET -->
+  <div class="cause-block">
+    <div class="cause-header">
+      <span class="cause-num">1</span>
+      <div><p class="cause-title">Diet</p><p class="cause-sub">The biggest impact — food is information for cells, not just calories</p></div>
+    </div>
+
+    <p style="font-size:13px; font-weight:700; color:var(--color-text-primary); margin:0 0 0.4rem;">The worst offenders:</p>
+    <div class="pill-row">
+      <span class="pill pill-red">High-fructose corn syrup (HFCS)</span>
+      <span class="pill pill-red">Vegetable / seed oils</span>
+      <span class="pill pill-red">Refined carbs & flours</span>
+      <span class="pill pill-red">Constant grazing / snacking</span>
+      <span class="pill pill-red">High-calorie, low-nutrient processed food</span>
+    </div>
+
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">HFCS</strong> (in ketchup, cereals, soda, processed snacks) — the most damaging sugar. Primary driver of fatty liver disease in children and adults.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Vegetable/seed oils</strong> (canola, corn, soy, sunflower) — go rancid during industrial processing; the body doesn't recognize them as food. Generate immediate inflammation. High in omega-6. These are in almost everything processed.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Refined carbs</strong> — bread, pasta, cereal, packaged foods. All convert to glucose rapidly. The issue isn't carbs themselves; it's the metabolic response. Learning to combine and time them is the solution, not elimination.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Constant snacking</strong> — every bite triggers an insulin response. Even "healthy" snacks prevent insulin from dropping between meals. The body never gets the window it needs to burn fat.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Nutrient-poor calories</strong> — processed food requires more effort to digest and delivers less. Nutritional deficiencies impair the body's ability to regulate glucose.</span></div>
+    </div>
+
+    <p style="font-size:13px; font-weight:700; color:var(--color-text-primary); margin:0 0 0.4rem;">One swap that matters most right now:</p>
+    <div class="swap-box">
+      <span class="swap-from">Canola / vegetable oil</span>
+      <span class="swap-arrow">→</span>
+      <span class="swap-to">Extra virgin olive oil</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CAUSE 2: GENETICS -->
+  <div class="cause-block">
+    <div class="cause-header">
+      <span class="cause-num">2</span>
+      <div><p class="cause-title">Genetics</p><p class="cause-sub">Real but limited — only 3–30% of total risk</p></div>
+    </div>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Family history of diabetes, hypertension, or cardiovascular disease increases predisposition — but genes are not destiny.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">If your mother had gestational diabetes, your own risk is higher.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Genetics load the gun. Lifestyle pulls the trigger. Style of life accounts for 70–97% of actual risk.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CAUSE 3: INFLAMMATION -->
+  <div class="cause-block">
+    <div class="cause-header">
+      <span class="cause-num">3</span>
+      <div><p class="cause-title">Chronic inflammation</p><p class="cause-sub">The silent killer — you can't feel it, but it's always there</p></div>
+    </div>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0 0 0.75rem;">Not the kind of inflammation from a sprain — this is systemic, cellular, slow-burning. Like many small fires throughout the body that the immune system keeps trying to put out.</p>
+    <div class="pill-row">
+      <span class="pill pill-amber">Processed food & seed oils</span>
+      <span class="pill pill-amber">Smoking & toxins</span>
+      <span class="pill pill-amber">Leaky gut (intestinal permeability)</span>
+      <span class="pill pill-amber">LPS bacterial toxins in bloodstream</span>
+      <span class="pill pill-amber">Excess body fat (fat = inflammatory organ)</span>
+      <span class="pill pill-amber">Hidden infections & parasites</span>
+      <span class="pill pill-amber">Oxidative stress</span>
+    </div>
+    <div class="amber-box">
+      <p class="amber-text">Leaky gut allows harmful bacteria (LPS — lipopolysaccharides) to escape into the bloodstream. The immune system attacks them, triggering body-wide inflammation. This directly disrupts insulin and glucose regulation.</p>
+    </div>
+    <div class="note-box">
+      <p class="note-text">Feeling swollen, headachy, achy, and foggy after a weekend of excess is what acute inflammation feels like. Chronic inflammation is that same process running quietly, all the time, at lower intensity.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CAUSE 4: STRESS -->
+  <div class="cause-block">
+    <div class="cause-header">
+      <span class="cause-num">4</span>
+      <div><p class="cause-title">Chronic stress</p><p class="cause-sub">Cortisol raises blood glucose — even without eating</p></div>
+    </div>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Emotional stress</strong> — arguments, financial worry, anxiety — directly raises glucose levels through cortisol release.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Physical stress</strong> — over-exercising, surgery, pollution, environmental toxins all count as stressors.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text"><strong style="color:var(--color-text-primary);">Poor sleep</strong> — one single night of bad sleep raises IR risk by 30%. Sleep is not optional; it's metabolic medicine.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Stress puts the body in survival mode: digestion slows, fat burning stops, the thyroid is suppressed. The body conserves everything and burns nothing.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CAUSE 5: SEDENTARY LIFE -->
+  <div class="cause-block">
+    <div class="cause-header">
+      <span class="cause-num">5</span>
+      <div><p class="cause-title">Sedentary lifestyle</p><p class="cause-sub">Not just the absence of exercise — it's how we live all day</p></div>
+    </div>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Sitting at a desk all day without movement keeps glucose elevated and insulin high, even with a good diet.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Regular movement breaks during the day (not formal exercise) are a meaningful tool for blood sugar management.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Exercise is the first thing that activates metabolic flexibility — the body's ability to switch between fuel sources. It cannot be skipped.</span></div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p class="note-text">Food is information. What you eat tells your cells how to function. Every meal is a decision about what kind of information you're sending your body.</p>
+  </div>
+
+</div>
