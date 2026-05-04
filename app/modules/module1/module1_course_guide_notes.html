@@ -12,8 +12,6 @@
   .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
   .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
   .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
-  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
-  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
 
   .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.65rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
   .row-item:last-child { border-bottom: none; }
@@ -21,18 +19,12 @@
   .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
   .row-label { font-weight: 700; color: var(--color-text-primary); }
 
-  .resources-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
-  .res-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.75rem; text-align: center; }
-  .res-num { font-family: 'Playfair Display', serif; font-size: 24px; color: #1D9E75; line-height: 1; margin-bottom: 6px; }
-  .res-title { font-size: 12px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; }
-  .res-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
-
   .print-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
   .print-item { display: flex; gap: 8px; align-items: center; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.6rem 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
   .print-dot { width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: #1D9E75; }
   .print-text { font-size: 13px; color: var(--color-text-secondary); }
 
-  @media (max-width: 480px) { .resources-grid { grid-template-columns: 1fr; } .print-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .print-grid { grid-template-columns: 1fr; } }
 </style>
 
 <div class="notes">
@@ -42,35 +34,13 @@
     <h1 class="main-title">Course guide — how to get the most out of this</h1>
   </div>
 
-  <hr class="divider">
-
-  <div style="margin-bottom:2rem;">
-    <p class="section-label">How the content is structured</p>
-    <div class="card" style="padding: 0.5rem 1.25rem;">
-      <div class="row-item">
-        <span class="row-icon">▶</span>
-        <span class="row-text"><span class="row-label">Videos are the core.</span> 30+ videos across 6 modules. Watch in order — don't skip the theory sections. Everything is sequenced intentionally.</span>
-      </div>
-      <div class="row-item">
-        <span class="row-icon">🎧</span>
-        <span class="row-text"><span class="row-label">Podcast audio available.</span> Every video has a companion audio version. Download a podcast app and listen while driving, walking, or doing chores.</span>
-      </div>
-      <div class="row-item">
-        <span class="row-icon">📄</span>
-        <span class="row-text"><span class="row-label">PDF downloads.</span> Most classes have a downloadable PDF. Or download the complete ebook (all course material in one file, ~200 pages) from its own section.</span>
-      </div>
-      <div class="row-item">
-        <span class="row-icon">📅</span>
-        <span class="row-text"><span class="row-label">Access period: 90 days.</span> Videos can be rewatched as many times as needed within this window.</span>
-      </div>
-    </div>
-  </div>
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">Read in order. Everything is sequenced intentionally — don't skip the theory sections. Understanding comes before applying.</p>
 
   <hr class="divider">
 
   <div style="margin-bottom:2rem;">
-    <p class="section-label">What to print / keep handy</p>
-    <p style="font-size:13px; color:var(--color-text-secondary); margin: 0 0 0.75rem; line-height:1.6;">These four items are referenced constantly — print, laminate, or pin to the fridge:</p>
+    <p class="section-label">What to keep handy</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); margin: 0 0 0.75rem; line-height:1.6;">These four references come up constantly throughout the program:</p>
     <div class="print-grid">
       <div class="print-item"><div class="print-dot"></div><span class="print-text">Meal plan (3-phase)</span></div>
       <div class="print-item"><div class="print-dot"></div><span class="print-text">Equivalencies guide</span></div>
@@ -82,39 +52,15 @@
   <hr class="divider">
 
   <div style="margin-bottom:2rem;">
-    <p class="section-label">3 ways to get questions answered</p>
-    <div class="resources-grid">
-      <div class="res-card">
-        <div class="res-num">1</div>
-        <div class="res-title">Q&A bank</div>
-        <div class="res-desc">100–200 questions organized by module. Start here for most doubts.</div>
-      </div>
-      <div class="res-card">
-        <div class="res-num">2</div>
-        <div class="res-title">Recorded sessions</div>
-        <div class="res-desc">Long Q&A recordings from past cohorts. Deep-dive resource.</div>
-      </div>
-      <div class="res-card">
-        <div class="res-num">3</div>
-        <div class="res-title">Live sessions</div>
-        <div class="res-desc">Scheduled live Q&As during this cohort. Check the calendar.</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <div style="margin-bottom:2rem;">
     <p class="section-label">Everything included in the program</p>
     <div class="card" style="padding: 0.5rem 1.25rem;">
-      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">30+ video lessons across 6 modules (insulin resistance & metabolic health)</span></div>
-      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">3-phase meal plan with designed menus (by MesaSana) + option to build your own</span></div>
-      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Recipe book (150+ MesaSana recipes adapted to the equivalencies system)</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">5 modules covering insulin resistance, metabolic health, and the Reset method</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">3-phase meal plan with designed menus + option to build your own</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">164 bilingual recipes adapted to the equivalencies system</span></div>
       <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Equivalencies guide + substitutes guide + recommended product list</span></div>
       <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Supplement plan — what each one does, suggested doses, your choice which to take</span></div>
       <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Lab analysis guide — which tests to request and how to read results</span></div>
       <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Exercise plan</span></div>
-      <div class="row-item"><span class="row-icon">✓</span><span class="row-text">Guest speaker talks, quizzes, downloadables, and extras</span></div>
     </div>
   </div>
 
@@ -128,10 +74,7 @@
   </div>
 
   <div class="note-box">
-    <p class="note-text">Watch theory <em>before</em> applying anything. Understand it first — then begin. The order matters.</p>
-  </div>
-  <div class="amber-box">
-    <p class="amber-text">Technical issues with access or payment: <strong style="font-weight:700;">Reset@PamelaBerrondo.com</strong></p>
+    <p class="note-text">Read through the theory <em>before</em> applying anything. Understand it first — then begin. The order matters.</p>
   </div>
 
 </div>
