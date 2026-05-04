@@ -149,8 +149,8 @@
     </div>
 
     <div class="nav-section">
-      <div class="nav-label">My Program</div>
-      <div class="nav-item" onclick="showView('modules')"><span class="nav-icon">📖</span> All modules</div>
+      <div class="nav-label">Library</div>
+      <div class="nav-item" onclick="showView('modules')"><span class="nav-icon">◎</span> Metabolic Reset</div>
       <div class="nav-module nav-group">Module 1 — Getting Started</div>
       <div class="nav-module" data-key="module1-course_guide" onclick="showLesson('module1','course_guide')">· Course guide</div>
       <div class="nav-module nav-group">Module 2 — Theory</div>
@@ -175,11 +175,7 @@
       <div class="nav-module" data-key="module4-lesson8" onclick="showLesson('module4','lesson8')">· Apple cider vinegar</div>
       <div class="nav-module nav-group">Module 5 — What's Next</div>
       <div class="nav-module" data-key="module5-what_comes_next" onclick="showLesson('module5','what_comes_next')">· What comes next</div>
-    </div>
-
-    <div class="nav-section">
-      <div class="nav-label">Tools</div>
-      <div class="nav-item" onclick="showView('libraries')"><span class="nav-icon">📚</span> Libraries</div>
+      <div class="nav-item" onclick="showView('libraries')" style="margin-top:0.25rem;"><span class="nav-icon">📚</span> Libraries</div>
       <div class="nav-item" onclick="showView('nuggets')"><span class="nav-icon">💡</span> Nuggets</div>
     </div>
   </nav>
@@ -239,7 +235,7 @@
 
       <!-- MODULES -->
       <div id="view-modules" style="display:none;">
-        <div class="section-title">My Program</div>
+        <div class="section-title">Metabolic Reset</div>
         <div class="module-list">
           <div class="module-card" onclick="showLesson('module1','course_guide')">
             <div class="module-num">1</div>
@@ -347,7 +343,7 @@
     document.querySelectorAll('[id^="view-"]').forEach(el => el.style.display = 'none');
     document.getElementById(`view-${name}`).style.display = 'block';
     document.getElementById('topbar-title').textContent = {
-      home: 'Dashboard', recipes: 'Recipes', modules: 'My Program',
+      home: 'Dashboard', recipes: 'Recipes', modules: 'Metabolic Reset',
       lesson: 'Lesson', libraries: 'Libraries', nuggets: 'Nuggets',
       'recipe-detail': ''
     }[name] || name;
