@@ -1,0 +1,200 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  /* timing table */
+  .timing-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+  .timing-table th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #D85A30; padding: 8px 12px; border-bottom: 1.5px solid var(--color-border-secondary); text-align: left; }
+  .timing-table td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 13px; color: var(--color-text-secondary); vertical-align: middle; }
+  .timing-table tr:last-child td { border-bottom: none; }
+  .timing-table tr:nth-child(even) td { background: var(--color-background-secondary); }
+  .when { font-weight: 700; color: var(--color-text-primary); }
+  .range-pill { display: inline-block; background: #E1F5EE; color: #0F6E56; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+
+  /* device comparison */
+  .dev-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
+  .dev-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+  .dev-title { font-size: 14px; font-weight: 700; color: var(--color-text-primary); margin: 0 0 8px; }
+  .dev-list { font-size: 12px; color: var(--color-text-secondary); line-height: 1.7; margin: 0; padding-left: 1rem; }
+
+  /* glucometer protocol */
+  .proto-row { display: flex; gap: 10px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .proto-row:last-child { border-bottom: none; }
+  .proto-time { font-size: 12px; font-weight: 700; color: #D85A30; min-width: 90px; padding-top: 1px; }
+  .proto-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+
+  /* food comparison examples */
+  .ex-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .ex-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.75rem 0.9rem; }
+  .ex-vs { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+  .ex-bad { font-size: 12px; font-weight: 700; color: #A32D2D; background: #FCEBEB; padding: 2px 8px; border-radius: 20px; }
+  .ex-good { font-size: 12px; font-weight: 700; color: #0F6E56; background: #E1F5EE; padding: 2px 8px; border-radius: 20px; }
+  .ex-arrow { font-size: 11px; color: var(--color-text-tertiary); }
+  .ex-lesson { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin: 0; }
+  .ex-principle { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #1D9E75; margin-bottom: 5px; }
+
+  @media (max-width: 480px) { .dev-grid { grid-template-columns: 1fr; } .ex-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 3 — Lesson 3</p>
+    <h1 class="main-title">How to use a glucose monitor</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">Lab work gives you a single snapshot. A glucose monitor shows you the whole movie — what happens across the entire day, in real time, in response to your exact food, sleep, stress, and exercise. Everyone responds differently to the same food, which is why this data is irreplaceable.</p>
+
+  <hr class="divider">
+
+  <!-- OPTIMAL RANGES TABLE -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Optimal glucose ranges — from the course slide</p>
+    <table class="timing-table">
+      <thead><tr><th>When measured</th><th>Optimal level</th></tr></thead>
+      <tbody>
+        <tr><td><span class="when">Fasting</span></td><td><span class="range-pill">72–85 mg/dL</span></td></tr>
+        <tr><td><span class="when">Pre-prandial</span> (just before eating)</td><td><span class="range-pill">72–90 mg/dL</span></td></tr>
+        <tr><td><span class="when">Post-prandial peak</span> (45–60 min after eating)</td><td><span class="range-pill">≤ 110 mg/dL (max 120)</span></td></tr>
+        <tr><td><span class="when">Daily average</span></td><td><span class="range-pill">90–100 mg/dL</span></td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <p class="note-text">Program your sensor or app to show the green zone as 75–110. Any reading outside that range is a spike worth investigating. Standard guidelines say under 140 is fine — that is not the goal here.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- DEVICE COMPARISON -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Two tools — glucometer vs. continuous sensor</p>
+    <div class="dev-grid">
+      <div class="dev-card">
+        <p class="dev-title">Glucometer (finger-prick)</p>
+        <ul class="dev-list">
+          <li>Available at any pharmacy or supermarket</li>
+          <li>~$25–30 USD one-time cost</li>
+          <li>Gives a single point-in-time reading</li>
+          <li>Cannot measure during sleep or exercise</li>
+          <li>Requires manual logging to see trends</li>
+          <li>Measure fasting, pre-meal, 45 min, 60 min, 2 hrs, 3 hrs after eating — for one week to build a trend</li>
+        </ul>
+      </div>
+      <div class="dev-card">
+        <p class="dev-title">Freestyle Libre sensor (CGM)</p>
+        <ul class="dev-list">
+          <li>Worn on back of upper arm for 14 days</li>
+          <li>Measures glucose 24 hrs including during sleep</li>
+          <li>~$60 USD per sensor (14-day use)</li>
+          <li>Scan with the FreeStyle LibreLink app or the reader device</li>
+          <li>Slight margin of error (interstitial fluid, not blood)</li>
+          <li>Tip: put it on and wait 2 days before activating — lets initial inflammation subside for more accurate readings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GLUCOMETER PROTOCOL -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Glucometer testing protocol — one week experiment</p>
+    <div class="card" style="padding: 0.5rem 1.25rem;">
+      <div class="proto-row"><span class="proto-time">On waking</span><span class="proto-text">Fasting glucose — before exercise, coffee, or food</span></div>
+      <div class="proto-row"><span class="proto-time">Before eating</span><span class="proto-text">Pre-prandial baseline</span></div>
+      <div class="proto-row"><span class="proto-time">+ 45 min</span><span class="proto-text">Peak glucose response — this is the highest point for most foods</span></div>
+      <div class="proto-row"><span class="proto-time">+ 60 min</span><span class="proto-text">Secondary check — confirming the peak has passed</span></div>
+      <div class="proto-row"><span class="proto-time">+ 2 hours</span><span class="proto-text">Should be returning toward baseline</span></div>
+      <div class="proto-row"><span class="proto-time">+ 3 hours</span><span class="proto-text">Should be back at or near pre-meal level</span></div>
+    </div>
+    <p style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin:0;">Download the tracking sheet from the course to log these readings. A week of data reveals your personal patterns — which foods spike you, how fast you recover, and whether you're achieving metabolic flexibility.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- READING THE GRAPHS -->
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">What to look for in your glucose curve</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Stay in the green zone.</strong> Curve should remain between 75–110 as much as possible. Consistently above range = chronically elevated glucose.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Keep the line flat.</strong> Many spikes throughout the day = constant grazing or foods your body can't handle.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Fast recovery.</strong> A spike is less dangerous if glucose returns to baseline quickly. Slow recovery = reduced metabolic flexibility.</span></div>
+      <div class="row-item"><span class="row-icon">✓</span><span class="row-text"><strong style="color:var(--color-text-primary);">Identify your triggers.</strong> Note what caused each spike — food, exercise (even intense cardio can spike to 185+), stress, poor sleep.</span></div>
+      <div class="row-item"><span class="row-icon">!</span><span class="row-text"><strong style="color:var(--color-text-primary);">Nocturnal hypoglycemia.</strong> Glucose dropping and staying low overnight = real issue. Can be caused by alcohol, intense evening exercise, sleep position on the sensor, or the Dawn Effect.</span></div>
+    </div>
+    <div class="amber-box">
+      <p class="amber-text">Dawn Effect: some people following low-carb or keto diets show high fasting glucose (90–100+) despite eating well. This is a physiological response — check fasting insulin to distinguish it from true IR. If insulin is normal, don't panic about the glucose reading alone.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FOOD EXAMPLES -->
+  <div style="margin-bottom:1rem;">
+    <p class="section-label">Real-world examples from glucose graphs</p>
+    <div class="ex-grid">
+
+      <div class="ex-card">
+        <p class="ex-principle">Liquid vs. whole</p>
+        <div class="ex-vs"><span class="ex-bad">Orange juice → big spike</span></div>
+        <div class="ex-vs"><span class="ex-good">Whole orange → flat curve</span></div>
+        <p class="ex-lesson">Fiber in whole fruit slows glucose absorption. Juice removes the fiber — same sugar, 3× the spike. Same applies to smoothies heavy on fruit vs. vegetables.</p>
+      </div>
+
+      <div class="ex-card">
+        <p class="ex-principle">Liquid carbs to avoid</p>
+        <div class="ex-vs"><span class="ex-bad">Gin & tonic → spike</span><span class="ex-arrow">vs</span><span class="ex-good">Gin & soda → flat</span></div>
+        <p class="ex-lesson">Tonic water is loaded with sugar. Club soda is not. The alcohol is the same — the mixer makes all the difference. Same principle for sweetened coffees, sports drinks, and quinine water.</p>
+      </div>
+
+      <div class="ex-card">
+        <p class="ex-principle">Timing / meal order</p>
+        <div class="ex-vs"><span class="ex-bad">Pineapple as a snack → spike</span></div>
+        <div class="ex-vs"><span class="ex-good">Pineapple as dessert → smaller spike</span></div>
+        <p class="ex-lesson">Eating carbs after protein + fat + fiber significantly blunts the glucose response. Same food, same portion — completely different impact depending on when in the meal it's eaten.</p>
+      </div>
+
+      <div class="ex-card">
+        <p class="ex-principle">The vinegar hack</p>
+        <div class="ex-vs"><span class="ex-bad">Frozen yogurt alone → 150+ spike</span></div>
+        <div class="ex-vs"><span class="ex-good">Apple cider vinegar first → stays ~120</span></div>
+        <p class="ex-lesson">1 tbsp apple cider vinegar in water before a high-carb meal measurably reduces the glucose spike. More on this in the method modules.</p>
+      </div>
+
+      <div class="ex-card">
+        <p class="ex-principle">Sleep quality</p>
+        <div class="ex-vs"><span class="ex-bad">Cappuccino after bad sleep → spike</span></div>
+        <div class="ex-vs"><span class="ex-good">Same cappuccino after good sleep → flat</span></div>
+        <p class="ex-lesson">The exact same food causes a meaningfully different glucose response depending on how well you slept. Sleep is metabolic — not optional.</p>
+      </div>
+
+      <div class="ex-card">
+        <p class="ex-principle">Combine carbs with fat/protein</p>
+        <div class="ex-vs"><span class="ex-bad">Oatmeal alone → spike</span></div>
+        <div class="ex-vs"><span class="ex-good">Oatmeal after eggs → flat</span></div>
+        <p class="ex-lesson">A plain bowl of oatmeal is pure glucose. The same portion eaten after scrambled eggs causes a fraction of the spike. Apple alone vs. apple + almonds shows the same principle.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p class="note-text">Follow @GlucoseGoddess for a continuous stream of real CGM experiment graphs — exactly the kind shown in this lesson. The visual data makes the principles click in a way that text alone cannot.</p>
+  </div>
+
+</div>

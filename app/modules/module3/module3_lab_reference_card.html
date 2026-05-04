@@ -1,0 +1,96 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .wrap { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 680px; }
+  .card-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .card-sub { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin: 0 0 1.25rem; }
+  table { width: 100%; border-collapse: collapse; }
+  th { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #D85A30; padding: 8px 12px; border-bottom: 1.5px solid var(--color-border-secondary); text-align: left; }
+  td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  .marker { font-size: 13px; font-weight: 700; color: var(--color-text-primary); }
+  .marker-note { font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+  .range { display: inline-block; font-size: 13px; font-weight: 700; color: #0F6E56; background: #E1F5EE; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+  .range.amber { color: #854F0B; background: #FAEEDA; }
+  tr:nth-child(even) td { background: var(--color-background-secondary); }
+  .star { color: #D85A30; font-size: 13px; margin-right: 3px; }
+  .footnote { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; margin-top: 1rem; padding-top: 0.75rem; border-top: 0.5px solid var(--color-border-tertiary); }
+</style>
+
+<div class="wrap">
+  <p class="card-sub">My wellness journey · Module 3 — Lab reference</p>
+  <p class="card-title">Lab markers — optimal ranges</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Lab test</th>
+        <th>Optimal level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="marker"><span class="star">★</span>Fasting glucose</span><div class="marker-note">10–12 hr fast</div></td>
+        <td><span class="range">75–85 mg/dL</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Postprandial glucose</span><div class="marker-note">2 hrs after eating</div></td>
+        <td><span class="range">&lt; 120 mg/dL (or back to baseline)</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker"><span class="star">★</span>Fasting insulin (basal)</span><div class="marker-note">Most important single test</div></td>
+        <td><span class="range">3–6 µIU/mL</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Postprandial insulin</span><div class="marker-note">2 hrs after eating</div></td>
+        <td><span class="range">&lt; 25 µIU/mL (or back to baseline)</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">HOMA-IR</span><div class="marker-note">Calculated: (glucose × insulin) ÷ 405</div></td>
+        <td><span class="range">&lt; 1.5 (ideal: close to 1)</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">HbA1c</span><div class="marker-note">3-month glucose average</div></td>
+        <td><span class="range">&lt; 5.0% (ideal: 4.8%)</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Triglycerides</span></td>
+        <td><span class="range">&lt; 100 mg/dL (ideal: &lt; 75)</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">HDL cholesterol</span><div class="marker-note">Protective / "good"</div></td>
+        <td><span class="range">&gt; 60 mg/dL (minimum: &gt; 40)</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">LDL cholesterol</span><div class="marker-note">Request particle type if possible</div></td>
+        <td><span class="range">&lt; 100 mg/dL</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">hsCRP (C-reactive protein)</span><div class="marker-note">Inflammation marker</div></td>
+        <td><span class="range">&lt; 0.05 mg/L</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Cortisol AM</span><div class="marker-note">Drawn between 7:30–8:00 AM</div></td>
+        <td><span class="range">5–18 µg/dL</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Uric acid</span></td>
+        <td><span class="range">&lt; 5 mg/dL</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Vitamin D3</span></td>
+        <td><span class="range">50–80 ng/mL</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Thyroid panel</span><div class="marker-note">Request: full panel + free T3 + thyroid antibodies</div></td>
+        <td><span class="range amber">See course PDF</span></td>
+      </tr>
+      <tr>
+        <td><span class="marker">Liver enzymes (ALT / AST)</span><div class="marker-note">Check alongside uric acid</div></td>
+        <td><span class="range amber">See course PDF</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="footnote">★ Priority tests if budget is limited. All fasting values require a 10–12 hr fast. For PCOS, Hashimoto's, or menopause, also request a full hormonal panel. Postprandial tests: fast → lab draw → eat a real mixed meal → return at 2 hrs for second draw.</p>
+</div>

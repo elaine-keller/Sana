@@ -1,0 +1,173 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .amber-box { border: 0.5px solid #FAC775; background: #FAEEDA; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .amber-text { font-size: 13px; color: #854F0B; line-height: 1.6; margin: 0; }
+
+  /* symptom checklist */
+  .sym-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; margin-bottom: 1rem; }
+  .sym-item { display: flex; gap: 8px; align-items: flex-start; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.55rem 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .sym-box { width: 14px; height: 14px; min-width: 14px; border-radius: 3px; border: 1.5px solid #1D9E75; margin-top: 2px; }
+  .sym-text { font-size: 12px; color: var(--color-text-secondary); line-height: 1.4; }
+
+  /* lab markers table */
+  .lab-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 0.75rem; }
+  .lab-table th { padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border-secondary); }
+  .lab-table td { padding: 9px 10px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; line-height: 1.5; color: var(--color-text-secondary); }
+  .lab-table tr:last-child td { border-bottom: none; }
+  .marker-name { font-weight: 700; color: var(--color-text-primary); font-size: 13px; }
+  .marker-note { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+  .range-badge { display: inline-block; background: #E1F5EE; color: #0F6E56; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; white-space: nowrap; }
+  .range-badge.amber { background: #FAEEDA; color: #854F0B; }
+  .priority-star { color: #D85A30; font-size: 14px; }
+
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #1D9E75; font-weight: 700; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  @media (max-width: 460px) { .sym-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 3 — Lesson 2</p>
+    <h1 class="main-title">Metabolic health — what it is & how to measure it</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">Metabolic health = the set of biochemical processes in the body (including hormones) that determine how you feel and your risk for other diseases. Measured two ways: symptoms and lab work. Both together give the full picture.</p>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Step 1 — symptom self-assessment</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); margin:0 0 0.75rem; line-height:1.6;">Any of these can signal a metabolic health problem. Even without labs, this checklist tells you whether to take action.</p>
+    <div class="sym-grid">
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Excess fat in the abdominal area</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">High blood pressure</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Family history: diabetes, hypertension, IR</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Energy swings throughout the day</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Skin tags or darkened skin folds</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">High triglycerides or cholesterol</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Dizziness, brain fog, post-meal fatigue</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Men: erectile dysfunction / low sperm count</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Women: PCOS or hypothyroidism</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Women: menopause with many symptoms</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Difficulty losing or managing weight</span></div>
+      <div class="sym-item"><div class="sym-box"></div><span class="sym-text">Constant hunger, cravings, or sleep issues</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Step 2 — essential lab markers with optimal ranges</p>
+    <p style="font-size:12px; color:var(--color-text-secondary); margin:0 0 0.75rem; font-style:italic;">All fasting values (10–12 hr fast). Download the PDF reference from the course for the full list. ★ = highest priority.</p>
+    <div style="overflow-x:auto;">
+      <table class="lab-table">
+        <thead>
+          <tr>
+            <th>Marker</th>
+            <th>Optimal range</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="marker-name">★ Fasting insulin</span><div class="marker-note">Most important single test</div></td>
+            <td><span class="range-badge">4–6 µIU/mL</span></td>
+            <td>Glucose can appear normal for years while insulin is already elevated. Insulin is the earlier warning signal.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">★ Fasting glucose</span></td>
+            <td><span class="range-badge">75–85 mg/dL</span><div class="marker-note">Under 100 is the standard, but not optimal. Diabetes threshold: 125+</div></td>
+            <td>Baseline blood sugar. Moves constantly — fasting snapshot only. Affected by sleep quality and stress the night before.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">HbA1c</span><div class="marker-note">Glycated hemoglobin</div></td>
+            <td><span class="range-badge">Under 5%</span><div class="marker-note">Many say under 5.3, aim for under 5</div></td>
+            <td>3-month average glucose. Gives a broader picture than a single fasting value. Has limitations — use alongside insulin.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">HOMA-IR</span><div class="marker-note">Calculated from glucose + insulin</div></td>
+            <td><span class="range-badge">Under 1.5</span><div class="marker-note">Formula: (glucose × insulin) ÷ 405</div></td>
+            <td>If you already have fasting glucose and insulin, this is just a calculation. Directly scores insulin resistance.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">Postprandial glucose & insulin</span><div class="marker-note">2 hrs after a real meal</div></td>
+            <td><span class="range-badge">Glucose &lt;120 mg/dL</span><span class="range-badge" style="margin-left:4px;">Insulin &lt;25</span></td>
+            <td>Shows how the body actually responds to food. More revealing than fasting values — some people are only detectable here.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">Triglycerides</span></td>
+            <td><span class="range-badge">Under 75 mg/dL ideal</span><div class="marker-note">Under 100 acceptable</div></td>
+            <td>Key metabolic marker. Elevated mainly by fructose/HFCS, not dietary fat. One of the clearest IR signals.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">HDL cholesterol</span></td>
+            <td><span class="range-badge">Over 60 mg/dL ideal</span><div class="marker-note">Minimum: over 40</div></td>
+            <td>Protective cholesterol. Low HDL despite normal total cholesterol is a common hidden risk. Total cholesterol alone is meaningless without this.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">LDL cholesterol</span><div class="marker-note">Request particle type if possible</div></td>
+            <td><span class="range-badge">Under 100 mg/dL</span></td>
+            <td>Ask for LDL particle type — not all LDL is equal. Total cholesterol of 180–200 is fine; cholesterol is the precursor to all hormones.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">hsCRP</span><div class="marker-note">High-sensitivity C-reactive protein</div></td>
+            <td><span class="range-badge">Under 0.5 mg/L</span></td>
+            <td>Measures systemic inflammation. Can read normal and still miss low-grade inflammation — use as one signal among many.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">Thyroid panel</span><div class="marker-note">Request: full panel + free T3 + thyroid antibodies</div></td>
+            <td><span class="range-badge amber">See PDF</span></td>
+            <td>Standard thyroid panel is often incomplete. Always add free T3 and antibodies. Thyroid and glucose regulation are interdependent.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">Vitamin D3</span></td>
+            <td><span class="range-badge">50–80 ng/mL</span></td>
+            <td>Functions as a prohormone. Supports insulin stability, thyroid, immunity, gut health, and cancer prevention.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">Uric acid</span></td>
+            <td><span class="range-badge">Under 5.5 mg/dL</span></td>
+            <td>Rising uric acid is an early metabolic red flag — driven mainly by fructose (HFCS), not protein. Elevated levels = check liver enzymes too.</td>
+          </tr>
+          <tr>
+            <td><span class="marker-name">Liver enzymes (ALT/AST)</span></td>
+            <td><span class="range-badge amber">See PDF</span></td>
+            <td>Elevated enzymes = liver inflammation / early fatty liver. Check alongside uric acid.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">On glucose tolerance tests (GTT)</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">The standard GTT (drinking pure glucose syrup) is not ideal — the body is never exposed to that amount of pure sugar alone in real life. Results can be misleading.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">Pamela prefers postprandial testing with real food (protein + carbs + fat + fiber) for a more accurate and relevant picture.</span></div>
+      <div class="row-item"><span class="row-icon">→</span><span class="row-text">GTT is what's used to screen for gestational diabetes in the 3rd trimester — many women are misdiagnosed because of how the test is structured.</span></div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <p class="note-text">If you can only do one test: get fasting insulin. Glucose can look normal for years while insulin is already elevated and doing damage. Insulin is the earlier, more sensitive warning.</p>
+  </div>
+  <div class="amber-box">
+    <p class="amber-text">For PCOS, Hashimoto's, or menopause: you'll also need a full hormonal panel on top of these markers. The course covers these in dedicated sessions.</p>
+  </div>
+
+</div>

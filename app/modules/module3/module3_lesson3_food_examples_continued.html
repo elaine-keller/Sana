@@ -1,0 +1,97 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+
+  .ex-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .ex-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.85rem 1rem; }
+  .ex-principle { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #1D9E75; margin-bottom: 6px; }
+  .ex-row { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; flex-wrap: wrap; }
+  .ex-bad { font-size: 12px; font-weight: 700; color: #A32D2D; background: #FCEBEB; padding: 2px 8px; border-radius: 20px; }
+  .ex-good { font-size: 12px; font-weight: 700; color: #0F6E56; background: #E1F5EE; padding: 2px 8px; border-radius: 20px; }
+  .ex-lesson { font-size: 12px; color: var(--color-text-secondary); line-height: 1.55; margin: 6px 0 0; }
+
+  .principles-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; }
+  .p-row { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .p-row:last-child { border-bottom: none; }
+  .p-num { font-family: 'Playfair Display', serif; font-size: 20px; color: #1D9E75; min-width: 24px; line-height: 1.1; }
+  .p-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  @media (max-width: 460px) { .ex-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 3 — Lesson 3 continued</p>
+    <h1 class="main-title">More glucose graph examples — food combinations</h1>
+  </div>
+
+  <p class="section-label">The remaining course examples</p>
+  <div class="ex-grid" style="margin-bottom:1.5rem;">
+
+    <div class="ex-card">
+      <p class="ex-principle">Add fat + protein to oats</p>
+      <div class="ex-row"><span class="ex-bad">Oats with fruit purée → spike to 140+</span></div>
+      <div class="ex-row"><span class="ex-good">Same oats + 1 tbsp butter + egg → stays flat ~80</span></div>
+      <p class="ex-lesson">Adding fat and protein to the exact same carb base dramatically flattens the curve. Oatmeal alone is pure glucose. With an egg and butter, it behaves like a balanced meal.</p>
+    </div>
+
+    <div class="ex-card">
+      <p class="ex-principle">Always pair fruit with fat</p>
+      <div class="ex-row"><span class="ex-bad">Green apple alone → spike to ~110</span></div>
+      <div class="ex-row"><span class="ex-good">Apple + handful of almonds → barely moves</span></div>
+      <p class="ex-lesson">Fruit is healthy — but never eat it alone. Fat from almonds, nut butter, or cheese acts as a brake on glucose absorption. This applies to all fruit, especially in the morning.</p>
+    </div>
+
+    <div class="ex-card">
+      <p class="ex-principle">Smoothies — what goes in matters</p>
+      <div class="ex-row"><span class="ex-bad">Apple + banana + strawberry → spike to 155+</span></div>
+      <div class="ex-row"><span class="ex-good">Avocado + protein + blueberries → barely moves</span></div>
+      <p class="ex-lesson">A smoothie full of fruit is liquid sugar. Swap most fruit for vegetables, add fat (avocado) and protein, and keep to one small fruit. The difference is enormous.</p>
+    </div>
+
+    <div class="ex-card">
+      <p class="ex-principle">Rice cakes aren't "free"</p>
+      <div class="ex-row"><span class="ex-bad">Plain rice cake → spike +60 above baseline</span></div>
+      <div class="ex-row"><span class="ex-good">Rice cake + 2 tbsp nut butter → significantly smaller spike</span></div>
+      <p class="ex-lesson">Rice cakes, amaranth crackers, and similar "healthy" snacks are almost pure starch. They look harmless on a nutrition label but spike glucose hard. Always add fat or protein.</p>
+    </div>
+
+    <div class="ex-card">
+      <p class="ex-principle">Eat fiber first (the salad trick)</p>
+      <div class="ex-row"><span class="ex-bad">Pizza alone → stays elevated for hours</span></div>
+      <div class="ex-row"><span class="ex-good">Big salad first, then pizza → much flatter curve</span></div>
+      <p class="ex-lesson">Eating a large green salad before a high-carb meal coats the gut with fiber, physically slowing glucose absorption. This works for pasta, pizza, rice — any high-glycemic food.</p>
+    </div>
+
+    <div class="ex-card">
+      <p class="ex-principle">Combine white rice with fiber</p>
+      <div class="ex-row"><span class="ex-bad">White rice alone → spike to ~120+</span></div>
+      <div class="ex-row"><span class="ex-good">Rice + beans → stays under 80</span></div>
+      <p class="ex-lesson">White rice is one of the fastest glucose-spiking foods. Beans are a legume with high fiber — combining them creates a completely different metabolic response. This is why traditional rice-and-beans combinations exist in most food cultures.</p>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <p class="section-label">The 4 glucose "brakes" — summary</p>
+  <div class="principles-card">
+    <div class="p-row"><span class="p-num">1</span><span class="p-text"><strong style="color:var(--color-text-primary);">Protein</strong> — slows gastric emptying and blunts insulin response. Always start a meal with protein.</span></div>
+    <div class="p-row"><span class="p-num">2</span><span class="p-text"><strong style="color:var(--color-text-primary);">Fat</strong> — slows glucose absorption. Add to every carb you eat (nut butter, olive oil, avocado, butter, cheese).</span></div>
+    <div class="p-row"><span class="p-num">3</span><span class="p-text"><strong style="color:var(--color-text-primary);">Fiber</strong> — physically coats the gut. Eat vegetables first, before carbs. The more fiber in a meal, the flatter the curve.</span></div>
+    <div class="p-row"><span class="p-num">4</span><span class="p-text"><strong style="color:var(--color-text-primary);">Vinegar</strong> — 1 tbsp apple cider vinegar in water before a high-carb meal measurably reduces the spike.</span></div>
+  </div>
+
+  <div class="note-box" style="margin-top:1rem;">
+    <p class="note-text">The goal is never to eliminate carbs — it's to never eat them alone. Every carb needs at least one brake. Timing matters too: carbs eaten after protein and vegetables behave very differently than the same carbs eaten first.</p>
+  </div>
+
+</div>
