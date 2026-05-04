@@ -252,7 +252,9 @@
 </div>
 
 <script>
-  const GITHUB = 'https://raw.githubusercontent.com/elaine-keller/Sana/main';
+  // Use local paths when opened from filesystem, GitHub when served remotely
+  const isLocal = location.protocol === 'file:';
+  const GITHUB = isLocal ? '..' : 'https://raw.githubusercontent.com/elaine-keller/Sana/main';
   let recipes = {};
   let currentLang = 'es';
   let currentPhase = null;
@@ -302,7 +304,7 @@
     const file = lessonFiles[key];
     if (!file) return;
     try {
-      const r = await fetch(`${GITHUB}/app/modules/${file}`);
+      const r = await fetch(`${GITHUB}/modules/${file}`);
       const html = await r.text();
       document.getElementById('lesson-content').innerHTML = html;
     } catch(e) {
