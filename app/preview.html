@@ -156,32 +156,33 @@
 
     <div class="nav-section">
       <div class="nav-label">Library</div>
-      <div class="nav-item" onclick="showView('modules')"><span class="nav-icon">◎</span> Metabolic Reset</div>
-      <div class="nav-module nav-group">Module 1 — Getting Started</div>
-      <div class="nav-module" data-key="module1-course_guide" onclick="showLesson('module1','course_guide')">· Course guide</div>
-      <div class="nav-module nav-group">Module 2 — Theory</div>
-      <div class="nav-module" data-key="module2-intro" onclick="showLesson('module2','intro')">· Intro</div>
-      <div class="nav-module" data-key="module2-lesson2" onclick="showLesson('module2','lesson2')">· Why everyone needs this</div>
-      <div class="nav-module" data-key="module2-lesson3" onclick="showLesson('module2','lesson3')">· Dysglycemia</div>
-      <div class="nav-module" data-key="module2-lesson4" onclick="showLesson('module2','lesson4')">· Related diseases</div>
-      <div class="nav-module" data-key="module2-lesson5" onclick="showLesson('module2','lesson5')">· Why we are sick</div>
-      <div class="nav-module nav-group">Module 3 — Measurement</div>
-      <div class="nav-module" data-key="module3-intro" onclick="showLesson('module3','intro')">· Intro</div>
-      <div class="nav-module" data-key="module3-lesson2" onclick="showLesson('module3','lesson2')">· Metabolic health measurement</div>
-      <div class="nav-module" data-key="module3-lesson3_glucose" onclick="showLesson('module3','lesson3_glucose')">· Glucose monitor</div>
-      <div class="nav-module" data-key="module3-lesson3_food" onclick="showLesson('module3','lesson3_food')">· Food examples</div>
-      <div class="nav-module" data-key="module3-lab_reference" onclick="showLesson('module3','lab_reference')">· Lab reference card</div>
-      <div class="nav-module nav-group">Module 4 — Nutrition Plan</div>
-      <div class="nav-module" data-key="module4-intro" onclick="showLesson('module4','intro')">· Intro</div>
-      <div class="nav-module" data-key="module4-lesson2" onclick="showLesson('module4','lesson2')">· Reset5 overview</div>
-      <div class="nav-module" data-key="module4-lesson3" onclick="showLesson('module4','lesson3')">· Nutrition plan</div>
-      <div class="nav-module" data-key="module4-lesson4" onclick="showLesson('module4','lesson4')">· Phase 1 — Revert</div>
-      <div class="nav-module" data-key="module4-lesson5" onclick="showLesson('module4','lesson5')">· Phase 2 — Burn</div>
-      <div class="nav-module" data-key="module4-lesson7" onclick="showLesson('module4','lesson7')">· Phase 3 — Nourish</div>
-      <div class="nav-module" data-key="module4-lesson8" onclick="showLesson('module4','lesson8')">· Apple cider vinegar</div>
-      <div class="nav-module nav-group">Module 5 — What's Next</div>
-      <div class="nav-module" data-key="module5-what_comes_next" onclick="showLesson('module5','what_comes_next')">· What comes next</div>
-      <div class="nav-item" onclick="showView('libraries')" style="margin-top:0.25rem;"><span class="nav-icon">📚</span> Libraries</div>
+      <div class="nav-item" onclick="showView('modules')" id="nav-reset"><span class="nav-icon">◎</span> Metabolic Reset <span id="reset-arrow" style="margin-left:auto; font-size:10px; color:var(--color-text-secondary);">▾</span></div>
+      <div id="lesson-nav-list" style="display:none;">
+        <div class="nav-module nav-group">Module 1 — Getting Started</div>
+        <div class="nav-module" data-key="module1-course_guide" onclick="showLesson('module1','course_guide')">· Course guide</div>
+        <div class="nav-module nav-group">Module 2 — Theory</div>
+        <div class="nav-module" data-key="module2-intro" onclick="showLesson('module2','intro')">· Intro</div>
+        <div class="nav-module" data-key="module2-lesson2" onclick="showLesson('module2','lesson2')">· Why everyone needs this</div>
+        <div class="nav-module" data-key="module2-lesson3" onclick="showLesson('module2','lesson3')">· Dysglycemia</div>
+        <div class="nav-module" data-key="module2-lesson4" onclick="showLesson('module2','lesson4')">· Related diseases</div>
+        <div class="nav-module" data-key="module2-lesson5" onclick="showLesson('module2','lesson5')">· Why we are sick</div>
+        <div class="nav-module nav-group">Module 3 — Measurement</div>
+        <div class="nav-module" data-key="module3-intro" onclick="showLesson('module3','intro')">· Intro</div>
+        <div class="nav-module" data-key="module3-lesson2" onclick="showLesson('module3','lesson2')">· Metabolic health measurement</div>
+        <div class="nav-module" data-key="module3-lesson3_glucose" onclick="showLesson('module3','lesson3_glucose')">· Glucose monitor</div>
+        <div class="nav-module" data-key="module3-lesson3_food" onclick="showLesson('module3','lesson3_food')">· Food examples</div>
+        <div class="nav-module" data-key="module3-lab_reference" onclick="showLesson('module3','lab_reference')">· Lab reference card</div>
+        <div class="nav-module nav-group">Module 4 — Nutrition Plan</div>
+        <div class="nav-module" data-key="module4-intro" onclick="showLesson('module4','intro')">· Intro</div>
+        <div class="nav-module" data-key="module4-lesson2" onclick="showLesson('module4','lesson2')">· Reset5 overview</div>
+        <div class="nav-module" data-key="module4-lesson3" onclick="showLesson('module4','lesson3')">· Nutrition plan</div>
+        <div class="nav-module" data-key="module4-lesson4" onclick="showLesson('module4','lesson4')">· Phase 1 — Revert</div>
+        <div class="nav-module" data-key="module4-lesson5" onclick="showLesson('module4','lesson5')">· Phase 2 — Burn</div>
+        <div class="nav-module" data-key="module4-lesson7" onclick="showLesson('module4','lesson7')">· Phase 3 — Nourish</div>
+        <div class="nav-module" data-key="module4-lesson8" onclick="showLesson('module4','lesson8')">· Apple cider vinegar</div>
+        <div class="nav-module nav-group">Module 5 — What's Next</div>
+        <div class="nav-module" data-key="module5-what_comes_next" onclick="showLesson('module5','what_comes_next')">· What comes next</div>
+      </div>
       <div class="nav-item" onclick="showView('nuggets')"><span class="nav-icon">💡</span> Nuggets</div>
     </div>
   </nav>
@@ -345,16 +346,22 @@
   }
 
   // ── VIEWS ──
+  function setLessonNavExpanded(expanded) {
+    document.getElementById('lesson-nav-list').style.display = expanded ? 'block' : 'none';
+    document.getElementById('reset-arrow').textContent = expanded ? '▴' : '▾';
+  }
+
   function showView(name, phase) {
     document.querySelectorAll('[id^="view-"]').forEach(el => el.style.display = 'none');
     document.getElementById(`view-${name}`).style.display = 'block';
     document.getElementById('topbar-title').textContent = {
       home: 'Dashboard', recipes: 'Recipes', modules: 'Metabolic Reset',
-      lesson: 'Lesson', libraries: 'Libraries', nuggets: 'Nuggets',
+      lesson: 'Lesson', nuggets: 'Nuggets',
       'recipe-detail': ''
     }[name] || name;
 
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    setLessonNavExpanded(name === 'modules' || name === 'lesson');
 
     if (name === 'recipes') {
       currentPhase = phase || null;
