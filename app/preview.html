@@ -450,7 +450,10 @@
   function renderRecipeGrid() {
     const keys = Object.keys(recipes).filter(k => {
       if (!currentPhase) return true;
-      return recipes[k].phases && recipes[k].phases.includes(currentPhase);
+      const phases = recipes[k].phases || [];
+      // Maintain = all program-safe recipes (phases 1, 2, or 3)
+      if (currentPhase === 3) return phases.some(p => [1, 2, 3].includes(p));
+      return phases.includes(currentPhase);
     });
     document.getElementById('recipe-grid').innerHTML = keys.map(k => recipeCardHTML(k, recipes[k])).join('');
   }
