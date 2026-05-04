@@ -1,0 +1,118 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+  .notes { font-family: 'Lato', sans-serif; padding: 1.5rem 0; max-width: 720px; }
+  .header-band { border-left: 3px solid #1D9E75; padding-left: 1.25rem; margin-bottom: 2rem; }
+  .main-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--color-text-primary); margin: 0 0 4px; }
+  .main-sub { font-size: 13px; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin: 0; }
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #1D9E75; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note-box { border: 0.5px solid #9FE1CB; background: #E1F5EE; border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+  .note-text { font-size: 13px; color: #0F6E56; line-height: 1.6; margin: 0; }
+  .card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 0.5rem 1.25rem; margin-bottom: 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
+  .row-item { display: flex; gap: 12px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .row-item:last-child { border-bottom: none; }
+  .row-num { font-family: 'Playfair Display', serif; font-size: 20px; color: #1D9E75; min-width: 24px; line-height: 1.2; }
+  .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+
+  .signal-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; margin-bottom: 1rem; }
+  .sig-card { background: var(--color-background-primary); border: 0.5px solid #9FE1CB; border-radius: var(--border-radius-md); padding: 0.8rem 1rem; }
+  .sig-num { font-family: 'Playfair Display', serif; font-size: 22px; color: #1D9E75; line-height: 1; margin-bottom: 4px; }
+  .sig-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 3px; }
+  .sig-text { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin: 0; }
+
+  .life-rule { display: flex; gap: 12px; align-items: flex-start; padding: 0.75rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .life-rule:last-child { border-bottom: none; }
+  .rule-icon { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; background: #E1F5EE; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #0F6E56; }
+  .rule-content { flex: 1; }
+  .rule-title { font-size: 14px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 3px; }
+  .rule-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.55; margin: 0; }
+
+  @media (max-width: 460px) { .signal-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="notes">
+  <div class="header-band">
+    <p class="main-sub">My wellness journey · Module 5</p>
+    <h1 class="main-title">I finished the Reset — what's next?</h1>
+  </div>
+
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">Module 5 is the bridge between completing the program and living it permanently. Two key things: knowing whether you've actually reversed IR, and internalizing the rules that carry you forward for life.</p>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">First steps after finishing</p>
+    <div class="card">
+      <div class="row-item"><span class="row-num">→</span><span class="row-text">Re-do the metabolic health symptom questionnaire and the objectives questionnaire — compare where you started vs. where you are now.</span></div>
+      <div class="row-item"><span class="row-num">→</span><span class="row-text">Get labs done — ideally before starting the program and again at 3 months. This is the clearest measure of reversal.</span></div>
+      <div class="row-item"><span class="row-num">→</span><span class="row-text">Download all materials if you haven't — platform access ends, the files are yours forever.</span></div>
+      <div class="row-item"><span class="row-num">→</span><span class="row-text">Review the Reset map and adjust the method based on what you've learned about your body.</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">6 signs you've reversed insulin resistance</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0 0 0.75rem;">If most of these are true, your blood sugar is balanced and IR is reversing or reversed:</p>
+    <div class="signal-grid">
+      <div class="sig-card">
+        <div class="sig-num">1</div>
+        <div class="sig-title">Stable energy all day</div>
+        <div class="sig-text">No afternoon crashes. No mood swings tied to meals. No desperate need for a nap at 3pm.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-num">2</div>
+        <div class="sig-title">Sugar cravings have dropped</div>
+        <div class="sig-text">You can want a cookie without needing the whole box. Desire vs. compulsion — you can tell the difference now.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-num">3</div>
+        <div class="sig-title">Energy doesn't depend on food</div>
+        <div class="sig-text">You can go 4–5 hours between meals without shakiness, weakness, mood changes, or desperation.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-num">4</div>
+        <div class="sig-title">Sleeping through the night</div>
+        <div class="sig-text">You fall asleep when you want, sleep through, and wake up feeling genuinely rested.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-num">5</div>
+        <div class="sig-title">Hunger & fullness signals are back</div>
+        <div class="sig-text">You feel satisfied after a meal. You can distinguish between real hunger and anxiety. You stop eating because you're full.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-num">6</div>
+        <div class="sig-title">Body responds to effort</div>
+        <div class="sig-text">Exercise builds muscle visibly. Weight loss is achievable when you try. You don't gain 3 kg from one restaurant meal.</div>
+      </div>
+    </div>
+    <div class="note-box">
+      <p class="note-text">Even after reversal, continue eating as if you have IR. It's not a diet — it's the lifestyle. Blood sugar moves constantly and the habits that reversed IR are the same ones that keep it reversed.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="margin-bottom:1rem;">
+    <p class="section-label">The rules to keep for life — master summary</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); line-height:1.6; margin:0 0 0.75rem;">This is the condensed version of everything in the course. If you could only remember one video, this is it.</p>
+    <div class="card" style="padding: 0.5rem 1.25rem;">
+      <div class="life-rule"><div class="rule-icon">1</div><div class="rule-content"><div class="rule-title">Use a glucometer — find what works for you</div><div class="rule-text">No perfect diet exists universally. Your glucose data is the truth. Test your own responses to foods and build your personal version of this plan.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">2</div><div class="rule-content"><div class="rule-title">Avoid refined carbs and refined fats — permanently</div><div class="rule-text">Industrial seed oils (canola, corn, soy) and anything made from flour that comes in a package. These are the two biggest dietary drivers of IR.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">3</div><div class="rule-content"><div class="rule-title">No liquid carbs — for you or your kids</div><div class="rule-text">Juice, soda, sports drinks, sweetened coffees. Children are not protected from this damage — they're more vulnerable because it accelerates disease earlier.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">4</div><div class="rule-content"><div class="rule-title">Always dress your carbs and fruit</div><div class="rule-text">Never eat alone. Always paired with protein, fat, or fiber. This rule will echo in your head for life — and that's the point.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">5</div><div class="rule-content"><div class="rule-title">Lower carb frequency — 1 to 2 times per day max</div><div class="rule-text">Concentrate all your carb portions into one or two meals. This reduces daily insulin spikes and deepens metabolic flexibility over time.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">6</div><div class="rule-content"><div class="rule-title">Include apple cider vinegar strategically</div><div class="rule-text">Before your highest-carb meal when possible. Find a form you actually enjoy so it's sustainable. Capsules if you truly can't tolerate the taste — not gummies.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">7</div><div class="rule-content"><div class="rule-title">Prioritize quality protein</div><div class="rule-text">Satiety, muscle building, glucose stability — protein does all three. Focus on quality, not just quantity.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">8</div><div class="rule-content"><div class="rule-title">Moderate fat — use your body's stores</div><div class="rule-text">Even good fat should be moderate. The goal is to use stored body fat for energy between meals, not just the fat you eat.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">9</div><div class="rule-content"><div class="rule-title">3 fixed meals — no snacking</div><div class="rule-text">Every bite triggers insulin. Even healthy snacks prevent the fat-burning windows you've worked to create. Exception: people with hypoglycemia still managing the transition.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">10</div><div class="rule-content"><div class="rule-title">Always fast at least 12 hours</div><div class="rule-text">Between dinner and breakfast, minimum. Extend to 14–16 hours when possible. This is non-negotiable as a baseline habit.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">11</div><div class="rule-content"><div class="rule-title">Exercise — especially walk after meals</div><div class="rule-text">A short walk after eating can significantly lower post-meal glucose. Exercise is also the primary activator of metabolic flexibility.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">12</div><div class="rule-content"><div class="rule-title">Protect your sleep</div><div class="rule-text">Sleep is metabolic medicine. One bad night raises IR risk by 30%. Everything you've built metabolically gets undermined by chronic poor sleep.</div></div></div>
+      <div class="life-rule"><div class="rule-icon">13</div><div class="rule-content"><div class="rule-title">Manage stress and emotions</div><div class="rule-text">Stress raises blood glucose as powerfully as food does. Cortisol is a metabolic hormone. What you think and feel matters as much as what you eat. Find what genuinely makes you happy and protect it.</div></div></div>
+    </div>
+  </div>
+
+</div>
