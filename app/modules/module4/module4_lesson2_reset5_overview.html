@@ -16,8 +16,6 @@
   .row-item:last-child { border-bottom: none; }
   .row-icon { font-size: 13px; min-width: 20px; margin-top: 2px; color: #D85A30; font-weight: 700; }
   .row-text { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
-
-  /* fuel types */
   .fuel-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 1rem; }
   .fuel-card { border-radius: var(--border-radius-lg); padding: 1rem; border: 0.5px solid var(--color-border-tertiary); }
   .fuel-card.carb { background: #FAEEDA; border-color: #FAC775; }
@@ -26,8 +24,6 @@
   .fuel-title.carb { color: #854F0B; }
   .fuel-title.fat { color: #0F6E56; }
   .fuel-text { font-size: 12px; line-height: 1.55; margin: 0; color: var(--color-text-secondary); }
-
-  /* RESET acronym */
   .reset-table { width: 100%; border-collapse: collapse; }
   .reset-table td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; font-size: 14px; }
   .reset-table tr:last-child td { border-bottom: none; }
@@ -35,27 +31,87 @@
   .reset-letter { font-family: 'Playfair Display', serif; font-size: 28px; color: #1D9E75; font-weight: 400; line-height: 1; min-width: 36px; display: block; }
   .reset-word { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 2px; }
   .reset-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
-
-  /* flex signs */
   .flex-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
   .flex-item { display: flex; gap: 8px; align-items: flex-start; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.6rem 0.75rem; border: 0.5px solid var(--color-border-tertiary); }
   .flex-dot { width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: #1D9E75; margin-top: 4px; }
   .flex-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
-
   @media (max-width: 460px) { .fuel-grid { grid-template-columns: 1fr; } .flex-grid { grid-template-columns: 1fr; } }
 </style>
 
-<div class="notes">
+<!-- ── ESPAÑOL ── -->
+<div class="notes lang-es">
+  <div class="header-band">
+    <p class="main-sub">Mi viaje de bienestar · Módulo 4 — Lección 2</p>
+    <h1 class="main-title">El Método Reset 5 — visión general del plan de acción</h1>
+  </div>
+  <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">El enfoque funcional — no tratar síntomas, sino revertir la causa raíz. El objetivo es hacer que las células sean más eficientes para que necesiten menos insulina para equilibrar el azúcar en sangre, y enseñar al cuerpo a usar la grasa como combustible.</p>
+  <hr class="divider">
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">Por qué el tratamiento convencional no revierte la RI</p>
+    <div class="card">
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Metformina</strong> — reduce los síntomas pero agota la vitamina B12 y otras vitaminas esenciales para el metabolismo, las hormonas y el sistema nervioso. El uso a largo plazo tiene efectos secundarios significativos.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Anticonceptivos orales</strong> — frecuentemente recetados para la RI relacionada con el SOP, pero suprimen las hormonas en lugar de regularlas.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">"Come menos, muévete más"</strong> — trata al cuerpo como una calculadora. Las calorías importan, pero las hormonas importan más. La insulina decide qué pasa con cada caloría.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Dieta alta en carbohidratos para la hipoglucemia</strong> — comúnmente recomendada pero refuerza la montaña rusa glucosa-insulina en lugar de romperla.</span></div>
+      <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Estatinas, medicamentos para la presión, inmunosupresores</strong> — cada uno aborda un síntoma secundario sin tocar la causa metabólica raíz.</span></div>
+    </div>
+  </div>
+  <hr class="divider">
+  <div style="margin-bottom:2rem;">
+    <p class="section-label">El objetivo real — flexibilidad metabólica</p>
+    <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1rem;">El cuerpo tiene dos fuentes de combustible. Una persona metabólicamente flexible puede alternar entre ellas libremente. Solo el <strong style="color:var(--color-text-primary);">12% de la población</strong> tiene actualmente esta capacidad — pero se puede entrenar.</p>
+    <div class="fuel-grid">
+      <div class="fuel-card carb">
+        <p class="fuel-title carb">Combustible 1 — Carbohidratos / glucosa</p>
+        <p class="fuel-text">Se usa inmediatamente después de comer. Se quema rápido y se agota pronto. La mayoría de las personas solo puede usar esta fuente.</p>
+      </div>
+      <div class="fuel-card fat">
+        <p class="fuel-title fat">Combustible 2 — Grasa corporal</p>
+        <p class="fuel-text">Se usa durante el ayuno, entre comidas y en reposo. Suministro casi ilimitado. Produce energía estable y duradera.</p>
+      </div>
+    </div>
+    <p class="section-label">Señales de que tienes flexibilidad metabólica</p>
+    <div class="flex-grid" style="margin-bottom:1rem;">
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Puedes pasar varias horas entre comidas sin sentirte mal o irritable</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">La insulina vuelve a su nivel base entre comidas — no está crónicamente elevada</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Los niveles de energía se mantienen estables durante el día</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Puedes quemar grasa corporal almacenada entre comidas y durante la noche</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Mejor rendimiento en el ejercicio y mayor capacidad para desarrollar músculo</span></div>
+      <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Puedes comer eficientemente sin aumentar de peso ni retener líquidos</span></div>
+    </div>
+  </div>
+  <hr class="divider">
+  <div style="margin-bottom:1.5rem;">
+    <p class="section-label">El Reset 5 — el pilar de nutrición explicado</p>
+    <p style="font-size:13px; color:var(--color-text-secondary); margin:0 0 0.75rem; line-height:1.6;">La palabra RESET corresponde directamente a los principios de nutrición. Cada letra es una regla a seguir:</p>
+    <div style="overflow-x:auto;">
+      <table class="reset-table">
+        <tbody>
+          <tr><td style="width:44px;"><span class="reset-letter">R</span></td><td><div class="reset-word">Reduce y rota tus carbohidratos</div><div class="reset-desc">No eliminar — gestionar. Aprende a elegir, combinar, cronometrar y porcionar los carbohidratos para que no disparen la glucosa.</div></td></tr>
+          <tr><td><span class="reset-letter">E</span></td><td><div class="reset-word">Elige proteína</div><div class="reset-desc">Prioriza la proteína en cada comida. Es el ancla de la estabilidad metabólica — saciante, preservadora del músculo y amigable con la insulina.</div></td></tr>
+          <tr><td><span class="reset-letter">S</span></td><td><div class="reset-word">Siempre verduras</div><div class="reset-desc">Agrega verduras en forma de fibra en cada comida. La fibra es el principal freno en la absorción de glucosa.</div></td></tr>
+          <tr><td><span class="reset-letter">E</span></td><td><div class="reset-word">Equilibra la grasa</div><div class="reset-desc">Ni demasiado ni muy poco — calibrado. La grasa saludable ralentiza la digestión y previene los picos de glucosa, pero las porciones importan.</div></td></tr>
+          <tr><td><span class="reset-letter">T</span></td><td><div class="reset-word">Tiempo — entre comidas y ventanas de ayuno</div><div class="reset-desc">Dale al cuerpo tiempo entre comidas para que la insulina baje y comience la quema de grasa. Esta es la base del ayuno intermitente.</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="note-box">
+    <p class="note-text">El plan de nutrición detallado (qué comer, cuándo, cómo combinar, las 3 fases completas) viene en la siguiente lección. Esta lección estableció el marco y el porqué detrás de todo.</p>
+  </div>
+  <div class="amber-box">
+    <p class="amber-text">Si has tomado metformina a largo plazo, pregunta a tu médico sobre los niveles de vitamina B12, folato y B6 — el agotamiento es un efecto secundario documentado que rara vez se menciona al momento de recetar.</p>
+  </div>
+</div>
+
+<!-- ── ENGLISH ── -->
+<div class="notes lang-en">
   <div class="header-band">
     <p class="main-sub">My wellness journey · Module 4 — Lesson 2</p>
     <h1 class="main-title">The Reset 5 method — action plan overview</h1>
   </div>
-
   <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1.5rem;">The functional approach — not treating symptoms, but reversing the root cause. The goal is to make cells more efficient so they need less insulin to balance blood sugar, and to teach the body to use fat as fuel.</p>
-
   <hr class="divider">
-
-  <!-- WHY CONVENTIONAL TREATMENT FAILS -->
   <div style="margin-bottom:2rem;">
     <p class="section-label">Why conventional treatment doesn't reverse IR</p>
     <div class="card">
@@ -66,14 +122,10 @@
       <div class="row-item"><span class="row-icon">✗</span><span class="row-text"><strong style="color:var(--color-text-primary);">Statins, BP meds, immunosuppressants</strong> — each addresses a downstream symptom without touching the metabolic root cause.</span></div>
     </div>
   </div>
-
   <hr class="divider">
-
-  <!-- METABOLIC FLEXIBILITY -->
   <div style="margin-bottom:2rem;">
     <p class="section-label">The real goal — metabolic flexibility</p>
     <p style="font-size:14px; color:var(--color-text-secondary); line-height:1.7; margin:0 0 1rem;">The body has two fuel sources. A metabolically flexible person can switch between them freely. Only <strong style="color:var(--color-text-primary);">12% of the population</strong> currently has this ability — but it can be trained.</p>
-
     <div class="fuel-grid">
       <div class="fuel-card carb">
         <p class="fuel-title carb">Fuel 1 — Carbohydrates / glucose</p>
@@ -84,7 +136,6 @@
         <p class="fuel-text">Used during fasting, between meals, and at rest. Nearly unlimited supply. Produces stable, long-lasting energy.</p>
       </div>
     </div>
-
     <p class="section-label">Signs you have metabolic flexibility</p>
     <div class="flex-grid" style="margin-bottom:1rem;">
       <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Can go several hours between meals without feeling unwell or irritable</span></div>
@@ -95,46 +146,26 @@
       <div class="flex-item"><div class="flex-dot"></div><span class="flex-text">Can eat efficiently without gaining weight or retaining fluid</span></div>
     </div>
   </div>
-
   <hr class="divider">
-
-  <!-- RESET ACRONYM -->
   <div style="margin-bottom:1.5rem;">
     <p class="section-label">The Reset 5 — nutrition pillar spelled out</p>
     <p style="font-size:13px; color:var(--color-text-secondary); margin:0 0 0.75rem; line-height:1.6;">The word RESET maps directly to the nutrition principles. Each letter is a rule to follow:</p>
     <div style="overflow-x:auto;">
       <table class="reset-table">
         <tbody>
-          <tr>
-            <td style="width:44px;"><span class="reset-letter">R</span></td>
-            <td><div class="reset-word">Reduce & rotate your carbohydrates</div><div class="reset-desc">Don't eliminate — manage. Learn to choose, combine, time, and portion carbs so they don't spike glucose.</div></td>
-          </tr>
-          <tr>
-            <td><span class="reset-letter">E</span></td>
-            <td><div class="reset-word">Choose protein</div><div class="reset-desc">Prioritize protein at every meal. It's the anchor of metabolic stability — satiating, muscle-preserving, and insulin-friendly.</div></td>
-          </tr>
-          <tr>
-            <td><span class="reset-letter">S</span></td>
-            <td><div class="reset-word">Always vegetables</div><div class="reset-desc">Add vegetables in fiber form at every meal. Fiber is the primary brake on glucose absorption.</div></td>
-          </tr>
-          <tr>
-            <td><span class="reset-letter">E</span></td>
-            <td><div class="reset-word">Balance fat</div><div class="reset-desc">Not too much, not too little — calibrated. Healthy fat slows digestion and prevents glucose spikes, but portions matter.</div></td>
-          </tr>
-          <tr>
-            <td><span class="reset-letter">T</span></td>
-            <td><div class="reset-word">Time — between meals and fasting windows</div><div class="reset-desc">Give the body time between meals for insulin to drop and fat burning to begin. This is the foundation of intermittent fasting.</div></td>
-          </tr>
+          <tr><td style="width:44px;"><span class="reset-letter">R</span></td><td><div class="reset-word">Reduce & rotate your carbohydrates</div><div class="reset-desc">Don't eliminate — manage. Learn to choose, combine, time, and portion carbs so they don't spike glucose.</div></td></tr>
+          <tr><td><span class="reset-letter">E</span></td><td><div class="reset-word">Choose protein</div><div class="reset-desc">Prioritize protein at every meal. It's the anchor of metabolic stability — satiating, muscle-preserving, and insulin-friendly.</div></td></tr>
+          <tr><td><span class="reset-letter">S</span></td><td><div class="reset-word">Always vegetables</div><div class="reset-desc">Add vegetables in fiber form at every meal. Fiber is the primary brake on glucose absorption.</div></td></tr>
+          <tr><td><span class="reset-letter">E</span></td><td><div class="reset-word">Balance fat</div><div class="reset-desc">Not too much, not too little — calibrated. Healthy fat slows digestion and prevents glucose spikes, but portions matter.</div></td></tr>
+          <tr><td><span class="reset-letter">T</span></td><td><div class="reset-word">Time — between meals and fasting windows</div><div class="reset-desc">Give the body time between meals for insulin to drop and fat burning to begin. This is the foundation of intermittent fasting.</div></td></tr>
         </tbody>
       </table>
     </div>
   </div>
-
   <div class="note-box">
     <p class="note-text">The detailed nutrition plan (what to eat, when, how to combine, all 3 phases) comes in the next lesson. This lesson established the framework and the why behind it.</p>
   </div>
   <div class="amber-box">
     <p class="amber-text">If you've been on metformin long-term, ask your doctor about checking vitamin B12, folate, and B6 levels — depletion is a documented side effect that's rarely mentioned at prescription time.</p>
   </div>
-
 </div>
