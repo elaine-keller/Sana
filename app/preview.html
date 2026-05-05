@@ -119,10 +119,10 @@
     .phase-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: #E8F7F2; color: var(--green); border: 1px solid #9FE1CB; margin-right: 4px; }
 
     /* Bilingual lesson content */
-    .lang-en { display: none; }
-    .lang-es { display: block; }
-    body.lang-en .lang-en { display: block; }
-    body.lang-en .lang-es { display: none; }
+    .lang-en { display: none !important; }
+    .lang-es { display: block !important; }
+    body.lang-en .lang-en { display: block !important; }
+    body.lang-en .lang-es { display: none !important; }
 
     /* Mobile */
     @media (max-width: 700px) {
@@ -413,6 +413,16 @@
     showLesson(key.slice(0, dash), key.slice(dash + 1));
   }
 
+  function applyLangToLesson() {
+    const content = document.getElementById('lesson-content');
+    content.querySelectorAll('.lang-es, .lang-en').forEach(el => {
+      el.style.display = 'none';
+    });
+    content.querySelectorAll(`.lang-${currentLang}`).forEach(el => {
+      el.style.display = 'block';
+    });
+  }
+
   async function showLesson(module, lesson) {
     showView('lesson');
     const key = `${module}-${lesson}`;
@@ -428,7 +438,6 @@
     const file = lessonFiles[key];
     if (!file) return;
 
-    // Scroll lesson area to top
     document.querySelector('.main').scrollTo(0, 0);
 
     try {
@@ -436,6 +445,7 @@
       const r = await fetch(isLocal ? `modules/${file}` : `${base}/modules/${file}`);
       const html = await r.text();
       document.getElementById('lesson-content').innerHTML = html;
+      applyLangToLesson();
     } catch(e) {
       document.getElementById('lesson-content').innerHTML = '<p style="color:red">Could not load lesson.</p>';
     }
@@ -544,6 +554,7 @@
     event.target.classList.add('active');
     renderRecipeGrid();
     renderHomeRecipes();
+    applyLangToLesson();
   }
 
   // Set default language class on body
