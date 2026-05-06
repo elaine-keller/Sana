@@ -19,23 +19,24 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Lato', sans-serif; background: #F2F1EE; color: var(--color-text-primary); }
+    body { font-family: 'Lato', sans-serif; background: #F8F6F2; color: var(--color-text-primary); }
 
     /* ── LAYOUT ── */
     .shell { display: flex; height: 100vh; overflow: hidden; }
 
     /* Sidebar */
     .sidebar { width: 260px; min-width: 260px; background: #fff; border-right: 1px solid var(--color-border-tertiary); display: flex; flex-direction: column; overflow-y: auto; }
-    .sidebar-logo { padding: 1.5rem 1.25rem 1rem; border-bottom: 1px solid var(--color-border-tertiary); }
-    .logo-text { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--color-text-primary); letter-spacing: -0.02em; }
-    .logo-sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-top: 2px; }
+    .sidebar-logo { padding: 1.75rem 1.25rem 1.25rem; border-bottom: 1px solid var(--color-border-tertiary); }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--color-text-primary); letter-spacing: -0.03em; line-height: 1; }
+    .logo-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--green); margin-top: 5px; font-weight: 700; }
 
     .nav-section { padding: 1rem 0; border-bottom: 1px solid var(--color-border-tertiary); }
     .nav-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-secondary); padding: 0 1.25rem 0.5rem; }
     .nav-item { display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.25rem; cursor: pointer; border-radius: 0; font-size: 13px; color: var(--color-text-secondary); transition: background 0.15s; }
     .nav-item:hover { background: var(--color-background-secondary); }
     .nav-item.active { background: #E8F7F2; color: var(--green); font-weight: 700; border-right: 2px solid var(--green); }
-    .nav-icon { font-size: 14px; min-width: 18px; }
+    .nav-icon { min-width: 18px; display: flex; align-items: center; }
+    .nav-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 
     .nav-module { padding: 0.35rem 1.25rem 0.35rem 2.5rem; cursor: pointer; font-size: 12px; color: var(--color-text-secondary); }
     .nav-module:hover { color: var(--green); }
@@ -47,34 +48,43 @@
     .main { flex: 1; overflow-y: auto; }
 
     /* Top bar */
-    .topbar { background: #fff; border-bottom: 1px solid var(--color-border-tertiary); padding: 0.75rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
-    .topbar-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; }
+    .topbar { background: rgba(248,246,242,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border-tertiary); padding: 0.75rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+    .topbar-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--color-text-secondary); letter-spacing: -0.01em; }
     .topbar-lang { display: flex; gap: 4px; }
     .lang-btn { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--color-border-secondary); background: transparent; cursor: pointer; color: var(--color-text-secondary); }
     .lang-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
 
     /* Content */
-    .content { padding: 2rem; max-width: 900px; }
+    .content { padding: 2.5rem 3rem; max-width: 1440px; width: 100%; margin: 0 auto; }
 
     /* ── HOME ── */
-    .home-hero { background: linear-gradient(135deg, #1D9E75 0%, #0F6E56 100%); border-radius: 16px; padding: 2.5rem; color: #fff; margin-bottom: 2rem; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 0.5rem; }
-    .hero-sub { font-size: 14px; opacity: 0.85; line-height: 1.6; }
+    .home-greeting { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--color-border-tertiary); margin-bottom: 2.5rem; }
+    .home-date { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.75rem; }
+    .home-title { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 400; color: var(--color-text-primary); line-height: 1.15; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
+    .home-title em { font-style: italic; color: var(--green); }
+    .home-sub { font-size: 15px; color: var(--color-text-secondary); line-height: 1.65; max-width: 520px; }
 
-    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
-    .stat-card { background: #fff; border-radius: 12px; padding: 1.25rem; text-align: center; border: 1px solid var(--color-border-tertiary); }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--green); }
-    .stat-label { font-size: 12px; color: var(--color-text-secondary); margin-top: 4px; }
+    .home-quick-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+    .home-quick-card { background: #fff; border-radius: 14px; padding: 1.4rem 1.5rem; border: 1px solid var(--color-border-tertiary); cursor: pointer; transition: box-shadow 0.15s, transform 0.15s; }
+    .home-quick-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .home-quick-icon { margin-bottom: 0.75rem; color: var(--green); }
+    .home-quick-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .home-quick-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 4px; }
+    .home-quick-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--color-text-primary); line-height: 1.3; }
 
-    .section-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 1rem; }
+    .home-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .home-divider-line { flex: 1; height: 1px; background: var(--color-border-tertiary); }
+    .home-divider-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-secondary); white-space: nowrap; }
+
+    .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 1rem; letter-spacing: -0.01em; }
 
     /* Recipe grid */
     .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
     .recipe-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--color-border-tertiary); cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
     .recipe-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-    .recipe-img { width: 100%; height: 140px; object-fit: cover; background: var(--color-background-secondary); }
-    .recipe-body { padding: 0.75rem; }
-    .recipe-name { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; line-height: 1.4; }
+    .recipe-img { width: 100%; height: 180px; object-fit: cover; background: var(--color-background-secondary); }
+    .recipe-body { padding: 0.85rem; }
+    .recipe-name { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; line-height: 1.45; }
     .recipe-meta { font-size: 11px; color: var(--color-text-secondary); }
     .phase-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-right: 4px; }
 
@@ -89,13 +99,13 @@
     .module-lessons { font-size: 11px; color: var(--green); margin-top: 4px; }
 
     /* Lesson view */
-    .lesson-frame { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid var(--color-border-tertiary); }
-    .lesson-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .lesson-frame { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid var(--color-border-tertiary); max-width: 860px; margin: 0 auto; }
+    .lesson-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; max-width: 860px; margin-left: auto; margin-right: auto; }
     .lesson-nav-btn { font-size: 13px; font-weight: 700; color: var(--green); cursor: pointer; padding: 6px 14px; border-radius: 8px; background: #E8F7F2; border: none; transition: background 0.15s; }
     .lesson-nav-btn:hover { background: #9FE1CB; }
     .lesson-nav-btn:disabled { visibility: hidden; }
     .lesson-nav-progress { font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.06em; }
-    .lesson-continue { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
+    .lesson-continue { display: flex; justify-content: flex-end; margin-top: 1.5rem; max-width: 860px; margin-left: auto; margin-right: auto; }
     .lesson-continue-btn { font-size: 13px; font-weight: 700; color: #fff; cursor: pointer; padding: 10px 24px; border-radius: 8px; background: var(--green); border: none; transition: opacity 0.15s; }
     .lesson-continue-btn:hover { opacity: 0.85; }
     .lesson-continue-btn:disabled { display: none; }
@@ -103,6 +113,7 @@
     /* Recipe detail */
     .recipe-detail { display: none; }
     .recipe-detail.visible { display: block; }
+    #recipe-detail-content { max-width: 860px; margin: 0 auto; }
 
     /* Tabs */
     .tabs { display: flex; gap: 4px; margin-bottom: 1.5rem; background: var(--color-background-secondary); border-radius: 8px; padding: 4px; }
@@ -118,11 +129,130 @@
     /* Phase badge */
     .phase-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: #E8F7F2; color: var(--green); border: 1px solid #9FE1CB; margin-right: 4px; }
 
+    /* Category label on cards (small uppercase text, not a pill) */
+    .cat-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+    .cat-label.breakfast { color: #E65100; }
+    .cat-label.lunch     { color: #2E7D32; }
+    .cat-label.dinner    { color: #1565C0; }
+    .cat-label.snack     { color: #7B1FA2; }
+    .cat-label.drink     { color: #00838F; }
+
+    /* Search bar */
+    .search-wrap { position: relative; margin-bottom: 1rem; }
+    .search-input { width: 100%; padding: 9px 14px 9px 36px; border-radius: 10px; border: 1px solid var(--color-border-secondary); background: #fff; font-size: 13px; color: var(--color-text-primary); outline: none; transition: border-color 0.15s; font-family: 'Lato', sans-serif; }
+    .search-input:focus { border-color: var(--green); }
+    .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; color: var(--color-text-secondary); pointer-events: none; }
+    .search-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--color-text-secondary); cursor: pointer; display: none; background: none; border: none; line-height: 1; padding: 2px; }
+
+    /* Meal type tabs (primary) */
+    .meal-tabs { display: flex; gap: 4px; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .meal-tab { padding: 7px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; border: none; cursor: pointer; background: var(--color-background-secondary); color: var(--color-text-secondary); transition: all 0.12s; }
+    .meal-tab.active { color: #fff; }
+    .meal-tab.all.active       { background: var(--color-text-primary); }
+    .meal-tab.breakfast.active { background: #E65100; }
+    .meal-tab.lunch.active     { background: #2E7D32; }
+    .meal-tab.dinner.active    { background: #1565C0; }
+    .meal-tab.snack.active     { background: #7B1FA2; }
+    .meal-tab.drink.active     { background: #00838F; }
+
+
+    /* ── MEAL PLAN ── */
+    /* Two-column layout */
+    .mp-layout { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .mp-browse { flex: 1; min-width: 0; }
+    .mp-planner-panel { width: 272px; min-width: 252px; background: #fff; border-radius: 12px; border: 1px solid var(--color-border-tertiary); position: sticky; top: 60px; max-height: calc(100vh - 76px); overflow: hidden; display: flex; flex-direction: column; flex-shrink: 0; }
+
+    /* Planner panel header tabs */
+    .mp-panel-tabs { display: flex; border-bottom: 1px solid var(--color-border-tertiary); flex-shrink: 0; }
+    .mp-panel-tab { flex: 1; padding: 0.65rem 0.5rem; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border: none; background: none; cursor: pointer; color: var(--color-text-secondary); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.12s; font-family: 'Lato', sans-serif; }
+    .mp-panel-tab.active { color: var(--green); border-bottom-color: var(--green); }
+    .mp-panel-body { padding: 0.85rem 0.8rem; overflow-y: auto; flex: 1; }
+
+    /* Active slot indicator */
+    .mp-slot-indicator { background: #E8F7F2; border: 1px solid #9FE1CB; border-radius: 8px; padding: 0.5rem 0.75rem; margin-bottom: 0.75rem; font-size: 12px; color: #0F6E56; display: none; }
+    .mp-slot-indicator.visible { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+    .mp-indicator-text { flex: 1; line-height: 1.4; }
+    .mp-indicator-cancel { font-size: 11px; font-weight: 700; color: #0F6E56; cursor: pointer; white-space: nowrap; text-decoration: underline; }
+
+    /* Day rows in planner */
+    .mp-week-day { margin-bottom: 0.6rem; }
+    .mp-day-label { font-size: 10px; font-weight: 700; text-transform: capitalize; letter-spacing: 0.04em; color: var(--color-text-primary); padding: 0.4rem 0 0.28rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 0.25rem; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+    .mp-slot { display: flex; align-items: center; gap: 5px; padding: 0.28rem 0.4rem; border-radius: 6px; cursor: pointer; transition: background 0.1s; min-height: 30px; }
+    .mp-slot:hover { background: var(--color-background-secondary); }
+    .mp-slot.slot-active { background: #E8F7F2; }
+    .mp-slot-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .mp-slot-dot.breakfast { background: #E65100; }
+    .mp-slot-dot.lunch     { background: #2E7D32; }
+    .mp-slot-dot.dinner    { background: #1565C0; }
+    .mp-slot-dot.snack     { background: #7B1FA2; }
+    .mp-slot-mealname { font-size: 9px; font-weight: 700; color: var(--color-text-secondary); min-width: 52px; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+    .mp-slot-recipe-name { font-size: 11px; color: var(--color-text-primary); flex: 1; line-height: 1.3; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .mp-slot-empty { font-size: 11px; color: #C8C8C2; font-style: italic; flex: 1; }
+    .mp-slot-add { font-size: 15px; color: #C8C8C2; width: 16px; text-align: center; flex-shrink: 0; line-height: 1; }
+    .mp-slot:hover .mp-slot-add, .mp-slot.slot-active .mp-slot-add { color: var(--green); }
+    .mp-slot-remove { font-size: 13px; color: #C8C8C2; width: 14px; text-align: center; flex-shrink: 0; cursor: pointer; line-height: 1; }
+    .mp-slot-remove:hover { color: #C8404A; }
+    .mp-empty-state { text-align: center; padding: 1.5rem 1rem; font-size: 12px; color: var(--color-text-secondary); line-height: 1.7; }
+
+    /* Shopping items in panel */
+    .mp-shop-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin: 0.85rem 0 0.3rem; }
+    .mp-shop-cat:first-child { margin-top: 0; }
+    .mp-shop-item { display: flex; align-items: flex-start; gap: 7px; padding: 0.3rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+    .mp-shop-item:last-child { border-bottom: none; }
+    .mp-shop-item input[type=checkbox] { margin-top: 2px; min-width: 13px; accent-color: var(--green); }
+
+    /* Equivalence chart */
+    .mp-phase-desc { font-size: 13px; color: var(--color-text-secondary); background: var(--color-background-secondary); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1.25rem; line-height: 1.6; border: 0.5px solid var(--color-border-tertiary); }
+    .mp-combo-wrap { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .mp-combo-card { background: var(--color-background-secondary); border-radius: 10px; padding: 0.75rem 0.9rem; border: 0.5px solid var(--color-border-tertiary); flex: 1; min-width: 180px; }
+    .mp-combo-label { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 0.65rem; line-height: 1.5; font-style: italic; }
+    .mp-equiv-chart { display: flex; gap: 6px; }
+    .mp-meal-col { flex: 1; }
+    .mp-meal-header { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-secondary); text-align: center; padding-bottom: 5px; }
+    .mp-block { border-radius: 4px; padding: 3px 2px; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: rgba(255,255,255,0.95); text-align: center; margin-bottom: 2px; }
+    .mp-block.protein { background: #C4784A; }
+    .mp-block.veggie  { background: #6A8F6A; }
+    .mp-block.carb    { background: #B89860; }
+    .mp-block.fruit   { background: #B07880; }
+    .mp-block.fat     { background: #C4A83A; }
+
+    /* Recipe browser (left col) */
+    .mp-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin: 0 0 0.75rem; }
+    .mp-recipe-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem; }
+    .mp-recipe-card { width: 155px; flex-shrink: 0; border-radius: 10px; overflow: hidden; background: #fff; border: 2px solid var(--color-border-tertiary); cursor: pointer; transition: border-color 0.15s; position: relative; }
+    .mp-recipe-card.selected { border-color: var(--green); }
+    .mp-recipe-card:hover { border-color: #9FE1CB; }
+    .mp-check-mark { position: absolute; top: 5px; right: 5px; width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.92); border: 1.5px solid var(--color-border-secondary); display: flex; align-items: center; justify-content: center; font-size: 10px; color: transparent; transition: all 0.12s; }
+    .mp-recipe-card.selected .mp-check-mark { background: var(--green); border-color: var(--green); color: #fff; }
+    .mp-card-img { width: 100%; height: 110px; object-fit: cover; background: var(--color-background-secondary); display: block; }
+    .mp-card-body { padding: 0.45rem 0.55rem 0.55rem; }
+    .mp-card-name { font-size: 11px; font-weight: 600; color: var(--color-text-primary); line-height: 1.35; margin-bottom: 5px; }
+    .mp-equiv-pills { display: flex; flex-wrap: wrap; gap: 3px; }
+    .mp-pill { font-size: 9px; font-weight: 700; padding: 2px 5px; border-radius: 4px; color: #fff; white-space: nowrap; }
+    .mp-pill.protein { background: #C4784A; }
+    .mp-pill.veggie  { background: #6A8F6A; }
+    .mp-pill.carb    { background: #B89860; }
+    .mp-pill.fruit   { background: #B07880; }
+    .mp-pill.fat     { background: #C4A83A; }
+
+    /* Cat filter pills in meal plan (smaller/rounder than recipe-view tabs) */
+    #mp-cat-chips .meal-tab { padding: 5px 12px; font-size: 12px; border-radius: 20px; }
+
+    /* Mobile */
+    @media (max-width: 900px) { .mp-planner-panel { width: 240px; min-width: 220px; } }
+    @media (max-width: 768px) { .mp-layout { flex-direction: column; } .mp-planner-panel { width: 100%; min-width: 0; position: static; max-height: none; } }
+    @media (max-width: 480px) { .mp-recipe-card { width: calc(50% - 5px); } .mp-combo-card { min-width: 130px; } }
+
+    /* Elegant thin scrollbar */
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.13); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.22); }
+    * { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.13) transparent; }
+
     /* Bilingual lesson content */
-    .lang-en { display: none !important; }
-    .lang-es { display: block !important; }
-    body.lang-en .lang-en { display: block !important; }
-    body.lang-en .lang-es { display: none !important; }
+    #lesson-content .lang-en { display: none; }
+    #lesson-content .lang-es { display: block; }
 
     /* Mobile */
     @media (max-width: 700px) {
@@ -139,52 +269,54 @@
   <nav class="sidebar">
     <div class="sidebar-logo">
       <div class="logo-text">Sana</div>
-      <div class="logo-sub">Mesa Sana · Wellness</div>
+      <div class="logo-sub">My Wellness</div>
     </div>
 
     <div class="nav-section">
-      <div class="nav-label">Home</div>
-      <div class="nav-item active" onclick="showView('home')"><span class="nav-icon">⌂</span> Dashboard</div>
+      <div class="nav-item active" onclick="showView('home')"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></span> <span data-i18n="nav.dashboard">Inicio</span></div>
     </div>
 
     <div class="nav-section">
-      <div class="nav-label">Recipes</div>
-      <div class="nav-item" onclick="showView('recipes')"><span class="nav-icon">🍽</span> All recipes</div>
-      <div class="nav-item" onclick="showView('recipes', 1)"><span class="nav-icon">·</span> Reboot</div>
-      <div class="nav-item" onclick="showView('recipes', 2)"><span class="nav-icon">·</span> Burn</div>
-      <div class="nav-item" onclick="showView('recipes', 3)"><span class="nav-icon">·</span> Maintain</div>
+      <div class="nav-item" onclick="showView('recipes')"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M8 3v5a3 3 0 006 0V3"/><line x1="11" y1="8" x2="11" y2="21"/><line x1="16" y1="3" x2="16" y2="21"/></svg></span> <span data-i18n="nav.allRecipes">Todas las recetas</span></div>
+      <div class="nav-item" onclick="showView('recipes', 1)"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/></svg></span> <span data-i18n="phase.1">Reboot</span></div>
+      <div class="nav-item" onclick="showView('recipes', 2)"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/></svg></span> <span data-i18n="phase.2">Burn</span></div>
+      <div class="nav-item" onclick="showView('recipes', 3)"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/></svg></span> <span data-i18n="phase.3">Maintain</span></div>
     </div>
 
     <div class="nav-section">
-      <div class="nav-label">Library</div>
-      <div class="nav-item" onclick="showView('modules')" id="nav-reset"><span class="nav-icon">◎</span> Metabolic Reset <span id="reset-arrow" style="margin-left:auto; font-size:10px; color:var(--color-text-secondary);">▾</span></div>
+      <div class="nav-item" onclick="showView('mealplan')"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span> <span data-i18n="nav.mealPlan">Plan de comidas</span></div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-item" onclick="showView('modules')" id="nav-reset"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></span> <span data-i18n="nav.metabolicReset">Reset Metabólico</span> <span id="reset-arrow" style="margin-left:auto; font-size:10px; color:var(--color-text-secondary);">▾</span></div>
       <div id="lesson-nav-list" style="display:none;">
-        <div class="nav-module nav-group">Module 1 — Getting Started</div>
-        <div class="nav-module" data-key="module1-course_guide" onclick="showLesson('module1','course_guide')">· Course guide</div>
-        <div class="nav-module nav-group">Module 2 — Theory</div>
-        <div class="nav-module" data-key="module2-intro" onclick="showLesson('module2','intro')">· Intro</div>
-        <div class="nav-module" data-key="module2-lesson2" onclick="showLesson('module2','lesson2')">· Why everyone needs this</div>
-        <div class="nav-module" data-key="module2-lesson3" onclick="showLesson('module2','lesson3')">· Dysglycemia</div>
-        <div class="nav-module" data-key="module2-lesson4" onclick="showLesson('module2','lesson4')">· Related diseases</div>
-        <div class="nav-module" data-key="module2-lesson5" onclick="showLesson('module2','lesson5')">· Why we are sick</div>
-        <div class="nav-module nav-group">Module 3 — Measurement</div>
-        <div class="nav-module" data-key="module3-intro" onclick="showLesson('module3','intro')">· Intro</div>
-        <div class="nav-module" data-key="module3-lesson2" onclick="showLesson('module3','lesson2')">· Metabolic health measurement</div>
-        <div class="nav-module" data-key="module3-lesson3_glucose" onclick="showLesson('module3','lesson3_glucose')">· Glucose monitor</div>
-        <div class="nav-module" data-key="module3-lesson3_food" onclick="showLesson('module3','lesson3_food')">· Food examples</div>
-        <div class="nav-module" data-key="module3-lab_reference" onclick="showLesson('module3','lab_reference')">· Lab reference card</div>
-        <div class="nav-module nav-group">Module 4 — Nutrition Plan</div>
-        <div class="nav-module" data-key="module4-intro" onclick="showLesson('module4','intro')">· Intro</div>
-        <div class="nav-module" data-key="module4-lesson2" onclick="showLesson('module4','lesson2')">· Reset5 overview</div>
-        <div class="nav-module" data-key="module4-lesson3" onclick="showLesson('module4','lesson3')">· Nutrition plan</div>
-        <div class="nav-module" data-key="module4-lesson4" onclick="showLesson('module4','lesson4')">· Phase 1 — Revert</div>
-        <div class="nav-module" data-key="module4-lesson5" onclick="showLesson('module4','lesson5')">· Phase 2 — Burn</div>
-        <div class="nav-module" data-key="module4-lesson7" onclick="showLesson('module4','lesson7')">· Phase 3 — Nourish</div>
-        <div class="nav-module" data-key="module4-lesson8" onclick="showLesson('module4','lesson8')">· Apple cider vinegar</div>
-        <div class="nav-module nav-group">Module 5 — What's Next</div>
-        <div class="nav-module" data-key="module5-what_comes_next" onclick="showLesson('module5','what_comes_next')">· What comes next</div>
+        <div class="nav-module nav-group" data-i18n="module1.group">Módulo 1 — Comenzando</div>
+        <div class="nav-module" data-key="module1-course_guide" onclick="showLesson('module1','course_guide')">· <span data-i18n="module1.courseGuide">Guía del curso</span></div>
+        <div class="nav-module" data-key="module1-platform_navigation" onclick="showLesson('module1','platform_navigation')">· <span data-i18n="module1.platformNav">Tour de la plataforma</span></div>
+        <div class="nav-module nav-group" data-i18n="module2.group">Módulo 2 — Teoría</div>
+        <div class="nav-module" data-key="module2-intro" onclick="showLesson('module2','intro')">· <span data-i18n="module2.intro">Introducción</span></div>
+        <div class="nav-module" data-key="module2-lesson2" onclick="showLesson('module2','lesson2')">· <span data-i18n="module2.lesson2">Por qué todos necesitan esto</span></div>
+        <div class="nav-module" data-key="module2-lesson3" onclick="showLesson('module2','lesson3')">· <span data-i18n="module2.lesson3">Disglicemia</span></div>
+        <div class="nav-module" data-key="module2-lesson4" onclick="showLesson('module2','lesson4')">· <span data-i18n="module2.lesson4">Enfermedades relacionadas</span></div>
+        <div class="nav-module" data-key="module2-lesson5" onclick="showLesson('module2','lesson5')">· <span data-i18n="module2.lesson5">Por qué estamos enfermos</span></div>
+        <div class="nav-module nav-group" data-i18n="module3.group">Módulo 3 — Medición</div>
+        <div class="nav-module" data-key="module3-intro" onclick="showLesson('module3','intro')">· <span data-i18n="module3.intro">Introducción</span></div>
+        <div class="nav-module" data-key="module3-lesson2" onclick="showLesson('module3','lesson2')">· <span data-i18n="module3.lesson2">Medición de salud metabólica</span></div>
+        <div class="nav-module" data-key="module3-lesson3_glucose" onclick="showLesson('module3','lesson3_glucose')">· <span data-i18n="module3.glucose">Monitor de glucosa</span></div>
+        <div class="nav-module" data-key="module3-lesson3_food" onclick="showLesson('module3','lesson3_food')">· <span data-i18n="module3.food">Ejemplos de alimentos</span></div>
+        <div class="nav-module" data-key="module3-lab_reference" onclick="showLesson('module3','lab_reference')">· <span data-i18n="module3.lab">Tarjeta de laboratorio</span></div>
+        <div class="nav-module nav-group" data-i18n="module4.group">Módulo 4 — Plan de Nutrición</div>
+        <div class="nav-module" data-key="module4-intro" onclick="showLesson('module4','intro')">· <span data-i18n="module4.intro">Introducción</span></div>
+        <div class="nav-module" data-key="module4-lesson2" onclick="showLesson('module4','lesson2')">· <span data-i18n="module4.lesson2">Visión general Reset5</span></div>
+        <div class="nav-module" data-key="module4-lesson3" onclick="showLesson('module4','lesson3')">· <span data-i18n="module4.lesson3">Plan de nutrición</span></div>
+        <div class="nav-module" data-key="module4-lesson4" onclick="showLesson('module4','lesson4')">· <span data-i18n="module4.lesson4">Fase 1 — Revertir</span></div>
+        <div class="nav-module" data-key="module4-lesson5" onclick="showLesson('module4','lesson5')">· <span data-i18n="module4.lesson5">Fase 2 — Quemar</span></div>
+        <div class="nav-module" data-key="module4-lesson7" onclick="showLesson('module4','lesson7')">· <span data-i18n="module4.lesson7">Fase 3 — Nutrir</span></div>
+        <div class="nav-module" data-key="module4-lesson8" onclick="showLesson('module4','lesson8')">· <span data-i18n="module4.lesson8">Vinagre de manzana</span></div>
+        <div class="nav-module nav-group" data-i18n="module5.group">Módulo 5 — ¿Qué sigue?</div>
+        <div class="nav-module" data-key="module5-what_comes_next" onclick="showLesson('module5','what_comes_next')">· <span data-i18n="module5.lesson">¿Qué sigue?</span></div>
       </div>
-      <div class="nav-item" onclick="showView('nuggets')"><span class="nav-icon">💡</span> Nuggets</div>
+      <div class="nav-item" onclick="showView('nuggets')"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 2.6-1.4 4.9-3.5 6.2V17a1 1 0 01-1 1h-5a1 1 0 01-1-1v-1.8C6.4 13.9 5 11.6 5 9a7 7 0 017-7z"/><path d="M9 21h6"/></svg></span> <span data-i18n="nav.nuggets">Nuggets</span></div>
     </div>
   </nav>
 
@@ -193,8 +325,8 @@
     <div class="topbar">
       <div class="topbar-title" id="topbar-title">Dashboard</div>
       <div class="topbar-lang">
-        <button class="lang-btn active" onclick="setLang('es')">ES</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en', this)">EN</button>
+        <button class="lang-btn" id="btn-es" onclick="setLang('es', this)">ES</button>
       </div>
     </div>
 
@@ -202,37 +334,54 @@
 
       <!-- HOME -->
       <div id="view-home">
-        <div class="home-hero">
-          <div class="hero-title">Bienvenida, Elaine</div>
-          <div class="hero-sub">Your personal wellness system — recipes, lessons, and knowledge, all in one place.</div>
+        <div class="home-greeting">
+          <div class="home-date" id="home-date"></div>
+          <h1 class="home-title"><span data-i18n="home.welcome">Bienvenida,</span> <em>Elaine</em></h1>
+          <p class="home-sub" data-i18n="home.sub">Tu bienestar, todo en un solo lugar.</p>
         </div>
-        <div class="stats-row">
-          <div class="stat-card">
-            <div class="stat-num">164</div>
-            <div class="stat-label">Bilingual recipes</div>
+
+        <div class="home-quick-row">
+          <div class="home-quick-card" onclick="showView('recipes')">
+            <div class="home-quick-icon"><svg viewBox="0 0 24 24"><path d="M8 3v5a3 3 0 006 0V3"/><line x1="11" y1="8" x2="11" y2="21"/><line x1="16" y1="3" x2="16" y2="21"/></svg></div>
+            <div class="home-quick-label" data-i18n="home.quick1label">Recetas</div>
+            <div class="home-quick-title" data-i18n="home.quick1title">164 recetas bilingües</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num">203</div>
-            <div class="stat-label">Food photos</div>
+          <div class="home-quick-card" onclick="showView('mealplan')">
+            <div class="home-quick-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
+            <div class="home-quick-label" data-i18n="home.quick2label">Plan de comidas</div>
+            <div class="home-quick-title" data-i18n="home.quick2title">Organiza tu semana</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num">19</div>
-            <div class="stat-label">Lessons</div>
+          <div class="home-quick-card" onclick="showView('modules')">
+            <div class="home-quick-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
+            <div class="home-quick-label" data-i18n="home.quick3label">Reset Metabólico</div>
+            <div class="home-quick-title" data-i18n="home.quick3title">19 lecciones</div>
           </div>
         </div>
 
-        <div class="section-title">Recent recipes</div>
+        <div class="home-divider">
+          <div class="home-divider-line"></div>
+          <span class="home-divider-label" data-i18n="home.recentRecipes">Recetas recientes</span>
+          <div class="home-divider-line"></div>
+        </div>
         <div class="recipe-grid" id="home-recipes"></div>
       </div>
 
       <!-- RECIPES -->
       <div id="view-recipes" style="display:none;">
-        <div class="tabs">
-          <button class="tab active" onclick="filterRecipes(null, this)">All</button>
-          <button class="tab" onclick="filterRecipes(1, this)">Reboot</button>
-          <button class="tab" onclick="filterRecipes(2, this)">Burn</button>
-          <button class="tab" onclick="filterRecipes(3, this)">Maintain</button>
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input class="search-input" id="recipe-search" type="text" data-i18n-placeholder="search.placeholder" placeholder="Buscar receta o ingrediente…" oninput="onSearchInput(this)">
+          <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
         </div>
+        <div class="meal-tabs" id="meal-tabs">
+          <button class="meal-tab all active"  onclick="filterCategory(null,this)"          data-i18n="cat.all">Todas</button>
+          <button class="meal-tab breakfast"   onclick="filterCategory('breakfast',this)"   data-i18n="cat.breakfast">Desayuno</button>
+          <button class="meal-tab lunch"       onclick="filterCategory('lunch',this)"       data-i18n="cat.lunch">Comida</button>
+          <button class="meal-tab dinner"      onclick="filterCategory('dinner',this)"      data-i18n="cat.dinner">Cena</button>
+          <button class="meal-tab snack"       onclick="filterCategory('snack',this)"       data-i18n="cat.snack">Snack</button>
+          <button class="meal-tab drink"       onclick="filterCategory('drink',this)"       data-i18n="cat.drink">Bebida</button>
+        </div>
+        <div id="recipe-count" style="font-size:12px; color:var(--color-text-secondary); margin-bottom:0.75rem;"></div>
         <div class="recipe-grid" id="recipe-grid"></div>
       </div>
 
@@ -306,6 +455,49 @@
         </div>
       </div>
 
+      <!-- MEAL PLAN -->
+      <div id="view-mealplan" style="display:none;">
+        <div class="tabs" style="margin-bottom:1rem;">
+          <button class="tab mp-phase-tab active" data-phase="1" onclick="setMealPhase(1)" data-i18n="phase.1">Reboot</button>
+          <button class="tab mp-phase-tab" data-phase="2" onclick="setMealPhase(2)" data-i18n="phase.2">Burn</button>
+          <button class="tab mp-phase-tab" data-phase="3" onclick="setMealPhase(3)" data-i18n="phase.3">Maintain</button>
+        </div>
+        <div id="mp-phase-desc" class="mp-phase-desc"></div>
+        <div id="mp-combo-area"></div>
+
+        <div class="mp-layout">
+          <!-- LEFT: Recipe browser -->
+          <div class="mp-browse">
+            <p id="mp-section-hdr" class="mp-section-title"></p>
+            <div id="mp-slot-indicator" class="mp-slot-indicator">
+              <span class="mp-indicator-text" id="mp-slot-indicator-text"></span>
+              <span class="mp-indicator-cancel" id="mp-indicator-cancel" onclick="clearActivePlanSlot()">Cancelar</span>
+            </div>
+            <div class="meal-tabs" id="mp-cat-chips" style="margin-bottom:0.75rem;">
+              <button class="meal-tab all active"   onclick="filterMealCat(null,this)"        data-i18n="cat.all">Todas</button>
+              <button class="meal-tab breakfast"    onclick="filterMealCat('breakfast',this)" data-i18n="cat.breakfast">Desayuno</button>
+              <button class="meal-tab lunch"        onclick="filterMealCat('lunch',this)"     data-i18n="cat.lunch">Comida</button>
+              <button class="meal-tab dinner"       onclick="filterMealCat('dinner',this)"    data-i18n="cat.dinner">Cena</button>
+              <button class="meal-tab snack"        onclick="filterMealCat('snack',this)"     data-i18n="cat.snack">Snack</button>
+              <button class="meal-tab drink"        onclick="filterMealCat('drink',this)"     data-i18n="cat.drink">Bebida</button>
+            </div>
+            <div id="mp-recipe-grid" class="mp-recipe-grid"></div>
+          </div>
+
+          <!-- RIGHT: Weekly planner panel -->
+          <div class="mp-planner-panel">
+            <div class="mp-panel-tabs">
+              <button class="mp-panel-tab active" id="mp-tab-plan" onclick="showPlannerTab('plan')"><span data-i18n="mp.weeklyPlan">Plan semanal</span></button>
+              <button class="mp-panel-tab" id="mp-tab-shop" onclick="showPlannerTab('shop')"><span data-i18n="mp.shoppingList">Lista de compras</span></button>
+            </div>
+            <div class="mp-panel-body" id="mp-week-view"></div>
+            <div class="mp-panel-body" id="mp-shop-view" style="display:none;">
+              <div id="mp-shopping-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- LIBRARIES -->
       <div id="view-libraries" style="display:none;">
         <div class="section-title">Libraries</div>
@@ -328,11 +520,53 @@
 
 <script>
   // Use local paths when opened from filesystem, GitHub when served remotely
-  const isLocal = location.protocol === 'file:';
+  const isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
   const GITHUB = isLocal ? '..' : 'https://raw.githubusercontent.com/elaine-keller/Sana/main';
   let recipes = {};
   let currentLang = 'es';
   let currentPhase = null;
+  let currentCategory = null;
+  let currentSearch = '';
+  let currentMealPhase = 1;
+  let currentMealCat = null;
+  let selectedMealRecipes = new Set();
+  let _mealPhaseCache = {};
+  const MP_DAYS = ['mon','tue','wed','thu','fri','sat','sun'];
+  const MP_MEALS = ['breakfast','lunch','dinner','snack'];
+  let weekPlan = {};
+  let activePlanSlot = null;
+  (function initWeekPlan() { MP_DAYS.forEach(d => { weekPlan[d] = {}; MP_MEALS.forEach(m => weekPlan[d][m] = null); }); })();
+
+  // ── PERSISTENCE ──
+  function saveMealPlanState() {
+    try {
+      localStorage.setItem('sana_weekPlan', JSON.stringify(weekPlan));
+      localStorage.setItem('sana_selectedRecipes', JSON.stringify([...selectedMealRecipes]));
+      localStorage.setItem('sana_mealPhase', String(currentMealPhase));
+    } catch(e) {}
+  }
+
+  function loadMealPlanState() {
+    try {
+      const ph = localStorage.getItem('sana_mealPhase');
+      if (ph) currentMealPhase = parseInt(ph) || 1;
+      const wp = localStorage.getItem('sana_weekPlan');
+      if (wp) {
+        const parsed = JSON.parse(wp);
+        MP_DAYS.forEach(d => {
+          if (!parsed[d]) parsed[d] = {};
+          MP_MEALS.forEach(m => { if (parsed[d][m] === undefined) parsed[d][m] = null; });
+        });
+        weekPlan = parsed;
+      }
+      const sr = localStorage.getItem('sana_selectedRecipes');
+      if (sr) selectedMealRecipes = new Set(JSON.parse(sr));
+      // Sync phase tabs to restored phase
+      document.querySelectorAll('.mp-phase-tab').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.dataset.phase) === currentMealPhase);
+      });
+    } catch(e) {}
+  }
 
   // ── LOAD DATA ──
   async function loadRecipes() {
@@ -355,11 +589,16 @@
   function showView(name, phase) {
     document.querySelectorAll('[id^="view-"]').forEach(el => el.style.display = 'none');
     document.getElementById(`view-${name}`).style.display = 'block';
-    document.getElementById('topbar-title').textContent = {
-      home: 'Dashboard', recipes: 'Recipes', modules: 'Metabolic Reset',
-      lesson: 'Lesson', nuggets: 'Nuggets',
+    const titleMap = {
+      home: i18n[currentLang]['nav.dashboard'] || 'Dashboard',
+      recipes: i18n[currentLang]['nav.recipes'] || 'Recipes',
+      modules: i18n[currentLang]['nav.metabolicReset'] || 'Metabolic Reset',
+      mealplan: i18n[currentLang]['nav.mealPlan'] || 'Meal Plan',
+      lesson: 'Lesson', nuggets: i18n[currentLang]['nav.nuggets'] || 'Nuggets',
       'recipe-detail': ''
-    }[name] || name;
+    };
+    document.getElementById('topbar-title').textContent = titleMap[name] || name;
+    if (name === 'mealplan') renderMealPlan();
 
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
     setLessonNavExpanded(name === 'modules' || name === 'lesson');
@@ -373,6 +612,7 @@
   // ── LESSONS ──
   const lessonFiles = {
     'module1-course_guide': 'module1/module1_course_guide_notes.html',
+    'module1-platform_navigation': 'module1/module1_platform_navigation_notes.html',
     'module2-intro': 'module2/module2_intro.html',
     'module2-lesson2': 'module2/module2_lesson2_why_everyone_needs_this.html',
     'module2-lesson3': 'module2/module2_lesson3_dysglycemia.html',
@@ -457,28 +697,60 @@
     document.getElementById('home-recipes').innerHTML = keys.map(k => recipeCardHTML(k, recipes[k])).join('');
   }
 
+  function recipeMatchesSearch(k, r) {
+    if (!currentSearch) return true;
+    const q = currentSearch.toLowerCase();
+    const name = (r.name_es || '') + ' ' + (r.name_en || '');
+    if (name.toLowerCase().includes(q)) return true;
+    // search ingredients
+    const ingEs = (r.ingredients_es || []).flatMap(g => g.items || []).join(' ').toLowerCase();
+    const ingEn = (r.ingredients_en || []).flatMap(g => g.items || []).join(' ').toLowerCase();
+    return ingEs.includes(q) || ingEn.includes(q);
+  }
+
   function renderRecipeGrid() {
     const keys = Object.keys(recipes).filter(k => {
-      if (!currentPhase) return true;
-      const phases = recipes[k].phases || [];
-      // Maintain = all program-safe recipes (phases 1, 2, or 3)
-      if (currentPhase === 3) return phases.some(p => [1, 2, 3].includes(p));
-      return phases.includes(currentPhase);
+      const r = recipes[k];
+      if (currentPhase) {
+        const phases = r.phases || [];
+        if (currentPhase === 3) { if (!phases.some(p => [1,2,3].includes(p))) return false; }
+        else { if (!phases.includes(currentPhase)) return false; }
+      }
+      if (currentCategory && r.category !== currentCategory) return false;
+      if (!recipeMatchesSearch(k, r)) return false;
+      return true;
     });
     document.getElementById('recipe-grid').innerHTML = keys.map(k => recipeCardHTML(k, recipes[k])).join('');
+    const countEl = document.getElementById('recipe-count');
+    if (countEl) {
+      const total = Object.keys(recipes).length;
+      countEl.textContent = keys.length < total
+        ? (currentLang === 'es' ? `${keys.length} recetas` : `${keys.length} recipes`)
+        : '';
+    }
   }
+
+  const CAT_LABELS = {
+    breakfast: { es: 'Desayuno', en: 'Breakfast' },
+    lunch:     { es: 'Comida',   en: 'Lunch'     },
+    dinner:    { es: 'Cena',     en: 'Dinner'    },
+    snack:     { es: 'Snack',    en: 'Snack'     },
+    drink:     { es: 'Bebida',   en: 'Drink'     },
+  };
 
   function recipeCardHTML(key, r) {
     const name = currentLang === 'es' ? (r.name_es || key) : (r.name_en || key);
-    const img = r.images && r.images[0]
-      ? `${GITHUB}/photos/${r.images[0]}`
-      : '';
+    const img = r.images && r.images[0] ? `${GITHUB}/photos/${r.images[0]}` : '';
     const phaseNames = { 1: 'Reboot', 2: 'Burn', 3: 'Maintain' };
     const phases = (r.phases || []).filter(p => phaseNames[p]).map(p => `<span class="phase-badge">${phaseNames[p]}</span>`).join('');
+    const cat = r.category;
+    const catLabel = cat && CAT_LABELS[cat] ? CAT_LABELS[cat][currentLang] : '';
+    const catLine = catLabel ? `<div class="cat-label ${cat}">${catLabel}</div>` : '';
     return `
       <div class="recipe-card" onclick="showRecipe('${key.replace(/'/g,"\\'")}')">
         ${img ? `<img class="recipe-img" src="${img}" alt="${name}" loading="lazy">` : `<div class="recipe-img"></div>`}
         <div class="recipe-body">
+          ${catLine}
           <div class="recipe-name">${name}</div>
           <div class="recipe-meta">${phases}</div>
         </div>
@@ -539,26 +811,557 @@
     `;
   }
 
-  function filterRecipes(phase, btn) {
-    currentPhase = phase;
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+function filterCategory(cat, btn) {
+    currentCategory = cat;
+    document.querySelectorAll('#meal-tabs .meal-tab').forEach(c => c.classList.remove('active'));
     btn.classList.add('active');
     renderRecipeGrid();
   }
 
-  function setLang(lang) {
+  function onSearchInput(input) {
+    currentSearch = input.value.trim();
+    document.getElementById('search-clear').style.display = currentSearch ? 'block' : 'none';
+    renderRecipeGrid();
+  }
+
+  function clearSearch() {
+    currentSearch = '';
+    document.getElementById('recipe-search').value = '';
+    document.getElementById('search-clear').style.display = 'none';
+    renderRecipeGrid();
+  }
+
+  function filterMealCat(cat, btn) {
+    currentMealCat = cat;
+    document.querySelectorAll('#mp-cat-chips .meal-tab').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    renderMealPlan();
+  }
+
+  // ── MEAL PLAN ──
+  const EQUIV_CHARTS = {
+    1: [{
+      label: { es: 'fruta en la mañana · carb en la comida', en: 'fruit in the morning · carb at lunch' },
+      meals: [
+        { name: { es: 'Desayuno', en: 'Breakfast' }, blocks: ['protein','veggie','fruit'] },
+        { name: { es: 'Comida',   en: 'Lunch'      }, blocks: ['protein','veggie','fat','carb'] },
+        { name: { es: 'Cena',     en: 'Dinner'     }, blocks: ['protein','veggie','fat'] },
+      ]
+    }],
+    2: [
+      {
+        label: { es: 'Combinación 1 — fruta y grasa en la mañana · carb en la comida', en: 'Combination 1 — fruit & fat in the morning · carb at lunch' },
+        meals: [
+          { name: { es: 'Desayuno', en: 'Breakfast' }, blocks: ['protein','veggie','fat','fruit'] },
+          { name: { es: 'Comida',   en: 'Lunch'      }, blocks: ['protein','veggie','fat','carb','fruit'] },
+          { name: { es: 'Cena',     en: 'Dinner'     }, blocks: ['protein','veggie','fat','carb'] },
+        ]
+      },
+      {
+        label: { es: 'Combinación 2 — fruta en mañana y cena · grasa en comida y cena', en: 'Combination 2 — fruit in morning & dinner · fat at lunch & dinner' },
+        meals: [
+          { name: { es: 'Desayuno', en: 'Breakfast' }, blocks: ['protein','veggie','carb','fruit'] },
+          { name: { es: 'Comida',   en: 'Lunch'      }, blocks: ['protein','veggie','carb','fat'] },
+          { name: { es: 'Cena',     en: 'Dinner'     }, blocks: ['protein','veggie','fat','fruit','fat'] },
+        ]
+      }
+    ],
+    3: []
+  };
+
+  const MAINTAIN_SHOPPING = {
+    es: [
+      { cat: 'Proteínas', items: ['Pechuga de pollo', 'Salmón', 'Atún en agua', 'Huevos', 'Queso cottage light', 'Queso feta', 'Sardinas', 'Camarones', 'Res magra'] },
+      { cat: 'Verduras', items: ['Espinacas', 'Kale', 'Brócoli', 'Zucchini / calabaza', 'Pepino', 'Jitomate', 'Aguacate', 'Champiñones', 'Cebolla', 'Ajo', 'Pimiento morrón', 'Acelgas', 'Apio', 'Lechuga romana'] },
+      { cat: 'Frutas (con moderación)', items: ['Manzana', 'Pera', 'Fresas', 'Arándanos', 'Kiwi', 'Naranja', 'Limón'] },
+      { cat: 'Grasas saludables', items: ['Aceite de oliva extra virgen', 'Aceite de aguacate', 'Nueces', 'Almendras', 'Semillas de chía', 'Semillas de linaza'] },
+      { cat: 'Carbohidratos complejos', items: ['Arroz salvaje', 'Quinoa', 'Camote', 'Frijoles negros', 'Lentejas', 'Avena sin gluten'] },
+      { cat: 'Despensa', items: ['Vinagre de manzana', 'Mostaza Dijon', 'Caldo de pollo bajo en sodio', 'Especias y hierbas frescas', 'Cacao puro sin azúcar'] },
+    ],
+    en: [
+      { cat: 'Proteins', items: ['Chicken breast', 'Salmon', 'Canned tuna in water', 'Eggs', 'Light cottage cheese', 'Feta cheese', 'Sardines', 'Shrimp', 'Lean beef'] },
+      { cat: 'Vegetables', items: ['Spinach', 'Kale', 'Broccoli', 'Zucchini', 'Cucumber', 'Tomatoes', 'Avocado', 'Mushrooms', 'Onion', 'Garlic', 'Bell pepper', 'Swiss chard', 'Celery', 'Romaine lettuce'] },
+      { cat: 'Fruits (in moderation)', items: ['Apple', 'Pear', 'Strawberries', 'Blueberries', 'Kiwi', 'Orange', 'Lemon'] },
+      { cat: 'Healthy fats', items: ['Extra virgin olive oil', 'Avocado oil', 'Walnuts', 'Almonds', 'Chia seeds', 'Flaxseeds'] },
+      { cat: 'Complex carbs', items: ['Wild rice', 'Quinoa', 'Sweet potato', 'Black beans', 'Lentils', 'Gluten-free oats'] },
+      { cat: 'Pantry staples', items: ['Apple cider vinegar', 'Dijon mustard', 'Low-sodium chicken broth', 'Spices and fresh herbs', 'Unsweetened cacao'] },
+    ]
+  };
+
+  function getPhaseRecipes(phase) {
+    if (_mealPhaseCache[phase]) return _mealPhaseCache[phase];
+    const keys = Object.keys(recipes).filter(k => {
+      const p = recipes[k].phases || [];
+      if (phase === 3) return p.some(x => [1, 2].includes(x));
+      return p.includes(phase);
+    });
+    _mealPhaseCache[phase] = keys;
+    return keys;
+  }
+
+  function setMealPhase(phase) {
+    currentMealPhase = phase;
+    currentMealCat = null;
+    selectedMealRecipes.clear();
+    activePlanSlot = null;
+    MP_DAYS.forEach(d => { weekPlan[d] = {}; MP_MEALS.forEach(m => weekPlan[d][m] = null); });
+    const indicator = document.getElementById('mp-slot-indicator');
+    if (indicator) indicator.classList.remove('visible');
+    saveMealPlanState();
+    // Reset panel to plan tab
+    showPlannerTab('plan');
+    // Reset cat chips
+    document.querySelectorAll('#mp-cat-chips .meal-tab').forEach(c => c.classList.remove('active'));
+    const allChip = document.querySelector('#mp-cat-chips .meal-tab.all');
+    if (allChip) allChip.classList.add('active');
+    renderMealPlan();
+  }
+
+  function buildEquivChartHTML(combos) {
+    if (!combos || combos.length === 0) return '';
+    const blockLabel = {
+      protein: { es: 'Prot', en: 'Prot' },
+      veggie:  { es: 'Veg',  en: 'Veg'  },
+      carb:    { es: 'Carb', en: 'Carb' },
+      fruit:   { es: 'Fru',  en: 'Fru'  },
+      fat:     { es: 'Gras', en: 'Fat'  },
+    };
+    return `<div class="mp-combo-wrap">` + combos.map(combo => `
+      <div class="mp-combo-card">
+        <p class="mp-combo-label">${combo.label[currentLang]}</p>
+        <div class="mp-equiv-chart">
+          ${combo.meals.map(meal => `
+            <div class="mp-meal-col">
+              <div class="mp-meal-header">${meal.name[currentLang]}</div>
+              ${meal.blocks.map(b => `<div class="mp-block ${b}">${blockLabel[b][currentLang]}</div>`).join('')}
+            </div>`).join('')}
+        </div>
+      </div>`).join('') + `</div>`;
+  }
+
+  function renderMealPlan() {
+    // Phase tabs
+    document.querySelectorAll('.mp-phase-tab').forEach(btn => {
+      btn.classList.toggle('active', parseInt(btn.dataset.phase) === currentMealPhase);
+    });
+
+    // Phase description
+    const descs = {
+      1: { es: '2 semanas · Fase restrictiva — proteína, verdura y fruta en el desayuno; se añade carb en la comida.', en: '2 weeks · Restrictive phase — protein, veggie, and fruit at breakfast; carb added at lunch.' },
+      2: { es: '2 semanas · Fase de quema — elige entre dos combinaciones según cómo quieras distribuir grasa, carb y fruta.', en: '2 weeks · Burn phase — choose between two combinations for distributing fat, carb, and fruit.' },
+      3: { es: 'Sin límite de tiempo · Mantenimiento — regla 80/20. Todas las recetas de Fases 1 y 2 están disponibles.', en: 'Ongoing · Maintenance — 80/20 rule. All Phase 1 and 2 recipes are available.' },
+    };
+    document.getElementById('mp-phase-desc').textContent = descs[currentMealPhase][currentLang];
+
+    // Equivalence chart
+    document.getElementById('mp-combo-area').innerHTML = buildEquivChartHTML(EQUIV_CHARTS[currentMealPhase]);
+
+    // Section header
+    const sectionLabels = {
+      1: { es: 'Recetas disponibles — Reboot', en: 'Available recipes — Reboot' },
+      2: { es: 'Recetas disponibles — Burn',   en: 'Available recipes — Burn'   },
+      3: { es: 'Recetas disponibles — Maintain (Fases 1 y 2)', en: 'Available recipes — Maintain (Phases 1 and 2)' },
+    };
+    document.getElementById('mp-section-hdr').textContent = sectionLabels[currentMealPhase][currentLang];
+
+    // Recipe grid
+    const PILL_DEFS = [
+      { key: 'protein', label: { es: 'Proteína', en: 'Protein' } },
+      { key: 'veggie',  label: { es: 'Veggie',   en: 'Veggie'  } },
+      { key: 'carb',    label: { es: 'Carb',     en: 'Carb'    } },
+      { key: 'fat',     label: { es: 'Grasa',    en: 'Fat'     } },
+      { key: 'fruit',   label: { es: 'Fruta',    en: 'Fruit'   } },
+    ];
+    function equivPillsHTML(equiv) {
+      return PILL_DEFS.filter(d => {
+        const v = equiv[d.key];
+        return v && v !== '0';
+      }).map(d => {
+        const v = equiv[d.key];
+        const label = PILL_DEFS.find(x => x.key === d.key).label[currentLang];
+        return `<span class="mp-pill ${d.key}">${v} ${label}</span>`;
+      }).join('');
+    }
+    const allPhaseKeys = getPhaseRecipes(currentMealPhase);
+    const keys = currentMealCat ? allPhaseKeys.filter(k => recipes[k] && recipes[k].category === currentMealCat) : allPhaseKeys;
+    document.getElementById('mp-recipe-grid').innerHTML = keys.map(k => {
+      const r = recipes[k];
+      if (!r) return '';
+      const name = currentLang === 'es' ? (r.name_es || k) : (r.name_en || k);
+      const img = r.images && r.images[0] ? `${GITHUB}/photos/${r.images[0]}` : '';
+      const sel = selectedMealRecipes.has(k) ? ' selected' : '';
+      const pills = equivPillsHTML(r.equiv || {});
+      const cat = r.category;
+      const catLabel = cat && CAT_LABELS[cat] ? CAT_LABELS[cat][currentLang] : '';
+      const catLine = catLabel ? `<div class="cat-label ${cat}">${catLabel}</div>` : '';
+      return `<div class="mp-recipe-card${sel}" data-key="${k.replace(/"/g,'&quot;')}" onclick="toggleMealRecipe(this,'${k.replace(/'/g,"\\'")}')">
+        <div class="mp-check-mark">✓</div>
+        ${img ? `<img class="mp-card-img" src="${img}" loading="lazy" alt="">` : `<div class="mp-card-img"></div>`}
+        <div class="mp-card-body">
+          ${catLine}
+          <div class="mp-card-name">${name}</div>
+          ${pills ? `<div class="mp-equiv-pills" style="margin-top:4px;">${pills}</div>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+
+    renderWeeklyPlan();
+  }
+
+  function toggleMealRecipe(el, key) {
+    if (activePlanSlot) {
+      weekPlan[activePlanSlot.day][activePlanSlot.meal] = key;
+      saveMealPlanState();
+      clearActivePlanSlot();
+      renderMealPlan();
+      return;
+    }
+    if (selectedMealRecipes.has(key)) {
+      selectedMealRecipes.delete(key);
+      el.classList.remove('selected');
+    } else {
+      selectedMealRecipes.add(key);
+      el.classList.add('selected');
+    }
+    saveMealPlanState();
+    const shopView = document.getElementById('mp-shop-view');
+    if (shopView && shopView.style.display !== 'none') buildAndShowShoppingList();
+  }
+
+  function setActivePlanSlot(day, meal) {
+    if (activePlanSlot && activePlanSlot.day === day && activePlanSlot.meal === meal) {
+      clearActivePlanSlot();
+      return;
+    }
+    activePlanSlot = { day, meal };
+    // Auto-filter category chips to match the slot's meal type
+    const btn = document.querySelector(`#mp-cat-chips .meal-tab.${meal}`);
+    if (btn) filterMealCat(meal, btn);
+    // Show indicator banner
+    const indicator = document.getElementById('mp-slot-indicator');
+    if (indicator) {
+      indicator.classList.add('visible');
+      const DAY_LABELS = {
+        es: { mon:'Lunes', tue:'Martes', wed:'Miércoles', thu:'Jueves', fri:'Viernes', sat:'Sábado', sun:'Domingo' },
+        en: { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday', sun:'Sunday' }
+      };
+      const MEAL_LABELS = {
+        es: { breakfast:'Desayuno', lunch:'Comida', dinner:'Cena', snack:'Snack' },
+        en: { breakfast:'Breakfast', lunch:'Lunch', dinner:'Dinner', snack:'Snack' }
+      };
+      const dl = DAY_LABELS[currentLang][day];
+      const ml = MEAL_LABELS[currentLang][meal];
+      document.getElementById('mp-slot-indicator-text').textContent =
+        currentLang === 'es' ? `Seleccionando para: ${dl} · ${ml}` : `Selecting for: ${dl} · ${ml}`;
+      document.getElementById('mp-indicator-cancel').textContent = currentLang === 'es' ? 'Cancelar' : 'Cancel';
+    }
+    renderWeeklyPlan();
+  }
+
+  function clearActivePlanSlot() {
+    activePlanSlot = null;
+    const indicator = document.getElementById('mp-slot-indicator');
+    if (indicator) indicator.classList.remove('visible');
+    renderWeeklyPlan();
+  }
+
+  function removeFromSlot(e, day, meal) {
+    e.stopPropagation();
+    weekPlan[day][meal] = null;
+    saveMealPlanState();
+    renderWeeklyPlan();
+    const shopView = document.getElementById('mp-shop-view');
+    if (shopView && shopView.style.display !== 'none') buildAndShowShoppingList();
+  }
+
+  function showPlannerTab(tab) {
+    const planTab = document.getElementById('mp-tab-plan');
+    const shopTab = document.getElementById('mp-tab-shop');
+    const weekView = document.getElementById('mp-week-view');
+    const shopView = document.getElementById('mp-shop-view');
+    if (!planTab || !weekView) return;
+    planTab.classList.toggle('active', tab === 'plan');
+    shopTab.classList.toggle('active', tab === 'shop');
+    weekView.style.display = tab === 'plan' ? 'block' : 'none';
+    shopView.style.display = tab === 'shop' ? 'block' : 'none';
+    if (tab === 'shop') buildAndShowShoppingList();
+  }
+
+  function getWeekDates() {
+    const today = new Date();
+    const dow = today.getDay(); // 0=Sun
+    const monday = new Date(today);
+    monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
+    return Array.from({length: 7}, (_, i) => {
+      const d = new Date(monday); d.setDate(monday.getDate() + i); return d;
+    });
+  }
+  function ordinalSuffix(n) {
+    const s = ['th','st','nd','rd'], v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
+
+  function renderWeeklyPlan() {
+    const weekView = document.getElementById('mp-week-view');
+    if (!weekView) return;
+    const DAY_LABELS = {
+      es: { mon:'lunes', tue:'martes', wed:'miércoles', thu:'jueves', fri:'viernes', sat:'sábado', sun:'domingo' },
+      en: { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday', sun:'Sunday' }
+    };
+    const MONTH_ES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+    const MONTH_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const MEAL_LABELS = {
+      es: { breakfast:'Desayuno', lunch:'Comida', dinner:'Cena', snack:'Snack' },
+      en: { breakfast:'Breakfast', lunch:'Lunch', dinner:'Dinner', snack:'Snack' }
+    };
+    const weekDates = getWeekDates();
+    const todayStr = new Date().toDateString();
+    let html = '';
+    MP_DAYS.forEach((day, dayIdx) => {
+      const d = weekDates[dayIdx];
+      const dn = d.getDate();
+      const isToday = d.toDateString() === todayStr;
+      const todayBadge = isToday ? ` <span style="font-size:9px;background:var(--green);color:#fff;padding:1px 6px;border-radius:10px;font-weight:700;letter-spacing:0.04em;vertical-align:middle;">${currentLang === 'es' ? 'hoy' : 'today'}</span>` : '';
+      const dayLabel = currentLang === 'es'
+        ? `${DAY_LABELS.es[day]} <span style="font-weight:400;opacity:0.7;">${dn} ${MONTH_ES[d.getMonth()]}</span>${todayBadge}`
+        : `${DAY_LABELS.en[day]} <span style="font-weight:400;opacity:0.7;">${MONTH_EN[d.getMonth()]} ${ordinalSuffix(dn)}</span>${todayBadge}`;
+      html += `<div class="mp-week-day"><div class="mp-day-label">${dayLabel}</div>`;
+      MP_MEALS.forEach(meal => {
+        const recipeKey = weekPlan[day][meal];
+        const isActive = activePlanSlot && activePlanSlot.day === day && activePlanSlot.meal === meal;
+        const slotClass = isActive ? ' slot-active' : '';
+        const mealLabel = MEAL_LABELS[currentLang][meal];
+        if (recipeKey && recipes[recipeKey]) {
+          const r = recipes[recipeKey];
+          const name = currentLang === 'es' ? (r.name_es || recipeKey) : (r.name_en || recipeKey);
+          html += `<div class="mp-slot${slotClass}" onclick="setActivePlanSlot('${day}','${meal}')">
+            <span class="mp-slot-dot ${meal}"></span>
+            <span class="mp-slot-mealname">${mealLabel}</span>
+            <span class="mp-slot-recipe-name" title="${name}">${name}</span>
+            <span class="mp-slot-remove" onclick="removeFromSlot(event,'${day}','${meal}')">×</span>
+          </div>`;
+        } else {
+          html += `<div class="mp-slot${slotClass}" onclick="setActivePlanSlot('${day}','${meal}')">
+            <span class="mp-slot-dot ${meal}"></span>
+            <span class="mp-slot-mealname">${mealLabel}</span>
+            <span class="mp-slot-empty">—</span>
+            <span class="mp-slot-add">+</span>
+          </div>`;
+        }
+      });
+      html += `</div>`;
+    });
+    const hasAny = MP_DAYS.some(d => MP_MEALS.some(m => weekPlan[d][m]));
+    if (!hasAny) {
+      html += `<div class="mp-empty-state">${currentLang === 'es'
+        ? 'Toca <strong>+</strong> junto a un día para asignar recetas a tu semana.'
+        : 'Tap <strong>+</strong> next to any day to assign recipes to your week.'}</div>`;
+    }
+    weekView.innerHTML = html;
+  }
+
+  function buildAndShowShoppingList() {
+    const content = document.getElementById('mp-shopping-content');
+    if (!content) return;
+    // Collect keys: week plan slots + unassigned selected
+    const keys = new Set();
+    MP_DAYS.forEach(d => MP_MEALS.forEach(m => { if (weekPlan[d][m]) keys.add(weekPlan[d][m]); }));
+    selectedMealRecipes.forEach(k => keys.add(k));
+    if (keys.size === 0 && currentMealPhase !== 3) {
+      content.innerHTML = `<div class="mp-empty-state">${currentLang === 'es'
+        ? 'Asigna recetas a tu semana para generar la lista.'
+        : 'Assign recipes to your week to generate the list.'}</div>`;
+      return;
+    }
+    let html = '';
+    if (keys.size === 0) {
+      // Maintain phase with no selections: show base healthy list
+      const cats = MAINTAIN_SHOPPING[currentLang] || MAINTAIN_SHOPPING.en;
+      html = cats.map(cat => `
+        <p class="mp-shop-cat">${cat.cat}</p>
+        ${cat.items.map(item => `<div class="mp-shop-item"><input type="checkbox"><span>${item}</span></div>`).join('')}
+      `).join('');
+    } else {
+      const seen = new Set();
+      const items = [];
+      keys.forEach(k => {
+        const r = recipes[k];
+        if (!r) return;
+        (r[`ingredients_${currentLang}`] || []).forEach(g => {
+          (g.items || []).forEach(item => {
+            if (!seen.has(item)) { seen.add(item); items.push(item); }
+          });
+        });
+      });
+      const n = keys.size;
+      const word = currentLang === 'es' ? `${n} receta${n !== 1 ? 's' : ''}` : `${n} recipe${n !== 1 ? 's' : ''}`;
+      html = `<p class="mp-shop-cat">${word}</p>` +
+        items.map(item => `<div class="mp-shop-item"><input type="checkbox"><span>${item}</span></div>`).join('');
+    }
+    content.innerHTML = html;
+  }
+
+  // ── I18N ──
+  const i18n = {
+    es: {
+      'nav.home': 'Inicio',
+      'nav.dashboard': 'Inicio',
+      'nav.recipes': 'Recetas',
+      'nav.allRecipes': 'Todas las recetas',
+      'phase.1': 'Reboot',
+      'phase.2': 'Burn',
+      'phase.3': 'Maintain',
+      'nav.library': 'Biblioteca',
+      'nav.metabolicReset': 'Reset Metabólico',
+      'nav.nuggets': 'Nuggets',
+      'module1.group': 'Módulo 1 — Comenzando',
+      'module1.courseGuide': 'Guía del curso',
+      'module1.platformNav': 'Tour de la plataforma',
+      'module2.group': 'Módulo 2 — Teoría',
+      'module2.intro': 'Introducción',
+      'module2.lesson2': 'Por qué todos necesitan esto',
+      'module2.lesson3': 'Disglicemia',
+      'module2.lesson4': 'Enfermedades relacionadas',
+      'module2.lesson5': 'Por qué estamos enfermos',
+      'module3.group': 'Módulo 3 — Medición',
+      'module3.intro': 'Introducción',
+      'module3.lesson2': 'Medición de salud metabólica',
+      'module3.glucose': 'Monitor de glucosa',
+      'module3.food': 'Ejemplos de alimentos',
+      'module3.lab': 'Tarjeta de laboratorio',
+      'module4.group': 'Módulo 4 — Plan de Nutrición',
+      'module4.intro': 'Introducción',
+      'module4.lesson2': 'Visión general Reset5',
+      'module4.lesson3': 'Plan de nutrición',
+      'module4.lesson4': 'Fase 1 — Revertir',
+      'module4.lesson5': 'Fase 2 — Quemar',
+      'module4.lesson7': 'Fase 3 — Nutrir',
+      'module4.lesson8': 'Vinagre de manzana',
+      'module5.group': 'Módulo 5 — ¿Qué sigue?',
+      'module5.lesson': '¿Qué sigue?',
+      'home.welcome': 'Bienvenida,',
+      'home.sub': 'Tu bienestar, todo en un solo lugar.',
+      'home.quick1label': 'Recetas',
+      'home.quick1title': '164 recetas bilingües',
+      'home.quick2label': 'Plan de comidas',
+      'home.quick2title': 'Organiza tu semana',
+      'home.quick3label': 'Reset Metabólico',
+      'home.quick3title': '19 lecciones',
+      'home.recentRecipes': 'Recetas recientes',
+      'tab.all': 'Todas',
+      'nav.mealPlan': 'Plan de comidas',
+      'cat.all': 'Todas',
+      'cat.breakfast': 'Desayuno',
+      'cat.lunch': 'Comida',
+      'cat.dinner': 'Cena',
+      'cat.snack': 'Snack',
+      'cat.drink': 'Bebida',
+      'search.placeholder': 'Buscar receta o ingrediente…',
+      'mp.weeklyPlan': 'Plan semanal',
+      'mp.shoppingList': 'Lista de compras',
+    },
+    en: {
+      'nav.home': 'Home',
+      'nav.dashboard': 'Home',
+      'nav.recipes': 'Recipes',
+      'nav.allRecipes': 'All recipes',
+      'phase.1': 'Reboot',
+      'phase.2': 'Burn',
+      'phase.3': 'Maintain',
+      'nav.library': 'Library',
+      'nav.metabolicReset': 'Metabolic Reset',
+      'nav.nuggets': 'Nuggets',
+      'module1.group': 'Module 1 — Getting started',
+      'module1.courseGuide': 'Course guide',
+      'module1.platformNav': 'Platform tour',
+      'module2.group': 'Module 2 — Theory',
+      'module2.intro': 'Introduction',
+      'module2.lesson2': 'Why everyone needs this',
+      'module2.lesson3': 'Dysglycemia',
+      'module2.lesson4': 'Related diseases',
+      'module2.lesson5': 'Why we are sick',
+      'module3.group': 'Module 3 — Measuring',
+      'module3.intro': 'Introduction',
+      'module3.lesson2': 'Measuring metabolic health',
+      'module3.glucose': 'Glucose monitor',
+      'module3.food': 'Food examples',
+      'module3.lab': 'Lab reference card',
+      'module4.group': 'Module 4 — Nutrition Plan',
+      'module4.intro': 'Introduction',
+      'module4.lesson2': 'Reset5 overview',
+      'module4.lesson3': 'Nutrition plan',
+      'module4.lesson4': 'Phase 1 — Reboot',
+      'module4.lesson5': 'Phase 2 — Burn',
+      'module4.lesson7': 'Phase 3 — Nourish',
+      'module4.lesson8': 'Apple cider vinegar',
+      'module5.group': 'Module 5 — What\'s next?',
+      'module5.lesson': 'What comes next',
+      'home.welcome': 'Welcome,',
+      'home.sub': 'Your wellness, all in one place.',
+      'home.quick1label': 'Recipes',
+      'home.quick1title': '164 bilingual recipes',
+      'home.quick2label': 'Meal Plan',
+      'home.quick2title': 'Organize your week',
+      'home.quick3label': 'Metabolic Reset',
+      'home.quick3title': '19 lessons',
+      'home.recentRecipes': 'Recent recipes',
+      'tab.all': 'All',
+      'nav.mealPlan': 'Meal Plan',
+      'cat.all': 'All',
+      'cat.breakfast': 'Breakfast',
+      'cat.lunch': 'Lunch',
+      'cat.dinner': 'Dinner',
+      'cat.snack': 'Snack',
+      'cat.drink': 'Drink',
+      'search.placeholder': 'Search recipe or ingredient…',
+      'mp.weeklyPlan': 'Weekly Plan',
+      'mp.shoppingList': 'Shopping List',
+    }
+  };
+
+  function applyI18n() {
+    const t = i18n[currentLang] || i18n.es;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
+  }
+
+  function setLang(lang, btn) {
     currentLang = lang;
-    document.body.classList.remove('lang-es', 'lang-en');
-    document.body.classList.add(`lang-${lang}`);
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
+    if (btn) btn.classList.add('active');
+    applyI18n();
     renderRecipeGrid();
     renderHomeRecipes();
     applyLangToLesson();
+    _mealPhaseCache = {}; selectedMealRecipes.clear(); currentSearch = '';
+    activePlanSlot = null;
+    const indicator = document.getElementById('mp-slot-indicator');
+    if (indicator) indicator.classList.remove('visible');
+    const dateEl = document.getElementById('home-date');
+    if (dateEl) { const locale = lang === 'es' ? 'es-MX' : 'en-US'; dateEl.textContent = new Date().toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }); }
+    const si = document.getElementById('recipe-search'); if (si) si.value = '';
+    const sc = document.getElementById('search-clear'); if (sc) sc.style.display = 'none';
+    if (document.getElementById('view-mealplan').style.display !== 'none') renderMealPlan();
   }
 
-  // Set default language class on body
-  document.body.classList.add('lang-es');
+  currentLang = (navigator.language || 'es').toLowerCase().startsWith('es') ? 'es' : 'en';
+  document.getElementById(currentLang === 'en' ? 'btn-en' : 'btn-es').classList.add('active');
+  applyI18n();
+  loadMealPlanState();
+
+  // Live date on home
+  (function() {
+    const el = document.getElementById('home-date');
+    if (!el) return;
+    const locale = currentLang === 'es' ? 'es-MX' : 'en-US';
+    el.textContent = new Date().toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  })();
 
   loadRecipes();
 </script>

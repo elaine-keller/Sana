@@ -82,7 +82,8 @@
     ],
     "images": [
       "enchiladas-healthy-de-calabaza.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Frittata de Salmón Ahumado con Espárragos": {
     "name_es": "Frittata de Salmón Ahumado con Espárragos",
@@ -201,7 +202,8 @@
     ],
     "images": [
       "frittata-de-salmon-ahumado-con-esparragos.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Huevos Ahogados en Salsa Roja con Poblano": {
     "name_es": "Huevos Estrellados sobre Verduras",
@@ -306,7 +308,8 @@
     ],
     "images": [
       "huevos-ahogados-en-salsa-roja-con-poblano.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Huevos Estrellados sobre Verduras": {
     "name_es": "Smoothie Completo",
@@ -403,7 +406,8 @@
     ],
     "images": [
       "huevos-estrellados-sobre-verduras.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Smoothie Completo": {
     "name_es": "Huevo Revuelto con Verduras",
@@ -476,7 +480,8 @@
     ],
     "images": [
       "smoothie-completo.jpg"
-    ]
+    ],
+    "category": "drink"
   },
   "Huevo Revuelto con Verduras": {
     "name_es": "Rollitos de Pavo con Verduras",
@@ -557,7 +562,8 @@
     ],
     "images": [
       "huevo-revuelto-con-verduras.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Rollitos de Pavo con Verduras": {
     "name_es": "Sopes de Nopal con Pollo",
@@ -634,7 +640,8 @@
     ],
     "images": [
       "rollitos-de-pavo-con-verduras.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopes de Nopal con Pollo": {
     "name_es": "Enchiladas de Lechuga Rellenas de Pollo",
@@ -723,7 +730,8 @@
     ],
     "images": [
       "sopes-de-nopal-con-pollo.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Carpaccio de Salmón Ahumado": {
     "name_es": "Huevo a la Mexicana con Pavo",
@@ -800,7 +808,8 @@
     ],
     "images": [
       "carpaccio-de-salmon-ahumado.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Huevo a la Mexicana con Pavo": {
     "name_es": "Calabazas a la Mexicana con Pollo o Pavo",
@@ -879,7 +888,8 @@
     ],
     "images": [
       "huevo-a-la-mexicana-con-pavo.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Calabazas a la Mexicana con Pollo o Pavo": {
     "name_es": "Huevos Estrellados con Salsa Roja",
@@ -964,7 +974,8 @@
     ],
     "images": [
       "calabazas-a-la-mexicana-con-pollo-o-pavo.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Huevos Estrellados con Salsa Roja": {
     "name_es": "Omelette Relleno de Verduras",
@@ -1039,7 +1050,8 @@
     ],
     "images": [
       "huevos-estrellados-con-salsa-roja.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Omelette Relleno de Verduras": {
     "name_es": "Huevo sobre Champiñones y Queso de Cabra",
@@ -1145,7 +1157,8 @@
     ],
     "images": [
       "omelette-relleno-de-verduras.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Huevo sobre Champiñones y Queso de Cabra": {
     "name_es": "Toast de Rajas Poblanas con Flor de Calabaza, Panela y Huevo",
@@ -1227,7 +1240,8 @@
     ],
     "images": [
       "huevo-sobre-champinones-y-queso-de-cabra.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Toast de Rajas Poblanas, Flor de Calabaza, Panela y Huevo": {
     "name_es": "Avocado Toast con Salmón Marinado",
@@ -1305,7 +1319,8 @@
     ],
     "images": [
       "toast-de-rajas-poblanas-con-flor-de-calabaza-panela-y-huevo.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Avocado Toast con Salmón Marinado": {
     "name_es": "Toast de Jocoque con Huevos Verdes con Espárragos y Hierbas",
@@ -1409,7 +1424,8 @@
     ],
     "images": [
       "avocado-toast-con-salmon-marinado.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Toast de Jocoque con Huevos Verdes con Espárragos y Hierbas": {
     "name_es": "Toast de Jocoque con Huevos Verdes con Espárragos y Hierbas",
@@ -1513,7 +1529,8 @@
     ],
     "images": [
       "toast-de-jocoque-con-huevos-verdes-con-esparragos-y-hierbas.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Cazuelita de Verduras, Pavo y Feta": {
     "name_es": "Cazuelita de Verduras, Pavo y Feta",
@@ -1599,7 +1616,8 @@
     ],
     "images": [
       "cazuelita-de-verduras-pavo-y-feta.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Enchiladas de Jamaica y Panela con Salsa Morita": {
     "name_es": "Enchiladas de Jamaica y Panela con Salsa Morita",
@@ -1729,7 +1747,8 @@
     ],
     "images": [
       "enchiladas-de-jamaica-y-panela-con-salsa-morita.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Smoothie Ligero": {
     "name_es": "Frappé de Café",
@@ -1798,7 +1817,8 @@
     ],
     "images": [
       "smoothie-ligero.jpg"
-    ]
+    ],
+    "category": "drink"
   },
   "Frappé de Café": {
     "name_es": "Frappé de Café",
@@ -1863,7 +1883,8 @@
     ],
     "images": [
       "frappe-de-cafe.jpg"
-    ]
+    ],
+    "category": "drink"
   },
   "Waffles Altos en Proteína con Queso Cottage": {
     "name_es": "Waffles Altos en Proteína con Queso Cottage",
@@ -1943,7 +1964,8 @@
     ],
     "images": [
       "waffles-altos-en-proteina-con-queso-cottage.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Toast de Hongos con Ricotta": {
     "name_es": "Toast de Hongos con Ricotta",
@@ -2023,7 +2045,8 @@
     ],
     "images": [
       "toast-de-hongos-con-ricotta.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Avena que No Sube la Glucosa (overnight Oats)": {
     "name_es": "Avena que No Sube la Glucosa (overnight Oats)",
@@ -2099,7 +2122,8 @@
     ],
     "images": [
       "avena-que-no-sube-la-glucosa-overnight-oats.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Pan de Semillas sin Harina y sin Lácteos": {
     "name_es": "Pan de Semillas sin Harina y sin Lácteos",
@@ -2196,7 +2220,8 @@
     ],
     "images": [
       "pan-de-semillas-sin-harina-y-sin-lacteos.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Shakshuka": {
     "name_es": "Shakshuka",
@@ -2300,7 +2325,8 @@
     ],
     "images": [
       "shakshuka.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Enchiladas Keto con Salsa de Tomate y Chipotle": {
     "name_es": "Enchiladas Keto con Salsa de Tomate y Chipotle",
@@ -2412,7 +2438,8 @@
     ],
     "images": [
       "enchiladas-keto-con-salsa-de-tomate-y-chipotle.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Waffles o Hot Cakes Keto": {
     "name_es": "Waffles o Hot Cakes Keto",
@@ -2488,7 +2515,8 @@
     ],
     "images": [
       "waffles-o-hot-cakes-keto.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Sopa de Brócoli (o Cualquier Verdura) sin Crema": {
     "name_es": "Sopa de Brócoli (o Cualquier Verdura) sin Crema",
@@ -2557,7 +2585,8 @@
     ],
     "images": [
       "sopa-de-brocoli-o-cualquier-verdura-sin-crema.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Verdura Rallada": {
     "name_es": "Sopa de Verdura Rallada",
@@ -2652,7 +2681,8 @@
     ],
     "images": [
       "sopa-de-verdura-rallada.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Apio con Limón": {
     "name_es": "Sopa de Apio con Limón",
@@ -2727,7 +2757,8 @@
     ],
     "images": [
       "sopa-de-apio-con-limon.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Brócoli Rostizado (con o sin Queso)": {
     "name_es": "Sopa de Brócoli Rostizado (con o sin Queso)",
@@ -2802,7 +2833,8 @@
     ],
     "images": [
       "sopa-de-brocoli-rostizado-con-o-sin-queso.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Gazpacho": {
     "name_es": "Gazpacho",
@@ -2903,7 +2935,8 @@
     ],
     "images": [
       "gazpacho.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa Detox": {
     "name_es": "Sopa Detox",
@@ -2988,7 +3021,8 @@
     ],
     "images": [
       "sopa-detox.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Tortilla con Pollo": {
     "name_es": "Sopa de Tortilla con Pollo",
@@ -3084,7 +3118,8 @@
     ],
     "images": [
       "sopa-de-tortilla-con-pollo.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Sopa de Rajas Poblanas": {
     "name_es": "Sopa de Rajas Poblanas",
@@ -3155,7 +3190,8 @@
     ],
     "images": [
       "sopa-de-rajas-poblanas.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa Verde con Calabaza Verdolaga y Tomate Verde": {
     "name_es": "Sopa Verde con Calabaza Verdolaga y Tomate Verde",
@@ -3232,7 +3268,8 @@
     ],
     "images": [
       "sopa-verde-con-calabaza-verdolaga-y-tomate-verde.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Frijol con Camarón Serrano y Queso (opcional)": {
     "name_es": "Sopa de Frijol con Camarón Serrano y Queso (opcional)",
@@ -3315,7 +3352,8 @@
     ],
     "images": [
       "sopa-de-frijol-con-camaron-serrano-y-queso-opcional.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Sopa de la Milpa con Flor de Calabaza": {
     "name_es": "Sopa de la Milpa con Flor de Calabaza",
@@ -3398,7 +3436,8 @@
     ],
     "images": [
       "sopa-de-la-milpa-con-flor-de-calabaza.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Puchero Verde con Poblano y Cilantro": {
     "name_es": "Puchero Verde con Poblano y Cilantro",
@@ -3483,7 +3522,8 @@
     ],
     "images": [
       "puchero-verde-con-poblano-y-cilantro.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Hongos con Chipotle": {
     "name_es": "Sopa de Hongos con Chipotle",
@@ -3572,7 +3612,8 @@
     ],
     "images": [
       "sopa-de-hongos-con-chipotle.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa Fría de Palmito con Almendra Tostada": {
     "name_es": "Sopa Fría de Palmito con Almendra Tostada",
@@ -3660,7 +3701,8 @@
     ],
     "images": [
       "sopa-fria-de-palmito-con-almendra-tostada.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Espárragos con Calabaza": {
     "name_es": "Sopa de Espárragos con Calabaza",
@@ -3741,7 +3783,8 @@
     ],
     "images": [
       "sopa-de-esparragos-con-calabaza.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Zanahoria con Jengibre": {
     "name_es": "Sopa de Zanahoria con Jengibre",
@@ -3844,7 +3887,8 @@
     ],
     "images": [
       "sopa-de-zanahoria-con-jengibre.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Sopa de Alcachofa y Poro": {
     "name_es": "Sopa de Alcachofa y Poro",
@@ -3943,7 +3987,8 @@
     ],
     "images": [
       "sopa-de-alcachofa-y-poro.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sopa de Nopalitos": {
     "name_es": "Sopa de Nopalitos",
@@ -4026,7 +4071,8 @@
     ],
     "images": [
       "sopa-de-nopalitos.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Chicharrón de Pollo sin Aceite": {
     "name_es": "Pollo Marinado en Yogurt",
@@ -4116,7 +4162,8 @@
     ],
     "images": [
       "chicharron-de-pollo-sin-aceite.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pollo Marinado en Yogurt": {
     "name_es": "Pollo al Orégano, Mostaza y Limón",
@@ -4199,7 +4246,8 @@
     ],
     "images": [
       "pollo-marinado-en-yogurt.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pollo al Orégano, Mostaza y Limón": {
     "name_es": "Pollo a la Mostaza",
@@ -4284,7 +4332,8 @@
     ],
     "images": [
       "pollo-al-oregano-mostaza-y-limon.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pollo a la Mostaza": {
     "name_es": "Pollo al Romero sobre Papas al Horno",
@@ -4380,7 +4429,8 @@
     ],
     "images": [
       "pollo-a-la-mostaza.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Pollo al Romero sobre Papas al Horno": {
     "name_es": "Brochetas de Pollo con Salsa de Cilantro y Aguacate",
@@ -4497,7 +4547,8 @@
     ],
     "images": [
       "pollo-al-romero-sobre-papas-al-horno.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Brochetas de Pollo con Salsa de Cilantro y Aguacate": {
     "name_es": "Pollo o Pescado Pibil con Cebollita Encurtida",
@@ -4583,7 +4634,8 @@
     ],
     "images": [
       "brochetas-de-pollo-con-salsa-de-cilantro-y-aguacate.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salmón con Mostaza y Tajín": {
     "name_es": "Salmón con Mostaza, Miel y Chipotle",
@@ -4679,7 +4731,8 @@
     ],
     "images": [
       "salmon-con-mostaza-y-tajin.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salmón con Soya, Jengibre y Limón": {
     "name_es": "Salmón con Za'atar sobre Orzo con Calabacita y Espárragos",
@@ -4777,7 +4830,8 @@
     ],
     "images": [
       "salmon-con-soya-jengibre-y-limon.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Salmón con Salsa de Pimienta Verde": {
     "name_es": "Salmón con Eneldo y Limón",
@@ -4866,7 +4920,8 @@
     ],
     "images": [
       "salmon-con-salsa-de-pimienta-verde.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salmón con Mostaza, Miel y Chipotle": {
     "name_es": "Filete con Romero, Balsámico y Mostaza",
@@ -4960,7 +5015,8 @@
     ],
     "images": [
       "salmon-con-mostaza-miel-y-chipotle.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salmón con Za'atar sobre Orzo con Calabacita y Espárragos": {
     "name_es": "Ceviche de Cecina",
@@ -5053,7 +5109,8 @@
     ],
     "images": [
       "salmon-con-za-atar-sobre-orzo-con-calabacita-y-esparragos.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salmón con Eneldo y Limón": {
     "name_es": "Salpicón de Res",
@@ -5138,7 +5195,8 @@
     ],
     "images": [
       "salmon-con-eneldo-y-limon.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Filete con Romero, Balsámico y Mostaza": {
     "name_es": "Filete con Romero, Balsámico y Mostaza",
@@ -5232,7 +5290,8 @@
     ],
     "images": [
       "filete-con-romero-balsamico-y-mostaza.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ceviche de Cecina": {
     "name_es": "Ceviche de Cecina",
@@ -5325,7 +5384,8 @@
     ],
     "images": [
       "ceviche-de-cecina.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salpicón de Res": {
     "name_es": "Bowls de Rib Eye, Pollo o Salmón Teriyaki",
@@ -5425,7 +5485,8 @@
     ],
     "images": [
       "salpicon-de-res.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Arrachera con Salsa de Jitomate, Aguacate y Hierbas": {
     "name_es": "Pescado a la Parrilla con Salsa de Alcaparra y Perejil",
@@ -5510,7 +5571,8 @@
     ],
     "images": [
       "arrachera-con-salsa-de-jitomate-aguacate-y-hierbas.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Bowls de Rib Eye, Pollo o Salmón Teriyaki": {
     "name_es": "Pescado a la Parrilla con Hierbas sobre Jitomate",
@@ -5605,7 +5667,8 @@
     ],
     "images": [
       "bowls-de-rib-eye-pollo-o-salmon-teriyaki.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pescado a la Parrilla con Salsa de Alcaparra y Perejil": {
     "name_es": "Pescado al Cilantro",
@@ -5720,7 +5783,8 @@
     ],
     "images": [
       "pescado-a-la-parrilla-con-salsa-de-alcaparra-y-perejil.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pescado a la Parrilla con Hierbas sobre Jitomate": {
     "name_es": "Pescado a la Parrilla con Hierbas sobre Jitomate",
@@ -5815,7 +5879,8 @@
     ],
     "images": [
       "pescado-a-la-parrilla-con-hierbas-sobre-jitomate.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pescado al Cilantro": {
     "name_es": "Pescado al Cilantro",
@@ -5930,7 +5995,8 @@
     ],
     "images": [
       "pescado-al-cilantro.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salpicón de Pescado Oriental con Champiñones y Espárragos": {
     "name_es": "Salpicón de Pescado con Aguacate y Serrano",
@@ -6015,7 +6081,8 @@
     ],
     "images": [
       "salpicon-de-pescado-oriental-con-champinones-y-esparragos.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salpicón de Pescado con Aguacate y Serrano": {
     "name_es": "Camarones a la Parrilla con Chile Guajillo y Limón",
@@ -6102,7 +6169,8 @@
     ],
     "images": [
       "salpicon-de-pescado-con-aguacate-y-serrano.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Camarones a la Parrilla con Chile Guajillo y Limón": {
     "name_es": "Tacos de Camarón con Poro, Chilito, Cilantro y Limon",
@@ -6198,7 +6266,8 @@
     ],
     "images": [
       "camarones-a-la-parrilla-con-chile-guajillo-y-limon.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Tacos de Camarón con Poro, Chilito, Cilantro y Limón": {
     "name_es": "Tacos de Camarón con Chipotle (sin Frijoles)",
@@ -6286,7 +6355,8 @@
     ],
     "images": [
       "tacos-de-camaron-con-poro-chilito-cilantro-y-limon.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Tacos de Camarón con Chipotle (sin Frijoles)": {
     "name_es": "Carnitas de Atún sin Aceite",
@@ -6389,7 +6459,8 @@
     ],
     "images": [
       "tacos-de-camaron-con-chipotle-sin-frijoles.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Carnitas de Atún sin Aceite": {
     "name_es": "Ceviche de Atún Oriental",
@@ -6490,7 +6561,8 @@
     ],
     "images": [
       "carnitas-de-atun-sin-aceite.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ceviche de Atún Oriental": {
     "name_es": "Ceviche de Atún Oriental",
@@ -6591,7 +6663,8 @@
     ],
     "images": [
       "ceviche-de-atun-oriental.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Atún Sellado con Everything But The Bagel": {
     "name_es": "Atún Sellado con Everything But The Bagel",
@@ -6701,7 +6774,8 @@
     ],
     "images": [
       "atun-sellado-con-everything-but-the-bagel.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Tacos Vietnamitas de Lechuga con Salsa de Cacahuate": {
     "name_es": "Tacos Vietnamitas de Lechuga con Salsa de Cacahuate",
@@ -6825,7 +6899,8 @@
     ],
     "images": [
       "tacos-vietnamitas-de-lechuga-con-salsa-de-cacahuate.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Tacos Chinos de Pollo en Hojas de Lechuga": {
     "name_es": "Tacos Chinos de Pollo en Hojas de Lechuga",
@@ -6936,7 +7011,8 @@
     ],
     "images": [
       "tacos-chinos-de-pollo-en-hojas-de-lechuga.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Noodles de Calabaza con Bolognesa": {
     "name_es": "Noodles de Calabaza con Bolognesa",
@@ -7026,7 +7102,8 @@
     ],
     "images": [
       "noodles-de-calabaza-con-bolognesa.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pollo a las Hierbas sobre Zucchini Noodles con Pesto": {
     "name_es": "Pollo a las Hierbas sobre Zucchini Noodles con Pesto",
@@ -7158,7 +7235,8 @@
     ],
     "images": [
       "pollo-a-las-hierbas-sobre-zucchini-noodles-con-pesto.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Pizzas de Portobello con Aguacate y Salmón": {
     "name_es": "Pizzas de Portobello con Aguacate y Salmón",
@@ -7235,7 +7313,8 @@
     ],
     "images": [
       "pizzas-de-portobello-con-aguacate-y-salmon.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Toronja con Aguacate, Pepita y Vinagreta de Mostaza": {
     "name_es": "Ensalada de Toronja con Aguacate, Pepita y Vinagreta de Mostaza",
@@ -7330,7 +7409,8 @@
     ],
     "images": [
       "ensalada-de-toronja-con-aguacate-pepita-y-vinagreta-de-mostaza.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Berros": {
     "name_es": "Ensalada de Berros",
@@ -7421,7 +7501,8 @@
     ],
     "images": [
       "ensalada-de-berros.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Pepino y Edamame": {
     "name_es": "Ensalada de Pepino y Edamame",
@@ -7518,7 +7599,8 @@
     ],
     "images": [
       "ensalada-de-pepino-y-edamame.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Atún Bonito con Garbanzo y Aguacate": {
     "name_es": "Ensalada de Atún Bonito con Garbanzo y Aguacate",
@@ -7607,7 +7689,8 @@
     ],
     "images": [
       "ensalada-de-atun-bonito-con-garbanzo-y-aguacate.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Ensalada de Verdolagas y Nopales": {
     "name_es": "Ensalada de Verdolagas y Nopales",
@@ -7712,7 +7795,8 @@
     ],
     "images": [
       "ensalada-de-verdolagas-y-nopales.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Carpaccio de Jitomate con Queso Oaxaca": {
     "name_es": "Carpaccio de Jitomate con Queso Oaxaca",
@@ -7814,7 +7898,8 @@
     ],
     "images": [
       "carpaccio-de-jitomate-con-queso-oaxaca.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Listones de Calabacita y Burrata": {
     "name_es": "Ensalada de Listones de Calabacita y Burrata",
@@ -7894,7 +7979,8 @@
     ],
     "images": [
       "ensalada-de-listones-de-calabacita-y-burrata.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada Israelí con Vinagreta de Za'atar": {
     "name_es": "Ensalada Israelí con Vinagreta de Za'atar",
@@ -7988,7 +8074,8 @@
     ],
     "images": [
       "ensalada-israeli-con-vinagreta-de-za-atar.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Lechugas al Grill con Vinagreta de Corazones": {
     "name_es": "Lechugas al Grill con Vinagreta de Corazones",
@@ -8087,7 +8174,8 @@
     ],
     "images": [
       "lechugas-al-grill-con-vinagreta-de-corazones.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Carpaccio de Portobello con Arúgula y Nuez de la India": {
     "name_es": "Carpaccio de Portobello con Arúgula y Nuez de la India",
@@ -8184,7 +8272,8 @@
     ],
     "images": [
       "carpaccio-de-portobello-con-arugula-y-nuez-de-la-india.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Elotitos con Jitomate": {
     "name_es": "Ensalada de Elotitos con Jitomate",
@@ -8277,7 +8366,8 @@
     ],
     "images": [
       "ensalada-de-elotitos-con-jitomate.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Ensalada Thai sin Cacahuate": {
     "name_es": "Ensalada Thai sin Cacahuate",
@@ -8370,7 +8460,8 @@
     ],
     "images": [
       "ensalada-thai-sin-cacahuate.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Apio con Parmesano": {
     "name_es": "Ensalada de Apio con Parmesano",
@@ -8440,7 +8531,8 @@
     ],
     "images": [
       "ensalada-de-apio-con-parmesano.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada Mixta": {
     "name_es": "Ensalada Mixta",
@@ -8535,7 +8627,8 @@
     ],
     "images": [
       "ensalada-mixta.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada Thai Crunchy": {
     "name_es": "Ensalada Thai Crunchy",
@@ -8648,7 +8741,8 @@
     ],
     "images": [
       "ensalada-thai-crunchy.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada Otoñal": {
     "name_es": "Ensalada Otoñal",
@@ -8772,7 +8866,8 @@
     ],
     "images": [
       "ensalada-otonal.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Ensalada de Arúgula con Pera, Parmesano y Ajonjolí Garapiñado": {
     "name_es": "Ensalada de Arugula con Pera, Parmesano y Ajonjoli Garapiñado",
@@ -8882,7 +8977,8 @@
     ],
     "images": [
       "ensalada-de-arugula-con-pera-parmesano-y-ajonjoli-garapinado.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Garbanzo con Alcachofa, Aceituna y Queso Feta": {
     "name_es": "Ensalada de Garbanzo con Alcachofa, Aceituna y Queso Feta",
@@ -8980,7 +9076,8 @@
     ],
     "images": [
       "ensalada-de-garbanzo-con-alcachofa-aceituna-y-queso-feta.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Ensalada de Pepino con Queso Feta y Hierbas Frescas": {
     "name_es": "Ensalada de Pepino con Queso Feta y Hierbas Frescas",
@@ -9062,7 +9159,8 @@
     ],
     "images": [
       "ensalada-de-pepino-con-queso-feta-y-hierbas-frescas.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Palmitos con Arúgula, Jitomate Cherry y Aguacate": {
     "name_es": "Ensalada de Pepino y Edamame",
@@ -9159,7 +9257,8 @@
     ],
     "images": [
       "ensalada-de-palmitos-con-arugula-jitomate-cherry-y-aguacate.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Atún Sellado con Mango, Aguacate y Edamame": {
     "name_es": "Ensalada de Palmitos con Arugula, Jitomate Cherry y Aguacate",
@@ -9252,7 +9351,8 @@
     ],
     "images": [
       "ensalada-de-atun-sellado-con-mango-aguacate-y-edamame.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Tabule a Nuestro Estilo": {
     "name_es": "Tabule a Nuestro Estilo",
@@ -9361,7 +9461,8 @@
     ],
     "images": [
       "tabule-a-nuestro-estilo.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Carpaccio de Aguacate con Ensalada de Hierbas": {
     "name_es": "Carpaccio de Aguacate con Ensalada de Hierbas",
@@ -9480,7 +9581,8 @@
     ],
     "images": [
       "carpaccio-de-aguacate-con-ensalada-de-hierbas.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Betabel con Aderezo de Tahini y Eneldo": {
     "name_es": "Tabule a Nuestro Estilo",
@@ -9589,7 +9691,8 @@
     ],
     "images": [
       "ensalada-de-betabel-con-aderezo-de-tahini-y-eneldo.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada de Jitomate con Atún Bonito": {
     "name_es": "Tabule a Nuestro Estilo",
@@ -9668,7 +9771,8 @@
     ],
     "images": [
       "ensalada-de-jitomate-con-atun-bonito.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ensalada Oriental de Pollo, Edamame, Pepino y Zanahoria": {
     "name_es": "Carpaccio de Aguacate con Ensalada de Hierbas",
@@ -9787,7 +9891,8 @@
     ],
     "images": [
       "ensalada-oriental-de-pollo-edamame-pepino-y-zanahoria.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Esquites de Coliflor": {
     "name_es": "Ensalada de Jitomate con Atún Bonito",
@@ -9880,7 +9985,8 @@
     ],
     "images": [
       "esquites-de-coliflor.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Portobellos al Grill Rellenos de Alcachofa y Perejil": {
     "name_es": "Ensalada Oriental de Pollo, Edamame, Pepino y Zanahoria",
@@ -9981,7 +10087,8 @@
     ],
     "images": [
       "portobellos-al-grill-rellenos-de-alcachofa-y-perejil.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Aguachile de Palmito y Champiñón": {
     "name_es": "Esquites de Coliflor",
@@ -10053,7 +10160,8 @@
     ],
     "images": [
       "aguachile-de-palmito-y-champinon.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Tiradito de Camarón con Salsa Tatemada": {
     "name_es": "Aguachile de Palmito y Champiñón",
@@ -10145,7 +10253,8 @@
     ],
     "images": [
       "tiradito-de-camaron-con-salsa-tatemada.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Aguachile Rojo de Camarón": {
     "name_es": "Carpaccio de Salmón Ahumado",
@@ -10234,7 +10343,8 @@
     ],
     "images": [
       "aguachile-rojo-de-camaron.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ceviche de Palmito y Corazones de Alcachofa": {
     "name_es": "Tiradito de Camarón con Salsa Tatemada",
@@ -10335,7 +10445,8 @@
     ],
     "images": [
       "ceviche-de-palmito-y-corazones-de-alcachofa.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Cogollos con Bonito y Parmesano": {
     "name_es": "Aguachile Rojo de Camarón",
@@ -10434,7 +10545,8 @@
     ],
     "images": [
       "cogollos-con-bonito-y-parmesano.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Aguachile Verde de Camarón": {
     "name_es": "Cogollos con Bonito y Parmesano",
@@ -10528,7 +10640,8 @@
     ],
     "images": [
       "aguachile-verde-de-camaron.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ceviche de Palmito con Manzana": {
     "name_es": "Tacos Vietnamitas de Lechuga con Salsa de Cacahuate",
@@ -10653,7 +10766,8 @@
     ],
     "images": [
       "ceviche-de-palmito-con-manzana.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ceviche Peruano con Tomate y Mango": {
     "name_es": "Ceviche Peruano con Tomate y Mango",
@@ -10735,7 +10849,8 @@
     ],
     "images": [
       "ceviche-peruano-con-tomate-y-mango.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ceviche de Pescado con Pepino y Habanero": {
     "name_es": "Ceviche de Pescado con Pepino y Habanero",
@@ -10816,7 +10931,8 @@
     ],
     "images": [
       "ceviche-de-pescado-con-pepino-y-habanero.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Ceviche de Camarón Estilo Nayarit (tostadas)": {
     "name_es": "Ceviche de Palmito con Manzana",
@@ -10911,7 +11027,8 @@
     ],
     "images": [
       "ceviche-de-camaron-estilo-nayarit-tostadas.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Poke Bowl de Atún": {
     "name_es": "Ceviche Peruano con Tomate y Mango",
@@ -10993,7 +11110,8 @@
     ],
     "images": [
       "poke-bowl-de-atun.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Rollitos de Atún Rellenos de Palmito y Aguacate": {
     "name_es": "Ceviche de Pescado con Pepino y Habanero",
@@ -11074,7 +11192,8 @@
     ],
     "images": [
       "rollitos-de-atun-rellenos-de-palmito-y-aguacate.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Tostadas de Salpicón de Trucha Ahumada": {
     "name_es": "Ceviche de Camarón Estilo Nayarit (tostadas)",
@@ -11173,7 +11292,8 @@
     ],
     "images": [
       "tostadas-de-salpicon-de-trucha-ahumada.jpg"
-    ]
+    ],
+    "category": "breakfast"
   },
   "Coliflor Teriyaki": {
     "name_es": "Coliflor Teriyaki",
@@ -11276,7 +11396,8 @@
     ],
     "images": [
       "coliflor-teriyaki.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Yakimeshi de Coliflor con Verduras": {
     "name_es": "Yakimeshi de Coliflor con Verduras",
@@ -11391,7 +11512,8 @@
     ],
     "images": [
       "yakimeshi-de-coliflor-con-verduras.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Verduras al Grill con Burrata": {
     "name_es": "Rollitos de Atún Rellenos de Palmito y Aguacate",
@@ -11487,7 +11609,8 @@
     ],
     "images": [
       "verduras-al-grill-con-burrata.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Portobello Relleno de Jitomate, Pavo y Queso de Cabra": {
     "name_es": "Tostadas de Salpicon de Trucha Ahumada",
@@ -11569,7 +11692,8 @@
     ],
     "images": [
       "portobello-relleno-de-jitomate-pavo-y-queso-de-cabra.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Bowl de Yogurt Griego con Berries o Cerezas y Nueces": {
     "name_es": "Coliflor Teriyaki",
@@ -11672,7 +11796,8 @@
     ],
     "images": [
       "bowl-de-yogurt-griego-con-berries-o-cerezas-y-nueces.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Tártara de Hongos con Mantequilla de Soya, Ajo y Limón": {
     "name_es": "Yakimeshi de Coliflor con Verduras",
@@ -11787,7 +11912,8 @@
     ],
     "images": [
       "tartara-de-hongos-con-mantequilla-de-soya-ajo-y-limon.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Bowl de Salmón Teriyaki": {
     "name_es": "Verduras al Grill con Burrata",
@@ -11875,7 +12001,8 @@
     ],
     "images": [
       "bowl-de-salmon-teriyaki.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sándwich de Pavo Griego": {
     "name_es": "Portobello Relleno de Jitomate, Pavo y Queso de Cabra",
@@ -11957,7 +12084,8 @@
     ],
     "images": [
       "sandwich-de-pavo-griego.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Sándwich de Salmón Marinado": {
     "name_es": "Bowl de Yogurt Griego con Berries o Cerezas y Nueces",
@@ -12023,7 +12151,8 @@
     ],
     "images": [
       "sandwich-de-salmon-marinado.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Noodles Zucchini/palmito con Jitomate Rostizado y Queso de Cabra": {
     "name_es": "Noodles de Zucchini/palmito con Jitomate Rostizado y Queso de Cabra",
@@ -12109,7 +12238,8 @@
     ],
     "images": [
       "noodles-de-zucchini-palmito-con-jitomate-rostizado-y-queso-de-cabra.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Quinoa con Espárragos Calabacitas y Hierbas": {
     "name_es": "Quinoa con Espárragos Calabacitas y Hierbas",
@@ -12211,7 +12341,8 @@
     ],
     "images": [
       "quinoa-con-esparragos-calabacitas-y-hierbas.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Risotto Poblano con Bits de Coliflor (pollo Opcional)": {
     "name_es": "Risotto Poblano con Bits de Coliflor (pollo Opcional)",
@@ -12303,7 +12434,8 @@
     ],
     "images": [
       "risotto-poblano-con-bits-de-coliflor-pollo-opcional.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Verduras Asadas": {
     "name_es": "Sándwich de Pavo Griego",
@@ -12377,7 +12509,8 @@
     ],
     "images": [
       "verduras-asadas.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Arroz Blanco": {
     "name_es": "Sándwich de Salmón Marinado",
@@ -12459,7 +12592,8 @@
     ],
     "images": [
       "arroz-blanco.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Espárragos con Ajonjolí y Ponzu": {
     "name_es": "Noodles de Zucchini/palmito con Jitomate Rostizado y Queso de Cabra",
@@ -12545,7 +12679,8 @@
     ],
     "images": [
       "esparragos-con-ajonjoli-y-ponzu.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Coliflor Rostizada con Pistache, Dátil y Tahini": {
     "name_es": "Coliflor Rostizada con Pistache, Dátil y Tahini",
@@ -12652,7 +12787,8 @@
     ],
     "images": [
       "coliflor-rostizada-con-pistache-datil-y-tahini.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Arroz Salvaje con Champiñones": {
     "name_es": "Risotto Poblano con Bits de Coliflor (pollo Opcional)",
@@ -12744,7 +12880,8 @@
     ],
     "images": [
       "arroz-salvaje-con-champinones.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Arroz de Coliflor con Cilantro": {
     "name_es": "Verduras Asadas",
@@ -12823,7 +12960,8 @@
     ],
     "images": [
       "arroz-de-coliflor-con-cilantro.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Camote Rostizado con Romero": {
     "name_es": "Arroz Blanco",
@@ -12903,7 +13041,8 @@
     ],
     "images": [
       "camote-rostizado-con-romero.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Quinoa con Espárragos, Hierbas y Almendra": {
     "name_es": "Espárragos con Ajonjolí y Ponzu",
@@ -12984,7 +13123,8 @@
     ],
     "images": [
       "quinoa-con-esparragos-hierbas-y-almendra.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Lenteja y Arroz Salvaje con Hongos, Feta, Nuez": {
     "name_es": "Ejotes con Almendras",
@@ -13063,7 +13203,8 @@
     ],
     "images": [
       "lenteja-y-arroz-salvaje-con-hongos-feta-nuez.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Papitas Cambray Adobadas": {
     "name_es": "Coliflor Rostizada con Pistache, Dátil y Tahini",
@@ -13170,7 +13311,8 @@
     ],
     "images": [
       "papitas-cambray-adobadas.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Papitas Cambray con Alcachofa, Mostaza, Alcaparras y Romero": {
     "name_es": "Papitas con Orégano",
@@ -13246,7 +13388,8 @@
     ],
     "images": [
       "papitas-cambray-con-alcachofa-mostaza-alcaparras-y-romero.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Arroz de Coliflor": {
     "name_es": "Arroz Salvaje con Champiñones",
@@ -13340,7 +13483,8 @@
     ],
     "images": [
       "arroz-de-coliflor.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Frijoles de la Olla Estilo \"mesa Sana\"": {
     "name_es": "Arroz de Coliflor con Cilantro",
@@ -13420,7 +13564,8 @@
     ],
     "images": [
       "frijoles-de-la-olla-estilo-mesa-sana.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Quinoa": {
     "name_es": "Camote Rostizado con Romero",
@@ -13495,7 +13640,8 @@
     ],
     "images": [
       "quinoa.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Tzatziki sin Grasa": {
     "name_es": "Quinoa con Espárragos, Hierbas y Almendra",
@@ -13597,7 +13743,8 @@
     ],
     "images": [
       "tzatziki-sin-grasa.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Berenjenas con Balsámico Mostaza, Tomillo y Miel": {
     "name_es": "Berenjenas con Balsámico Mostaza, Tomillo y Miel",
@@ -13682,7 +13829,8 @@
     ],
     "images": [
       "berenjenas-con-balsamico-mostaza-tomillo-y-miel.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Muffins de Zanahoria Saludables": {
     "name_es": "Muffins de Zanahoria Saludables",
@@ -13772,7 +13920,8 @@
     ],
     "images": [
       "muffins-de-zanahoria-saludables.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Panqué de Chocolate y Plátano": {
     "name_es": "Arroz de Coliflor",
@@ -13847,7 +13996,8 @@
     ],
     "images": [
       "panque-de-chocolate-y-platano.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Frappé de Pepino con Tajín": {
     "name_es": "Frijoles de la Olla Estilo \"mesa Sana\"",
@@ -13924,7 +14074,8 @@
     ],
     "images": [
       "frappe-de-pepino-con-tajin.jpg"
-    ]
+    ],
+    "category": "drink"
   },
   "Jamaica Snack": {
     "name_es": "Quinoa",
@@ -13988,7 +14139,8 @@
     ],
     "images": [
       "jamaica-snack.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Paletas de Mango con Yogurt": {
     "name_es": "Tzatziki sin Grasa",
@@ -14066,7 +14218,8 @@
     ],
     "images": [
       "paletas-de-mango-con-yogurt.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Bark de Yoghurt": {
     "name_es": "Berenjenas con Balsámico Mostaza, Tomillo y Miel",
@@ -14151,7 +14304,8 @@
     ],
     "images": [
       "bark-de-yoghurt.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Gelatina de Yoghurt con Berries": {
     "name_es": "Frappé de Café",
@@ -14220,7 +14374,8 @@
     ],
     "images": [
       "gelatina-de-yoghurt-con-berries.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Centros de Dona Keto Sabor Churro": {
     "name_es": "Muffins de Zanahoria Saludables",
@@ -14310,7 +14465,8 @@
     ],
     "images": [
       "centros-de-dona-keto-sabor-churro.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Banana Bread sin Azúcar": {
     "name_es": "Banana Bread sin Azúcar",
@@ -14414,7 +14570,8 @@
     ],
     "images": [
       "banana-bread-sin-azucar.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Carpaccio de Manzana": {
     "name_es": "Carpaccio de Manzana",
@@ -14480,7 +14637,8 @@
     ],
     "images": [
       "carpaccio-de-manzana.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Pollo o Pescado Pibil con Cebollita Encurtida": {
     "name_es": "Pollo o Pescado Pibil con Cebollita Encurtida",
@@ -14566,7 +14724,8 @@
     ],
     "images": [
       "pollo-o-pescado-pibil-con-cebollita-encurtida.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Salmón al Chipotle con Ensalada de Lenteja": {
     "name_es": "Salmón al Chipotle con Ensalada de Lenteja",
@@ -14668,7 +14827,8 @@
     ],
     "images": [
       "salmon-al-chipotle-con-ensalada-de-lenteja.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Ejotes con Almendras": {
     "name_es": "Ejotes con Almendras",
@@ -14747,7 +14907,8 @@
     ],
     "images": [
       "ejotes-con-almendras.jpg"
-    ]
+    ],
+    "category": "dinner"
   },
   "Papitas con Orégano": {
     "name_es": "Papitas con Orégano",
@@ -14823,7 +14984,8 @@
     ],
     "images": [
       "papitas-con-oregano.jpg"
-    ]
+    ],
+    "category": "lunch"
   },
   "Muffins de Blueberry sin Harina": {
     "name_es": "Muffins de Blueberry sin Harina",
@@ -14932,7 +15094,8 @@
     ],
     "images": [
       "muffins-de-blueberry-sin-harina.jpg"
-    ]
+    ],
+    "category": "snack"
   },
   "Sorbete de Fresa": {
     "name_es": "Sorbete de Fresa",
@@ -15002,6 +15165,7 @@
     ],
     "images": [
       "sorbete-de-fresa.jpg"
-    ]
+    ],
+    "category": "snack"
   }
 }
