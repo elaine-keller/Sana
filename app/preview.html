@@ -522,6 +522,9 @@
 
   </div><!-- /.content -->
 
+<!-- Pre-load recipe data so it works from file:// in any browser (Chrome blocks fetch() from file://) -->
+<script src="../data/recipes_data.js"></script>
+
 <script>
   // Use local paths when opened from filesystem, GitHub when served remotely
   const isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
@@ -574,6 +577,14 @@
 
   // ── LOAD DATA ──
   async function loadRecipes() {
+    // Use preloaded data if available (works from file:// in Chrome, Safari, Firefox)
+    if (window.SANA_RECIPES) {
+      recipes = window.SANA_RECIPES;
+      renderHomeRecipes();
+      renderRecipeGrid();
+      return;
+    }
+    // Fallback: fetch (works when served via HTTP)
     try {
       const r = await fetch(`${GITHUB}/data/recipes_bilingual.json`);
       recipes = await r.json();
