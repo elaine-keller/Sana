@@ -373,10 +373,13 @@
     #lesson-content .lang-en { display: none; }
     #lesson-content .lang-es { display: block; }
 
-    /* ── AUTH SCREEN ── */
-    #auth-screen { position: fixed; inset: 0; background: #fff; z-index: 999; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    /* ── AUTH MODAL ── */
+    #auth-screen { position: fixed; inset: 0; z-index: 999; display: flex; align-items: center; justify-content: center; padding: 2rem; }
     #auth-screen.hidden { display: none; }
-    .auth-card { width: 100%; max-width: 400px; }
+    .auth-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.35); backdrop-filter: blur(3px); }
+    .auth-card { position: relative; width: 100%; max-width: 400px; background: #fff; border-radius: 16px; padding: 2.5rem 2.25rem 2rem; box-shadow: 0 24px 64px rgba(0,0,0,0.18); }
+    .auth-close { position: absolute; top: 1rem; right: 1.1rem; background: none; border: none; font-size: 22px; color: #AAAAAA; cursor: pointer; line-height: 1; padding: 2px 6px; transition: color 0.15s; }
+    .auth-close:hover { color: #111; }
     .auth-logo { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: #111; margin-bottom: 4px; }
     .auth-logo em { font-style: italic; color: var(--green); }
     .auth-tagline { font-size: 13px; color: #888; margin-bottom: 2.5rem; }
@@ -403,11 +406,13 @@
 </head>
 <body>
 
-  <!-- ── AUTH SCREEN ── -->
-  <div id="auth-screen">
+  <!-- ── AUTH MODAL ── -->
+  <div id="auth-screen" class="hidden">
+    <div class="auth-backdrop" onclick="hideAuthModal()"></div>
     <div class="auth-card">
+      <button class="auth-close" onclick="hideAuthModal()">×</button>
       <div class="auth-logo">S<em>ana</em></div>
-      <p class="auth-tagline">Your personal wellness space</p>
+      <p class="auth-tagline">Save your week plan &amp; notes</p>
       <div class="auth-tabs">
         <button class="auth-tab active" id="auth-tab-login" onclick="switchAuthTab('login')">Sign in</button>
         <button class="auth-tab" id="auth-tab-signup" onclick="switchAuthTab('signup')">Create account</button>
@@ -459,6 +464,7 @@
         <button class="lang-btn" id="btn-en" onclick="setLang('en', this)">EN</button>
         <button class="lang-btn" id="btn-es" onclick="setLang('es', this)">ES</button>
       </div>
+      <button class="signout-btn" id="topnav-signin" onclick="showAuthModal('login')" style="display:block;">Sign in</button>
       <div class="topnav-user" id="topnav-user" style="display:none;">
         <div class="user-avatar" id="user-avatar" title="Account">?</div>
         <button class="signout-btn" onclick="doSignOut()">Sign out</button>
@@ -787,22 +793,25 @@
   let currentUser = null;
 
   // ── AUTH HELPERS ──
-  function showAuthScreen() {
+  function showAuthModal(tab) {
+    switchAuthTab(tab || 'login');
     document.getElementById('auth-screen').classList.remove('hidden');
-    document.getElementById('topnav-user').style.display = 'none';
   }
-  function hideAuthScreen() {
+  function hideAuthModal() {
     document.getElementById('auth-screen').classList.add('hidden');
   }
   function setNavUser(user) {
-    const nav = document.getElementById('topnav-user');
+    const nav    = document.getElementById('topnav-user');
+    const signin = document.getElementById('topnav-signin');
     const avatar = document.getElementById('user-avatar');
     if (user) {
-      nav.style.display = 'flex';
-      avatar.textContent = (user.email || '?')[0].toUpperCase();
-      avatar.title = user.email;
+      nav.style.display    = 'flex';
+      signin.style.display = 'none';
+      avatar.textContent   = (user.email || '?')[0].toUpperCase();
+      avatar.title         = user.email;
     } else {
-      nav.style.display = 'none';
+      nav.style.display    = 'none';
+      signin.style.display = 'block';
     }
   }
   function switchAuthTab(tab) {
@@ -810,15 +819,15 @@
     document.getElementById('auth-signup-form').style.display = tab === 'signup' ? 'block' : 'none';
     document.getElementById('auth-tab-login').classList.toggle('active',  tab === 'login');
     document.getElementById('auth-tab-signup').classList.toggle('active', tab === 'signup');
-    document.getElementById('login-error').textContent  = '';
-    document.getElementById('signup-error').textContent = '';
+    document.getElementById('login-error').textContent    = '';
+    document.getElementById('signup-error').textContent   = '';
     document.getElementById('signup-success').textContent = '';
   }
   async function doLogin() {
-    const email    = document.getElementById('login-email').value.trim();
+    const email  = document.getElementById('login-email').value.trim();
     const password = document.getElementById('login-password').value;
-    const btn      = document.getElementById('login-btn');
-    const errEl    = document.getElementById('login-error');
+    const btn    = document.getElementById('login-btn');
+    const errEl  = document.getElementById('login-error');
     errEl.textContent = '';
     btn.disabled = true; btn.textContent = 'Signing in…';
     const { data, error } = await _supa.auth.signInWithPassword({ email, password });
@@ -846,30 +855,29 @@
     await _supa.auth.signOut();
     currentUser = null;
     setNavUser(null);
-    showAuthScreen();
   }
   function onAuthSuccess(user) {
     currentUser = user;
     setNavUser(user);
-    hideAuthScreen();
+    hideAuthModal();
+  }
+  // Returns true if user is logged in, otherwise shows auth modal and returns false
+  function requireAuth() {
+    if (currentUser) return true;
+    showAuthModal('signup');
+    return false;
   }
 
-  // Check for existing session on load
+  // Restore session silently on load — never blocks the app
   _supa.auth.getSession().then(({ data }) => {
-    if (data.session && data.session.user) {
-      onAuthSuccess(data.session.user);
-    } else {
-      showAuthScreen();
-    }
+    if (data.session && data.session.user) onAuthSuccess(data.session.user);
+    else setNavUser(null);
   });
 
-  // Listen for auth state changes (e.g. email confirmation)
+  // Listen for auth state changes
   _supa.auth.onAuthStateChange((event, session) => {
-    if (session && session.user) {
-      onAuthSuccess(session.user);
-    } else if (event === 'SIGNED_OUT') {
-      showAuthScreen();
-    }
+    if (session && session.user) onAuthSuccess(session.user);
+    else if (event === 'SIGNED_OUT') { currentUser = null; setNavUser(null); }
   });
 
   // Use local paths when opened from filesystem, GitHub when served remotely
@@ -914,6 +922,7 @@
   function dropRecipeOnDay(e, day) {
     e.preventDefault();
     e.currentTarget.classList.remove('drag-over');
+    if (!requireAuth()) return;
     const key = _dragKey || e.dataTransfer.getData('text/plain');
     if (!key || !recipes[key]) return;
     weekPlan[day].push(key);
@@ -1576,6 +1585,7 @@ function filterCategory(cat, btn) {
   }
 
   function setActivePlanSlot(day) {
+    if (!requireAuth()) return;
     if (activePlanSlot === day) {
       clearActivePlanSlot();
       return;
