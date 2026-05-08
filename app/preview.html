@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sana — Preview</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     :root {
       --color-text-primary: #111111;
@@ -372,9 +373,74 @@
     #lesson-content .lang-en { display: none; }
     #lesson-content .lang-es { display: block; }
 
+    /* ── AUTH SCREEN ── */
+    #auth-screen { position: fixed; inset: 0; background: #fff; z-index: 999; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    #auth-screen.hidden { display: none; }
+    .auth-card { width: 100%; max-width: 400px; }
+    .auth-logo { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: #111; margin-bottom: 4px; }
+    .auth-logo em { font-style: italic; color: var(--green); }
+    .auth-tagline { font-size: 13px; color: #888; margin-bottom: 2.5rem; }
+    .auth-tabs { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 1px solid var(--color-border-tertiary); }
+    .auth-tab { background: none; border: none; font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; color: #999; cursor: pointer; padding: 0 0 0.75rem; margin-right: 1.5rem; border-bottom: 2px solid transparent; transition: all 0.15s; }
+    .auth-tab.active { color: #111; border-bottom-color: #111; }
+    .auth-field { margin-bottom: 1rem; }
+    .auth-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 6px; }
+    .auth-input { width: 100%; padding: 11px 14px; border: 1px solid var(--color-border-secondary); border-radius: 10px; font-size: 14px; font-family: 'Lato', sans-serif; color: #111; outline: none; transition: border-color 0.15s; }
+    .auth-input:focus { border-color: var(--green); }
+    .auth-btn { width: 100%; padding: 13px; background: #111; color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; font-family: 'Lato', sans-serif; cursor: pointer; margin-top: 0.5rem; transition: opacity 0.15s; }
+    .auth-btn:hover { opacity: 0.85; }
+    .auth-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .auth-error { font-size: 13px; color: #E53935; margin-top: 0.75rem; min-height: 20px; }
+    .auth-success { font-size: 13px; color: var(--green); margin-top: 0.75rem; }
+
+    /* User menu in nav */
+    .topnav-user { display: flex; align-items: center; gap: 8px; }
+    .user-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--green); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+    .signout-btn { font-size: 11px; font-weight: 700; color: #999; background: none; border: none; cursor: pointer; font-family: 'Lato', sans-serif; padding: 0; transition: color 0.15s; }
+    .signout-btn:hover { color: #111; }
+
   </style>
 </head>
 <body>
+
+  <!-- ── AUTH SCREEN ── -->
+  <div id="auth-screen">
+    <div class="auth-card">
+      <div class="auth-logo">S<em>ana</em></div>
+      <p class="auth-tagline">Your personal wellness space</p>
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="auth-tab-login" onclick="switchAuthTab('login')">Sign in</button>
+        <button class="auth-tab" id="auth-tab-signup" onclick="switchAuthTab('signup')">Create account</button>
+      </div>
+      <!-- Login -->
+      <div id="auth-login-form">
+        <div class="auth-field">
+          <label class="auth-label">Email</label>
+          <input class="auth-input" id="login-email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="auth-field">
+          <label class="auth-label">Password</label>
+          <input class="auth-input" id="login-password" type="password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+        </div>
+        <button class="auth-btn" id="login-btn" onclick="doLogin()">Sign in</button>
+        <div class="auth-error" id="login-error"></div>
+      </div>
+      <!-- Signup -->
+      <div id="auth-signup-form" style="display:none;">
+        <div class="auth-field">
+          <label class="auth-label">Email</label>
+          <input class="auth-input" id="signup-email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="auth-field">
+          <label class="auth-label">Password</label>
+          <input class="auth-input" id="signup-password" type="password" placeholder="Min. 6 characters" autocomplete="new-password" onkeydown="if(event.key==='Enter')doSignup()">
+        </div>
+        <button class="auth-btn" id="signup-btn" onclick="doSignup()">Create account</button>
+        <div class="auth-error" id="signup-error"></div>
+        <div class="auth-success" id="signup-success"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ── TOP NAV ── -->
   <nav class="topnav">
@@ -392,6 +458,10 @@
       <div class="topnav-lang">
         <button class="lang-btn" id="btn-en" onclick="setLang('en', this)">EN</button>
         <button class="lang-btn" id="btn-es" onclick="setLang('es', this)">ES</button>
+      </div>
+      <div class="topnav-user" id="topnav-user" style="display:none;">
+        <div class="user-avatar" id="user-avatar" title="Account">?</div>
+        <button class="signout-btn" onclick="doSignOut()">Sign out</button>
       </div>
       <button class="topnav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -709,6 +779,99 @@
 <script src="../data/recipes_data.js"></script>
 
 <script>
+  // ── SUPABASE ──
+  const _supa = window.supabase.createClient(
+    'https://faxzrjqqkyjwbvsedria.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZheHpyanFxa3lqd2J2c2VkcmlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxOTg4MzYsImV4cCI6MjA5Mzc3NDgzNn0.hYZPssWOmbtIe2RjIaNlEDTQToTYief2tz6oJoql8Ng'
+  );
+  let currentUser = null;
+
+  // ── AUTH HELPERS ──
+  function showAuthScreen() {
+    document.getElementById('auth-screen').classList.remove('hidden');
+    document.getElementById('topnav-user').style.display = 'none';
+  }
+  function hideAuthScreen() {
+    document.getElementById('auth-screen').classList.add('hidden');
+  }
+  function setNavUser(user) {
+    const nav = document.getElementById('topnav-user');
+    const avatar = document.getElementById('user-avatar');
+    if (user) {
+      nav.style.display = 'flex';
+      avatar.textContent = (user.email || '?')[0].toUpperCase();
+      avatar.title = user.email;
+    } else {
+      nav.style.display = 'none';
+    }
+  }
+  function switchAuthTab(tab) {
+    document.getElementById('auth-login-form').style.display  = tab === 'login'  ? 'block' : 'none';
+    document.getElementById('auth-signup-form').style.display = tab === 'signup' ? 'block' : 'none';
+    document.getElementById('auth-tab-login').classList.toggle('active',  tab === 'login');
+    document.getElementById('auth-tab-signup').classList.toggle('active', tab === 'signup');
+    document.getElementById('login-error').textContent  = '';
+    document.getElementById('signup-error').textContent = '';
+    document.getElementById('signup-success').textContent = '';
+  }
+  async function doLogin() {
+    const email    = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    const btn      = document.getElementById('login-btn');
+    const errEl    = document.getElementById('login-error');
+    errEl.textContent = '';
+    btn.disabled = true; btn.textContent = 'Signing in…';
+    const { data, error } = await _supa.auth.signInWithPassword({ email, password });
+    btn.disabled = false; btn.textContent = 'Sign in';
+    if (error) { errEl.textContent = error.message; return; }
+    onAuthSuccess(data.user);
+  }
+  async function doSignup() {
+    const email    = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+    const btn      = document.getElementById('signup-btn');
+    const errEl    = document.getElementById('signup-error');
+    const okEl     = document.getElementById('signup-success');
+    errEl.textContent = ''; okEl.textContent = '';
+    btn.disabled = true; btn.textContent = 'Creating account…';
+    const { data, error } = await _supa.auth.signUp({ email, password });
+    btn.disabled = false; btn.textContent = 'Create account';
+    if (error) { errEl.textContent = error.message; return; }
+    if (data.user && data.user.identities && data.user.identities.length === 0) {
+      errEl.textContent = 'An account with this email already exists.'; return;
+    }
+    okEl.textContent = 'Check your email to confirm your account, then sign in.';
+  }
+  async function doSignOut() {
+    await _supa.auth.signOut();
+    currentUser = null;
+    setNavUser(null);
+    showAuthScreen();
+  }
+  function onAuthSuccess(user) {
+    currentUser = user;
+    setNavUser(user);
+    hideAuthScreen();
+  }
+
+  // Check for existing session on load
+  _supa.auth.getSession().then(({ data }) => {
+    if (data.session && data.session.user) {
+      onAuthSuccess(data.session.user);
+    } else {
+      showAuthScreen();
+    }
+  });
+
+  // Listen for auth state changes (e.g. email confirmation)
+  _supa.auth.onAuthStateChange((event, session) => {
+    if (session && session.user) {
+      onAuthSuccess(session.user);
+    } else if (event === 'SIGNED_OUT') {
+      showAuthScreen();
+    }
+  });
+
   // Use local paths when opened from filesystem, GitHub when served remotely
   const isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
   const GITHUB = isLocal ? '..' : 'https://raw.githubusercontent.com/elaine-keller/Sana/main';
