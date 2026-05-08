@@ -7,28 +7,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-text-primary: #1A1A1A;
-      --color-text-secondary: #5A5A5A;
+      --color-text-primary: #111111;
+      --color-text-secondary: #444444;
       --color-background-primary: #FFFFFF;
-      --color-background-secondary: #F7F7F5;
-      --color-border-tertiary: #E8E8E4;
-      --color-border-secondary: #D8D8D2;
+      --color-background-secondary: #F5F5F5;
+      --color-border-tertiary: #E6E6E6;
+      --color-border-secondary: #CCCCCC;
       --border-radius-lg: 12px;
       --border-radius-md: 8px;
       --green: #1D9E75;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Lato', sans-serif; background: #F8F6F2; color: var(--color-text-primary); }
+    body { font-family: 'Lato', sans-serif; background: #FFFFFF; color: var(--color-text-primary); }
 
     /* ── TOP NAV ── */
-    .topnav { position: sticky; top: 0; z-index: 100; background: rgba(248,246,242,0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border-tertiary); }
+    .topnav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-tertiary); }
     .topnav-inner { max-width: 1440px; margin: 0 auto; padding: 0 3rem; height: 58px; display: flex; align-items: center; gap: 2rem; }
     .topnav-logo { display: flex; align-items: baseline; gap: 10px; cursor: pointer; flex-shrink: 0; }
     .logo-text { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--color-text-primary); letter-spacing: -0.03em; line-height: 1; }
     .logo-sub { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--green); font-weight: 700; }
     .topnav-links { display: flex; align-items: center; gap: 0; flex: 1; justify-content: center; }
-    .topnav-item { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--color-text-secondary); padding: 0.4rem 1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; font-family: 'Lato', sans-serif; text-transform: uppercase; }
+    .topnav-item { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--color-text-secondary); padding: 0.4rem 1.1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; font-family: 'Lato', sans-serif; text-transform: uppercase; }
     .topnav-item:hover { color: var(--color-text-primary); }
     .topnav-item.active { color: var(--green); border-bottom-color: var(--green); }
     .topnav-lang { display: flex; gap: 4px; flex-shrink: 0; }
@@ -49,43 +49,55 @@
     .drawer-close { background: none; border: none; font-size: 20px; color: var(--color-text-secondary); cursor: pointer; line-height: 1; padding: 2px 4px; font-family: 'Lato', sans-serif; }
     .drawer-close:hover { color: var(--color-text-primary); }
     .drawer-body { overflow-y: auto; flex: 1; padding: 0.5rem 0 1rem; }
-    .nav-module { padding: 0.35rem 1.25rem 0.35rem 2.5rem; cursor: pointer; font-size: 12px; color: var(--color-text-secondary); }
-    .nav-module:hover { color: var(--green); }
-    .nav-module.active { color: var(--green); font-weight: 700; background: #E8F7F2; border-right: 2px solid var(--green); }
-    .nav-module.nav-group { font-size: 11px; font-weight: 700; color: var(--color-text-primary); padding-left: 1.25rem; padding-top: 0.65rem; cursor: default; }
-    .nav-module.nav-group:hover { color: var(--color-text-primary); }
+    .nav-module { padding: 0.3rem 1rem 0.3rem 1.5rem; cursor: pointer; font-size: 12.5px; color: var(--color-text-secondary); line-height: 1.5; border-left: 2px solid transparent; transition: color 0.15s, border-color 0.15s; }
+    .nav-module:hover { color: var(--color-text-primary); }
+    .nav-module.active { color: var(--green); border-left-color: var(--green); font-weight: 400; }
+    .nav-module.nav-group { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999999; padding-left: 1.25rem; padding-top: 1.1rem; padding-bottom: 0.2rem; cursor: default; border-left: none; }
+    .nav-module.nav-group:hover { color: #999999; }
 
     /* ── CONTENT ── */
     .content { padding: 2.5rem 3rem; max-width: 1440px; width: 100%; margin: 0 auto; }
 
     /* Mobile nav */
-    @media (max-width: 768px) {
-      .topnav-inner { padding: 0 1.25rem; }
-      .topnav-links { display: none; }
-      .topnav-hamburger { display: flex; }
-      .content { padding: 1.5rem 1.25rem; }
-    }
 
     /* ── HOME ── */
-    .home-greeting { padding: 3rem 0 2.5rem; border-bottom: 1px solid var(--color-border-tertiary); margin-bottom: 2.5rem; }
-    .home-date { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.75rem; }
-    .home-title { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 400; color: var(--color-text-primary); line-height: 1.15; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
+    .home-greeting { padding: 3.5rem 0 2rem; margin-bottom: 2rem; }
+    .home-date { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; }
+    .home-title { font-family: 'Playfair Display', serif; font-size: 58px; font-weight: 400; color: var(--color-text-primary); line-height: 1.1; margin-bottom: 0; letter-spacing: -0.03em; }
     .home-title em { font-style: italic; color: var(--green); }
-    .home-sub { font-size: 15px; color: var(--color-text-secondary); line-height: 1.65; max-width: 520px; }
 
-    .home-quick-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
-    .home-quick-card { background: #fff; border-radius: 14px; padding: 1.4rem 1.5rem; border: 1px solid var(--color-border-tertiary); cursor: pointer; transition: box-shadow 0.15s, transform 0.15s; }
-    .home-quick-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
-    .home-quick-icon { margin-bottom: 0.75rem; color: var(--green); }
-    .home-quick-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
-    .home-quick-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 4px; }
-    .home-quick-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--color-text-primary); line-height: 1.3; }
+    .home-week-strip { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.5rem 2rem; background: #F5F5F5; border-radius: 14px; margin-bottom: 3rem; cursor: pointer; transition: background 0.15s; }
+    .home-week-strip:hover { background: #EFEFEF; }
+    .home-week-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
+    .home-week-stats { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+    .home-week-stat { font-size: 14px; color: var(--color-text-secondary); }
+    .home-week-stat-val { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--color-text-primary); margin-right: 4px; }
+    .home-week-sep { color: var(--color-border-secondary); font-size: 16px; }
+    .home-week-coming { color: #AAAAAA; font-size: 13px; font-style: italic; }
+    .home-week-cta { font-size: 13px; font-weight: 700; color: var(--green); white-space: nowrap; flex-shrink: 0; letter-spacing: 0.02em; }
 
-    .home-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .home-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem; }
     .home-divider-line { flex: 1; height: 1px; background: var(--color-border-tertiary); }
-    .home-divider-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-secondary); white-space: nowrap; }
+    .home-divider-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #888888; white-space: nowrap; }
 
-    .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 1rem; letter-spacing: -0.01em; }
+    /* ── NOTES ── */
+    .notes-section { margin-bottom: 4rem; }
+    .notes-compose { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 1.25rem; }
+    .notes-input { flex: 1; border: 1px solid var(--color-border-secondary); border-radius: 10px; padding: 10px 14px; font-size: 14px; font-family: 'Lato', sans-serif; color: var(--color-text-primary); background: #fff; resize: none; outline: none; line-height: 1.55; min-height: 44px; transition: border-color 0.15s; overflow: hidden; }
+    .notes-input:focus { border-color: var(--green); }
+    .notes-save-btn { flex-shrink: 0; background: #111; color: #fff; border: none; border-radius: 10px; padding: 10px 18px; font-size: 13px; font-weight: 700; font-family: 'Lato', sans-serif; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; }
+    .notes-save-btn:hover { opacity: 0.8; }
+    .notes-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .note-card { background: #FAFAFA; border: 1px solid var(--color-border-tertiary); border-radius: 12px; padding: 1rem 1.1rem; position: relative; transition: box-shadow 0.15s; }
+    .note-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .note-card:hover .note-delete { opacity: 1; }
+    .note-text { font-size: 14px; color: var(--color-text-primary); line-height: 1.6; white-space: pre-wrap; word-break: break-word; margin-bottom: 0.6rem; }
+    .note-date { font-size: 10px; color: #AAAAAA; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    .note-delete { position: absolute; top: 8px; right: 10px; background: none; border: none; font-size: 16px; color: #CCCCCC; cursor: pointer; opacity: 0; transition: opacity 0.15s, color 0.15s; line-height: 1; padding: 2px 4px; }
+    .note-delete:hover { color: #E53935; }
+    .notes-empty { font-size: 13px; color: #AAAAAA; font-style: italic; padding: 0.5rem 0; }
+
+    .section-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
 
     /* Recipe grid */
     .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
@@ -93,8 +105,8 @@
     .recipe-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
     .recipe-img { width: 100%; height: 180px; object-fit: cover; background: var(--color-background-secondary); }
     .recipe-body { padding: 0.85rem; }
-    .recipe-name { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; line-height: 1.45; }
-    .recipe-meta { font-size: 11px; color: var(--color-text-secondary); }
+    .recipe-name { font-size: 14px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; line-height: 1.4; }
+    .recipe-meta { font-size: 12px; color: var(--color-text-secondary); }
     .phase-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-right: 4px; }
 
     /* Module list */
@@ -108,16 +120,33 @@
     .module-lessons { font-size: 11px; color: var(--green); margin-top: 4px; }
 
     /* Lesson view */
-    .lesson-frame { background: #fff; border-radius: 12px; padding: 2rem; border: 1px solid var(--color-border-tertiary); max-width: 860px; margin: 0 auto; }
-    .lesson-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; max-width: 860px; margin-left: auto; margin-right: auto; }
+    .lesson-frame { background: transparent; border-radius: 0; padding: 0; border: none; max-width: 680px; }
+    .lesson-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; max-width: 680px; }
     .lesson-nav-btn { font-size: 13px; font-weight: 700; color: var(--green); cursor: pointer; padding: 6px 14px; border-radius: 8px; background: #E8F7F2; border: none; transition: background 0.15s; }
     .lesson-nav-btn:hover { background: #9FE1CB; }
     .lesson-nav-btn:disabled { visibility: hidden; }
     .lesson-nav-progress { font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.06em; }
-    .lesson-continue { display: flex; justify-content: flex-end; margin-top: 1.5rem; max-width: 860px; margin-left: auto; margin-right: auto; }
+    .lesson-continue { display: flex; justify-content: flex-end; margin-top: 2rem; max-width: 680px; }
     .lesson-continue-btn { font-size: 13px; font-weight: 700; color: #fff; cursor: pointer; padding: 10px 24px; border-radius: 8px; background: var(--green); border: none; transition: opacity 0.15s; }
     .lesson-continue-btn:hover { opacity: 0.85; }
     .lesson-continue-btn:disabled { display: none; }
+
+    /* ── LEARN (two-panel layout) ── */
+    #view-learn { margin: -2.5rem -3rem 0; }
+    .learn-layout { display: flex; gap: 0; min-height: calc(100vh - 58px); background: #F9F8F6; }
+    .learn-sidebar { width: 230px; min-width: 210px; flex-shrink: 0; position: sticky; top: 58px; max-height: calc(100vh - 58px); overflow-y: auto; align-self: flex-start; padding: 0 0 4rem; background: transparent; border-right: none; }
+    .learn-sidebar-header { padding: 2rem 1.25rem 1rem 3rem; }
+    .learn-sidebar-section { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--color-text-primary); letter-spacing: -0.02em; margin-bottom: 1.25rem; display: block; cursor: pointer; }
+    .learn-sidebar-section:hover { color: var(--green); }
+    .learn-sidebar-book { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #AAAAAA; margin-bottom: 0.35rem; }
+    .learn-sidebar-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 400; color: var(--color-text-secondary); cursor: pointer; display: block; transition: color 0.15s; }
+    .learn-sidebar-title:hover { color: var(--green); }
+    .learn-sidebar .nav-module { padding-left: 3rem; color: #555555; }
+    .learn-sidebar .nav-module.active { color: var(--green); border-left-color: var(--green); }
+    .learn-sidebar .nav-module.nav-group { padding-left: 2.75rem; color: #AAAAAA; }
+    .learn-main { flex: 1; min-width: 0; background: #fff; padding: 2.5rem 3rem 4rem; box-shadow: none; }
+    .learn-overview .module-list { max-width: 540px; }
+    .learn-overview .section-title { margin-bottom: 1.5rem; }
 
     /* Recipe detail */
     .recipe-detail { display: none; }
@@ -139,12 +168,7 @@
     .phase-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: #E8F7F2; color: var(--green); border: 1px solid #9FE1CB; margin-right: 4px; }
 
     /* Category label on cards (small uppercase text, not a pill) */
-    .cat-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
-    .cat-label.breakfast { color: #E65100; }
-    .cat-label.lunch     { color: #2E7D32; }
-    .cat-label.dinner    { color: #1565C0; }
-    .cat-label.snack     { color: #7B1FA2; }
-    .cat-label.drink     { color: #00838F; }
+    .cat-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; color: #999999; }
 
     /* Search bar */
     .search-wrap { position: relative; margin-bottom: 1rem; }
@@ -156,26 +180,46 @@
     /* Meal type tabs (primary) */
     .meal-tabs { display: flex; gap: 4px; margin-bottom: 0.75rem; flex-wrap: wrap; }
     .meal-tab { padding: 7px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; border: none; cursor: pointer; background: var(--color-background-secondary); color: var(--color-text-secondary); transition: all 0.12s; }
-    .meal-tab.active { color: #fff; }
-    .meal-tab.all.active       { background: var(--color-text-primary); }
-    .meal-tab.breakfast.active { background: #E65100; }
-    .meal-tab.lunch.active     { background: #2E7D32; }
-    .meal-tab.dinner.active    { background: #1565C0; }
-    .meal-tab.snack.active     { background: #7B1FA2; }
-    .meal-tab.drink.active     { background: #00838F; }
+    .meal-tab.active { background: #111111; color: #ffffff; }
 
 
-    /* ── MEAL PLAN ── */
-    /* Two-column layout */
-    .mp-layout { display: flex; gap: 1.5rem; align-items: flex-start; }
-    .mp-browse { flex: 1; min-width: 0; }
-    .mp-planner-panel { width: 272px; min-width: 252px; background: #fff; border-radius: 12px; border: 1px solid var(--color-border-tertiary); position: sticky; top: 60px; max-height: calc(100vh - 76px); overflow: hidden; display: flex; flex-direction: column; flex-shrink: 0; }
+    /* ── PLAN ── */
+    .plan-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.75rem; flex-wrap: wrap; }
+    .phase-tab-wrap { display: inline-flex; align-items: center; gap: 2px; }
+    .phase-info-icon { font-size: 11px; color: #BBBBBB; cursor: default; line-height: 1; margin-left: 1px; transition: color 0.15s; user-select: none; }
+    .phase-info-icon:hover { color: #777; }
+    .phase-popover { display: none; position: absolute; right: 0; top: calc(100% + 8px); width: 288px; background: #fff; border: 1px solid #E0E0E0; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); padding: 1.1rem 1.2rem 1rem; z-index: 300; pointer-events: auto; }
+    .phase-popover.visible { display: block; }
+    .phase-pop-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 4px; }
+    .phase-pop-duration { font-size: 11px; color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .phase-pop-desc { font-size: 13px; color: #444; line-height: 1.55; margin-bottom: 12px; }
+    .phase-pop-chart { display: flex; flex-direction: column; gap: 5px; }
+    .phase-pop-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+    .phase-pop-bar-wrap { flex: 1; height: 6px; background: #F0F0F0; border-radius: 99px; overflow: hidden; }
+    .phase-pop-bar { height: 100%; border-radius: 99px; }
+    .phase-pop-label { color: #666; min-width: 70px; }
+    .phase-pop-pct { color: #111; font-weight: 700; min-width: 32px; text-align: right; }
+    .plan-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 400; letter-spacing: -0.025em; color: var(--color-text-primary); margin-bottom: 0.25rem; }
+    .plan-subtitle { font-size: 14px; color: var(--color-text-secondary); }
+    .plan-section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #888888; margin-bottom: 1rem; }
+    .plan-body { display: flex; gap: 3rem; align-items: flex-start; }
+    .plan-recipes { flex: 1; min-width: 0; }
+    .plan-week-col { width: 300px; min-width: 260px; flex-shrink: 0; }
+    .plan-week-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .plan-week-actions { display: flex; align-items: center; gap: 10px; }
+    .plan-copy-btn { display: flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: #888; background: none; border: none; cursor: pointer; font-family: 'Lato', sans-serif; padding: 0; transition: color 0.15s; }
+    .plan-copy-btn:hover { color: #111; }
+    .plan-copy-btn.copied { color: var(--green); }
+    .plan-shop-toggle { font-size: 11px; font-weight: 700; color: var(--green); background: none; border: none; cursor: pointer; font-family: 'Lato', sans-serif; padding: 0; text-decoration: underline; text-underline-offset: 2px; }
+    .plan-shop-toggle:hover { opacity: 0.75; }
 
-    /* Planner panel header tabs */
-    .mp-panel-tabs { display: flex; border-bottom: 1px solid var(--color-border-tertiary); flex-shrink: 0; }
-    .mp-panel-tab { flex: 1; padding: 0.65rem 0.5rem; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border: none; background: none; cursor: pointer; color: var(--color-text-secondary); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.12s; font-family: 'Lato', sans-serif; }
-    .mp-panel-tab.active { color: var(--green); border-bottom-color: var(--green); }
-    .mp-panel-body { padding: 0.85rem 0.8rem; overflow-y: auto; flex: 1; }
+    /* ── MEAL PLAN (legacy stubs — keep for JS compatibility) ── */
+    .mp-layout { display: none; }
+    .mp-browse { display: none; }
+    .mp-planner-panel { display: none; }
+    .mp-panel-tabs { display: none; }
+    .mp-panel-tab { display: none; }
+    .mp-panel-body { padding: 0; }
 
     /* Active slot indicator */
     .mp-slot-indicator { background: #E8F7F2; border: 1px solid #9FE1CB; border-radius: 8px; padding: 0.5rem 0.75rem; margin-bottom: 0.75rem; font-size: 12px; color: #0F6E56; display: none; }
@@ -183,25 +227,23 @@
     .mp-indicator-text { flex: 1; line-height: 1.4; }
     .mp-indicator-cancel { font-size: 11px; font-weight: 700; color: #0F6E56; cursor: pointer; white-space: nowrap; text-decoration: underline; }
 
-    /* Day rows in planner */
-    .mp-week-day { margin-bottom: 0.6rem; }
-    .mp-day-label { font-size: 10px; font-weight: 700; text-transform: capitalize; letter-spacing: 0.04em; color: var(--color-text-primary); padding: 0.4rem 0 0.28rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 0.25rem; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
-    .mp-slot { display: flex; align-items: center; gap: 5px; padding: 0.28rem 0.4rem; border-radius: 6px; cursor: pointer; transition: background 0.1s; min-height: 30px; }
-    .mp-slot:hover { background: var(--color-background-secondary); }
-    .mp-slot.slot-active { background: #E8F7F2; }
-    .mp-slot-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-    .mp-slot-dot.breakfast { background: #E65100; }
-    .mp-slot-dot.lunch     { background: #2E7D32; }
-    .mp-slot-dot.dinner    { background: #1565C0; }
-    .mp-slot-dot.snack     { background: #7B1FA2; }
-    .mp-slot-mealname { font-size: 9px; font-weight: 700; color: var(--color-text-secondary); min-width: 52px; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
-    .mp-slot-recipe-name { font-size: 11px; color: var(--color-text-primary); flex: 1; line-height: 1.3; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .mp-slot-empty { font-size: 11px; color: #C8C8C2; font-style: italic; flex: 1; }
-    .mp-slot-add { font-size: 15px; color: #C8C8C2; width: 16px; text-align: center; flex-shrink: 0; line-height: 1; }
-    .mp-slot:hover .mp-slot-add, .mp-slot.slot-active .mp-slot-add { color: var(--green); }
-    .mp-slot-remove { font-size: 13px; color: #C8C8C2; width: 14px; text-align: center; flex-shrink: 0; cursor: pointer; line-height: 1; }
-    .mp-slot-remove:hover { color: #C8404A; }
-    .mp-empty-state { text-align: center; padding: 1.5rem 1rem; font-size: 12px; color: var(--color-text-secondary); line-height: 1.7; }
+    /* Day rows in week grid */
+    .mp-week-day { margin-bottom: 0; border-bottom: 1px solid var(--color-border-tertiary); padding-bottom: 0.6rem; }
+    .mp-week-day:last-child { border-bottom: none; }
+    .mp-week-day.day-active { background: #F9FFFE; border-radius: 6px; padding: 0 6px 0.6rem; margin: 0 -6px; }
+    .mp-day-header { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0 0.3rem; }
+    .mp-day-label { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--color-text-primary); display: flex; align-items: baseline; gap: 6px; }
+    .mp-day-date { font-weight: 400; opacity: 0.6; }
+    .mp-today-badge { font-size: 9px; background: var(--green); color: #fff; padding: 1px 7px; border-radius: 10px; font-weight: 700; letter-spacing: 0.04em; vertical-align: middle; }
+    .mp-day-add-btn { background: none; border: 1.5px solid #CCCCCC; color: #999; font-size: 16px; line-height: 1; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; transition: all 0.15s; flex-shrink: 0; }
+    .mp-day-add-btn:hover, .mp-day-add-btn.active { border-color: var(--green); color: var(--green); background: #E8F7F2; }
+    .mp-day-recipe { display: flex; align-items: center; gap: 6px; padding: 0.2rem 0; min-height: 26px; }
+    .mp-day-recipe-cat { font-size: 10px; font-weight: 600; color: #AAAAAA; text-transform: uppercase; letter-spacing: 0.05em; min-width: 56px; flex-shrink: 0; }
+    .mp-day-recipe-name { font-size: 13px; color: var(--color-text-primary); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 1.3; }
+    .mp-day-recipe-remove { background: none; border: none; font-size: 14px; color: #CCCCCC; cursor: pointer; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+    .mp-day-recipe-remove:hover { color: #E53935; }
+    .mp-day-selecting { font-size: 11px; color: var(--green); padding: 0.2rem 0 0.1rem; font-style: italic; }
+    .mp-empty-state { padding: 2rem 0; font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
 
     /* Shopping items in panel */
     .mp-shop-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); margin: 0.85rem 0 0.3rem; }
@@ -227,15 +269,17 @@
 
     /* Recipe browser (left col) */
     .mp-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin: 0 0 0.75rem; }
-    .mp-recipe-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem; }
-    .mp-recipe-card { width: 155px; flex-shrink: 0; border-radius: 10px; overflow: hidden; background: #fff; border: 2px solid var(--color-border-tertiary); cursor: pointer; transition: border-color 0.15s; position: relative; }
-    .mp-recipe-card.selected { border-color: var(--green); }
+    .mp-recipe-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1rem; }
+    .mp-recipe-card { flex-shrink: 0; border-radius: 10px; overflow: hidden; background: #fff; border: 1.5px solid var(--color-border-tertiary); cursor: grab; transition: border-color 0.15s, box-shadow 0.15s; position: relative; }
+    .mp-recipe-card.selected { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
     .mp-recipe-card:hover { border-color: #9FE1CB; }
+    .mp-recipe-card.dragging { opacity: 0.45; cursor: grabbing; }
+    .mp-week-day.drag-over { background: #E8F7F2; border-radius: 6px; outline: 2px dashed var(--green); outline-offset: 2px; }
     .mp-check-mark { position: absolute; top: 5px; right: 5px; width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.92); border: 1.5px solid var(--color-border-secondary); display: flex; align-items: center; justify-content: center; font-size: 10px; color: transparent; transition: all 0.12s; }
     .mp-recipe-card.selected .mp-check-mark { background: var(--green); border-color: var(--green); color: #fff; }
     .mp-card-img { width: 100%; height: 110px; object-fit: cover; background: var(--color-background-secondary); display: block; }
-    .mp-card-body { padding: 0.45rem 0.55rem 0.55rem; }
-    .mp-card-name { font-size: 11px; font-weight: 600; color: var(--color-text-primary); line-height: 1.35; margin-bottom: 5px; }
+    .mp-card-body { padding: 0.55rem 0.65rem 0.65rem; }
+    .mp-card-name { font-size: 12px; font-weight: 600; color: var(--color-text-primary); line-height: 1.35; margin-bottom: 2px; }
     .mp-equiv-pills { display: flex; flex-wrap: wrap; gap: 3px; }
     .mp-pill { font-size: 9px; font-weight: 700; padding: 2px 5px; border-radius: 4px; color: #fff; white-space: nowrap; }
     .mp-pill.protein { background: #C4784A; }
@@ -247,10 +291,75 @@
     /* Cat filter pills in meal plan (smaller/rounder than recipe-view tabs) */
     #mp-cat-chips .meal-tab { padding: 5px 12px; font-size: 12px; border-radius: 20px; }
 
-    /* Mobile */
-    @media (max-width: 900px) { .mp-planner-panel { width: 240px; min-width: 220px; } }
-    @media (max-width: 768px) { .mp-layout { flex-direction: column; } .mp-planner-panel { width: 100%; min-width: 0; position: static; max-height: none; } }
-    @media (max-width: 480px) { .mp-recipe-card { width: calc(50% - 5px); } .mp-combo-card { min-width: 130px; } }
+    /* ── RESPONSIVE ── */
+
+    /* Large tablet (≤ 1100px) */
+    @media (max-width: 1100px) {
+      .home-title { font-size: 48px; }
+      .mp-recipe-grid { grid-template-columns: repeat(3, 1fr); }
+      .plan-week-col { width: 280px; min-width: 260px; }
+    }
+
+    /* Tablet (≤ 900px) */
+    @media (max-width: 900px) {
+      .home-title { font-size: 42px; }
+      .mp-recipe-grid { grid-template-columns: repeat(2, 1fr); }
+      .plan-week-col { width: 260px; min-width: 240px; }
+      .phase-popover { width: 260px; }
+    }
+
+    /* Mobile (≤ 768px) */
+    @media (max-width: 768px) {
+      /* Nav */
+      .topnav-inner { padding: 0 1.25rem; }
+      .topnav-links { display: none; }
+      .topnav-hamburger { display: flex; }
+      /* Content */
+      .content { padding: 1.5rem 1.25rem; }
+      /* Home */
+      .home-greeting { padding: 2rem 0 1.25rem; margin-bottom: 1.25rem; }
+      .home-title { font-size: 36px; }
+      .home-week-strip { flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 1.1rem 1.25rem; margin-bottom: 2rem; }
+      .home-week-cta { align-self: flex-end; }
+      .section-title { font-size: 22px; }
+      .recipe-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .recipe-img { height: 140px; }
+      /* Learn */
+      #view-learn { margin: -1.5rem -1.25rem 0; }
+      .learn-layout { flex-direction: column; }
+      .learn-sidebar { width: 100%; min-width: 0; position: static; max-height: none; padding-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .learn-sidebar-header { padding: 1.5rem 1.25rem 0.75rem; }
+      .learn-sidebar .nav-module { padding-left: 1.25rem; }
+      .learn-sidebar .nav-module.nav-group { padding-left: 1rem; }
+      .learn-main { padding: 1.5rem 1.25rem 3rem; }
+      /* Plan */
+      .plan-header { gap: 0.75rem; margin-bottom: 1.25rem; }
+      .plan-title { font-size: 28px; }
+      .plan-body { flex-direction: column; }
+      .plan-week-col { width: 100%; min-width: 0; }
+      .plan-week-header { flex-wrap: wrap; gap: 6px; }
+      .plan-week-actions { gap: 8px; }
+      .mp-recipe-grid { grid-template-columns: repeat(2, 1fr); }
+      .phase-popover { right: auto; left: 0; width: min(288px, calc(100vw - 2.5rem)); }
+      /* Tabs */
+      .tabs { flex-wrap: wrap; }
+      .tab { padding: 5px 12px; font-size: 12px; }
+    }
+
+    /* Small mobile (≤ 480px) */
+    @media (max-width: 480px) {
+      .home-title { font-size: 30px; }
+      .home-week-strip { padding: 1rem; }
+      .home-week-stats { gap: 0.4rem; }
+      .mp-recipe-grid { grid-template-columns: repeat(2, 1fr); gap: 7px; }
+      .mp-card-img { height: 90px; }
+      .plan-week-actions { width: 100%; justify-content: flex-start; }
+      .plan-section-label { display: none; }
+      .tab { padding: 5px 10px; font-size: 11px; }
+      #mp-cat-chips .meal-tab { padding: 4px 9px; font-size: 11px; }
+      .recipe-grid { grid-template-columns: repeat(2, 1fr); }
+      .recipe-img { height: 120px; }
+    }
 
     /* Elegant thin scrollbar */
     ::-webkit-scrollbar { width: 4px; height: 4px; }
@@ -277,9 +386,8 @@
       <div class="topnav-links">
         <button class="topnav-item active" onclick="showView('home')" data-view="home" data-i18n="nav.dashboard">Inicio</button>
         <button class="topnav-item" onclick="showView('recipes')" data-view="recipes" data-i18n="nav.allRecipes">Recetas</button>
-        <button class="topnav-item" onclick="showView('mealplan')" data-view="mealplan" data-i18n="nav.mealPlan">Plan de comidas</button>
-        <button class="topnav-item" onclick="showView('modules')" data-view="modules" data-i18n="nav.metabolicReset">Reset</button>
-        <button class="topnav-item" onclick="showView('nuggets')" data-view="nuggets" data-i18n="nav.nuggets">Nuggets</button>
+        <button class="topnav-item" onclick="showView('mealplan')" data-view="mealplan" data-i18n="nav.plan">Plan</button>
+        <button class="topnav-item" onclick="showView('learn')" data-view="learn" data-i18n="nav.learn">Aprender</button>
       </div>
       <div class="topnav-lang">
         <button class="lang-btn" id="btn-en" onclick="setLang('en', this)">EN</button>
@@ -293,9 +401,8 @@
     <div id="mobile-menu" style="display:none; border-top: 1px solid var(--color-border-tertiary); background: rgba(248,246,242,0.98); padding: 0.5rem 0 1rem;">
       <button class="topnav-item" style="display:block; width:100%; text-align:left; padding:0.65rem 1.5rem;" onclick="showView('home');closeMobileMenu()" data-i18n="nav.dashboard">Inicio</button>
       <button class="topnav-item" style="display:block; width:100%; text-align:left; padding:0.65rem 1.5rem;" onclick="showView('recipes');closeMobileMenu()" data-i18n="nav.allRecipes">Recetas</button>
-      <button class="topnav-item" style="display:block; width:100%; text-align:left; padding:0.65rem 1.5rem;" onclick="showView('mealplan');closeMobileMenu()" data-i18n="nav.mealPlan">Plan de comidas</button>
-      <button class="topnav-item" style="display:block; width:100%; text-align:left; padding:0.65rem 1.5rem;" onclick="showView('modules');closeMobileMenu()" data-i18n="nav.metabolicReset">Reset</button>
-      <button class="topnav-item" style="display:block; width:100%; text-align:left; padding:0.65rem 1.5rem;" onclick="showView('nuggets');closeMobileMenu()" data-i18n="nav.nuggets">Nuggets</button>
+      <button class="topnav-item" style="display:block; width:100%; text-align:left; padding:0.65rem 1.5rem;" onclick="showView('mealplan');closeMobileMenu()" data-i18n="nav.plan">Plan</button>
+      <button class="topnav-item" style="display:block; width:100%; text-align:left; padding:0.65rem 1.5rem;" onclick="showView('learn');closeMobileMenu()" data-i18n="nav.learn">Aprender</button>
     </div>
   </nav>
 
@@ -343,25 +450,18 @@
         <div class="home-greeting">
           <div class="home-date" id="home-date"></div>
           <h1 class="home-title"><span data-i18n="home.welcome">Bienvenida,</span> <em>Elaine</em></h1>
-          <p class="home-sub" data-i18n="home.sub">Tu bienestar, todo en un solo lugar.</p>
         </div>
 
-        <div class="home-quick-row">
-          <div class="home-quick-card" onclick="showView('recipes')">
-            <div class="home-quick-icon"><svg viewBox="0 0 24 24"><path d="M8 3v5a3 3 0 006 0V3"/><line x1="11" y1="8" x2="11" y2="21"/><line x1="16" y1="3" x2="16" y2="21"/></svg></div>
-            <div class="home-quick-label" data-i18n="home.quick1label">Recetas</div>
-            <div class="home-quick-title" data-i18n="home.quick1title">164 recetas bilingües</div>
+        <div class="home-week-strip" onclick="showView('mealplan')">
+          <div class="home-week-left">
+            <div class="home-week-label" data-i18n="home.thisWeek">Esta semana</div>
+            <div class="home-week-stats">
+              <span class="home-week-stat"><span class="home-week-stat-val" id="hw-recipes">0</span> <span data-i18n="home.recipesPlanned">recetas planificadas</span></span>
+              <span class="home-week-sep">·</span>
+              <span class="home-week-stat home-week-coming" data-i18n="home.movementComingSoon">Ejercicio próximamente</span>
+            </div>
           </div>
-          <div class="home-quick-card" onclick="showView('mealplan')">
-            <div class="home-quick-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
-            <div class="home-quick-label" data-i18n="home.quick2label">Plan de comidas</div>
-            <div class="home-quick-title" data-i18n="home.quick2title">Organiza tu semana</div>
-          </div>
-          <div class="home-quick-card" onclick="showView('modules')">
-            <div class="home-quick-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
-            <div class="home-quick-label" data-i18n="home.quick3label">Reset Metabólico</div>
-            <div class="home-quick-title" data-i18n="home.quick3title">19 lecciones</div>
-          </div>
+          <span class="home-week-cta" data-i18n="home.planWeek">Planifica tu semana →</span>
         </div>
 
         <div class="home-divider">
@@ -370,6 +470,20 @@
           <div class="home-divider-line"></div>
         </div>
         <div class="recipe-grid" id="home-recipes"></div>
+
+        <!-- NOTES -->
+        <div class="home-divider" style="margin-top: 2.5rem;">
+          <div class="home-divider-line"></div>
+          <span class="home-divider-label" data-i18n="home.notes">Mis notas</span>
+          <div class="home-divider-line"></div>
+        </div>
+        <div class="notes-section">
+          <div class="notes-compose">
+            <textarea class="notes-input" id="notes-input" rows="2" data-i18n-placeholder="notes.placeholder" placeholder="Escribe una nota…" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'" onkeydown="notesKeydown(event)"></textarea>
+            <button class="notes-save-btn" onclick="saveNote()" data-i18n="notes.save">Guardar</button>
+          </div>
+          <div class="notes-list" id="notes-list"></div>
+        </div>
       </div>
 
       <!-- RECIPES -->
@@ -396,90 +510,156 @@
         <div id="recipe-detail-content"></div>
       </div>
 
-      <!-- MODULES -->
-      <div id="view-modules" style="display:none;">
-        <div class="section-title">Metabolic Reset</div>
-        <div class="module-list">
-          <div class="module-card" onclick="showLesson('module1','course_guide')">
-            <div class="module-num">1</div>
-            <div class="module-info">
-              <div class="module-title">Getting started</div>
-              <div class="module-sub">Course guide, platform overview</div>
-              <div class="module-lessons">1 lesson</div>
+      <!-- LEARN -->
+      <div id="view-learn" style="display:none;">
+        <div class="learn-layout">
+
+          <!-- LEFT: Persistent sidebar -->
+          <div class="learn-sidebar">
+            <div class="learn-sidebar-header">
+              <span class="learn-sidebar-section" onclick="showLearnOverview()" data-i18n="nav.learn">Aprender</span>
+              <div class="learn-sidebar-book" data-i18n="learn.book">Libro 1</div>
+              <span class="learn-sidebar-title" onclick="showLearnOverview()" data-i18n="nav.metabolicReset">Reset Metabólico</span>
             </div>
-            <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
+            <div class="nav-module nav-group" data-i18n="learn.group1">Comenzando</div>
+            <div class="nav-module" data-key="module1-course_guide" onclick="showLesson('module1','course_guide')"><span data-i18n="module1.courseGuide">Guía del curso</span></div>
+            <div class="nav-module" data-key="module1-platform_navigation" onclick="showLesson('module1','platform_navigation')"><span data-i18n="module1.platformNav">Tour de la plataforma</span></div>
+            <div class="nav-module nav-group" data-i18n="learn.group2">Teoría</div>
+            <div class="nav-module" data-key="module2-intro" onclick="showLesson('module2','intro')"><span data-i18n="module2.intro">Introducción</span></div>
+            <div class="nav-module" data-key="module2-lesson2" onclick="showLesson('module2','lesson2')"><span data-i18n="module2.lesson2">Por qué todos necesitan esto</span></div>
+            <div class="nav-module" data-key="module2-lesson3" onclick="showLesson('module2','lesson3')"><span data-i18n="module2.lesson3">Disglicemia</span></div>
+            <div class="nav-module" data-key="module2-lesson4" onclick="showLesson('module2','lesson4')"><span data-i18n="module2.lesson4">Enfermedades relacionadas</span></div>
+            <div class="nav-module" data-key="module2-lesson5" onclick="showLesson('module2','lesson5')"><span data-i18n="module2.lesson5">Por qué estamos enfermos</span></div>
+            <div class="nav-module nav-group" data-i18n="learn.group3">Medición</div>
+            <div class="nav-module" data-key="module3-intro" onclick="showLesson('module3','intro')"><span data-i18n="module3.intro">Introducción</span></div>
+            <div class="nav-module" data-key="module3-lesson2" onclick="showLesson('module3','lesson2')"><span data-i18n="module3.lesson2">Medición de salud metabólica</span></div>
+            <div class="nav-module" data-key="module3-lesson3_glucose" onclick="showLesson('module3','lesson3_glucose')"><span data-i18n="module3.glucose">Monitor de glucosa</span></div>
+            <div class="nav-module" data-key="module3-lesson3_food" onclick="showLesson('module3','lesson3_food')"><span data-i18n="module3.food">Ejemplos de alimentos</span></div>
+            <div class="nav-module" data-key="module3-lab_reference" onclick="showLesson('module3','lab_reference')"><span data-i18n="module3.lab">Tarjeta de laboratorio</span></div>
+            <div class="nav-module nav-group" data-i18n="learn.group4">Nutrición</div>
+            <div class="nav-module" data-key="module4-intro" onclick="showLesson('module4','intro')"><span data-i18n="module4.intro">Introducción</span></div>
+            <div class="nav-module" data-key="module4-lesson2" onclick="showLesson('module4','lesson2')"><span data-i18n="module4.lesson2">Visión general Reset5</span></div>
+            <div class="nav-module" data-key="module4-lesson3" onclick="showLesson('module4','lesson3')"><span data-i18n="module4.lesson3">Plan de nutrición</span></div>
+            <div class="nav-module" data-key="module4-lesson4" onclick="showLesson('module4','lesson4')"><span data-i18n="module4.lesson4">Fase 1 — Revertir</span></div>
+            <div class="nav-module" data-key="module4-lesson5" onclick="showLesson('module4','lesson5')"><span data-i18n="module4.lesson5">Fase 2 — Quemar</span></div>
+            <div class="nav-module" data-key="module4-lesson7" onclick="showLesson('module4','lesson7')"><span data-i18n="module4.lesson7">Fase 3 — Nutrir</span></div>
+            <div class="nav-module" data-key="module4-lesson8" onclick="showLesson('module4','lesson8')"><span data-i18n="module4.lesson8">Vinagre de manzana</span></div>
+            <div class="nav-module nav-group" data-i18n="learn.group5">¿Qué sigue?</div>
+            <div class="nav-module" data-key="module5-what_comes_next" onclick="showLesson('module5','what_comes_next')"><span data-i18n="module5.lesson">¿Qué sigue?</span></div>
           </div>
-          <div class="module-card" onclick="showLesson('module2','intro')">
-            <div class="module-num">2</div>
-            <div class="module-info">
-              <div class="module-title">Theory — understand it to change it</div>
-              <div class="module-sub">Dysglycemia, insulin resistance, root causes</div>
-              <div class="module-lessons">5 lessons</div>
+
+          <!-- RIGHT: Content area -->
+          <div class="learn-main">
+
+            <!-- Overview (default) -->
+            <div id="learn-overview" class="learn-overview">
+              <div class="section-title" data-i18n="nav.metabolicReset">Reset Metabólico</div>
+              <div class="module-list">
+                <div class="module-card" onclick="showLesson('module1','course_guide')">
+                  <div class="module-num">1</div>
+                  <div class="module-info">
+                    <div class="module-title">Getting started</div>
+                    <div class="module-sub">Course guide, platform overview</div>
+                    <div class="module-lessons">1 lesson</div>
+                  </div>
+                  <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
+                </div>
+                <div class="module-card" onclick="showLesson('module2','intro')">
+                  <div class="module-num">2</div>
+                  <div class="module-info">
+                    <div class="module-title">Theory — understand it to change it</div>
+                    <div class="module-sub">Dysglycemia, insulin resistance, root causes</div>
+                    <div class="module-lessons">5 lessons</div>
+                  </div>
+                  <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
+                </div>
+                <div class="module-card" onclick="showLesson('module3','intro')">
+                  <div class="module-num">3</div>
+                  <div class="module-info">
+                    <div class="module-title">Measuring metabolic health</div>
+                    <div class="module-sub">Labs, glucose monitor, food examples</div>
+                    <div class="module-lessons">5 lessons</div>
+                  </div>
+                  <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
+                </div>
+                <div class="module-card" onclick="showLesson('module4','intro')">
+                  <div class="module-num">4</div>
+                  <div class="module-info">
+                    <div class="module-title">The Reset — nutrition plan</div>
+                    <div class="module-sub">Reset5 method, Reboot, Burn, Nourish phases</div>
+                    <div class="module-lessons">7 lessons</div>
+                  </div>
+                  <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
+                </div>
+                <div class="module-card" onclick="showLesson('module5','what_comes_next')">
+                  <div class="module-num">5</div>
+                  <div class="module-info">
+                    <div class="module-title">What comes next</div>
+                    <div class="module-sub">After the Reset — signs of reversal, rules for life</div>
+                    <div class="module-lessons">1 lesson</div>
+                  </div>
+                  <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
+                </div>
+              </div>
             </div>
-            <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
-          </div>
-          <div class="module-card" onclick="showLesson('module3','intro')">
-            <div class="module-num">3</div>
-            <div class="module-info">
-              <div class="module-title">Measuring metabolic health</div>
-              <div class="module-sub">Labs, glucose monitor, food examples</div>
-              <div class="module-lessons">5 lessons</div>
+
+            <!-- Lesson content -->
+            <div id="learn-lesson" style="display:none;">
+              <div class="lesson-nav">
+                <button class="lesson-nav-btn" id="lesson-prev-btn" onclick="goLesson(-1)">← Previous</button>
+                <span class="lesson-nav-progress" id="lesson-progress"></span>
+                <button class="lesson-nav-btn" id="lesson-next-btn" onclick="goLesson(1)">Next →</button>
+              </div>
+              <div class="lesson-frame" id="lesson-content"></div>
+              <div class="lesson-continue">
+                <button class="lesson-continue-btn" id="lesson-continue-btn" onclick="goLesson(1)">Continue →</button>
+              </div>
             </div>
-            <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
-          </div>
-          <div class="module-card" onclick="showLesson('module4','intro')">
-            <div class="module-num">4</div>
-            <div class="module-info">
-              <div class="module-title">The Reset — nutrition plan</div>
-              <div class="module-sub">Reset5 method, Reboot, Burn, Nourish phases</div>
-              <div class="module-lessons">7 lessons</div>
-            </div>
-            <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
-          </div>
-          <div class="module-card" onclick="showLesson('module5','what_comes_next')">
-            <div class="module-num">5</div>
-            <div class="module-info">
-              <div class="module-title">What comes next</div>
-              <div class="module-sub">After the Reset — signs of reversal, rules for life</div>
-              <div class="module-lessons">1 lesson</div>
-            </div>
-            <span style="color:var(--color-text-secondary); font-size:18px;">›</span>
-          </div>
-        </div>
+
+          </div><!-- /.learn-main -->
+        </div><!-- /.learn-layout -->
       </div>
 
-      <!-- LESSON -->
-      <div id="view-lesson" style="display:none;">
-        <div class="lesson-nav">
-          <button class="lesson-nav-btn" id="lesson-prev-btn" onclick="goLesson(-1)">← Previous</button>
-          <span class="lesson-nav-progress" id="lesson-progress"></span>
-          <button class="lesson-nav-btn" id="lesson-next-btn" onclick="goLesson(1)">Next →</button>
-        </div>
-        <div class="lesson-frame" id="lesson-content"></div>
-        <div class="lesson-continue">
-          <button class="lesson-continue-btn" id="lesson-continue-btn" onclick="goLesson(1)">Continue →</button>
-        </div>
-      </div>
-
-      <!-- MEAL PLAN -->
+      <!-- PLAN -->
       <div id="view-mealplan" style="display:none;">
-        <div class="tabs" style="margin-bottom:1rem;">
-          <button class="tab mp-phase-tab active" data-phase="1" onclick="setMealPhase(1)" data-i18n="phase.1">Reboot</button>
-          <button class="tab mp-phase-tab" data-phase="2" onclick="setMealPhase(2)" data-i18n="phase.2">Burn</button>
-          <button class="tab mp-phase-tab" data-phase="3" onclick="setMealPhase(3)" data-i18n="phase.3">Maintain</button>
-        </div>
-        <div id="mp-phase-desc" class="mp-phase-desc"></div>
-        <div id="mp-combo-area"></div>
 
-        <div class="mp-layout">
-          <!-- LEFT: Recipe browser -->
-          <div class="mp-browse">
-            <p id="mp-section-hdr" class="mp-section-title"></p>
-            <div id="mp-slot-indicator" class="mp-slot-indicator">
-              <span class="mp-indicator-text" id="mp-slot-indicator-text"></span>
-              <span class="mp-indicator-cancel" id="mp-indicator-cancel" onclick="clearActivePlanSlot()">Cancelar</span>
+        <!-- Header row: title + phase tabs -->
+        <div class="plan-header">
+          <div>
+            <h2 class="plan-title" data-i18n="nav.plan">Plan</h2>
+            <p class="plan-subtitle" data-i18n="plan.subtitle">Organiza tu semana de comidas</p>
+          </div>
+          <div class="tabs" style="margin:0; align-self:center; position:relative;">
+            <div class="phase-tab-wrap">
+              <button class="tab mp-phase-tab active" data-phase="1" onclick="setMealPhase(1)" data-i18n="phase.1">Reboot</button>
+              <span class="phase-info-icon" onmouseenter="showPhaseInfo(1,this)" onmouseleave="hidePhaseInfo()">ⓘ</span>
             </div>
-            <div class="meal-tabs" id="mp-cat-chips" style="margin-bottom:0.75rem;">
+            <div class="phase-tab-wrap">
+              <button class="tab mp-phase-tab" data-phase="2" onclick="setMealPhase(2)" data-i18n="phase.2">Burn</button>
+              <span class="phase-info-icon" onmouseenter="showPhaseInfo(2,this)" onmouseleave="hidePhaseInfo()">ⓘ</span>
+            </div>
+            <div class="phase-tab-wrap">
+              <button class="tab mp-phase-tab" data-phase="3" onclick="setMealPhase(3)" data-i18n="phase.3">Maintain</button>
+              <span class="phase-info-icon" onmouseenter="showPhaseInfo(3,this)" onmouseleave="hidePhaseInfo()">ⓘ</span>
+            </div>
+            <!-- Phase info popover — inside position:relative container -->
+            <div id="phase-popover" class="phase-popover" onmouseenter="keepPhaseInfo()" onmouseleave="hidePhaseInfo()"></div>
+          </div>
+        </div>
+
+        <!-- Slot indicator banner (shown when a slot is active) -->
+        <div id="mp-slot-indicator" class="mp-slot-indicator">
+          <span class="mp-indicator-text" id="mp-slot-indicator-text"></span>
+          <span class="mp-indicator-cancel" id="mp-indicator-cancel" onclick="clearActivePlanSlot()">Cancelar</span>
+        </div>
+
+        <!-- Two-column: recipe browser + week grid -->
+        <div class="plan-body">
+
+          <!-- LEFT: Recipe browser -->
+          <div class="plan-recipes">
+            <div class="plan-section-label" data-i18n="plan.recipes">Recetas</div>
+            <div class="meal-tabs" id="mp-cat-chips">
               <button class="meal-tab all active"   onclick="filterMealCat(null,this)"        data-i18n="cat.all">Todas</button>
               <button class="meal-tab breakfast"    onclick="filterMealCat('breakfast',this)" data-i18n="cat.breakfast">Desayuno</button>
               <button class="meal-tab lunch"        onclick="filterMealCat('lunch',this)"     data-i18n="cat.lunch">Comida</button>
@@ -490,35 +670,38 @@
             <div id="mp-recipe-grid" class="mp-recipe-grid"></div>
           </div>
 
-          <!-- RIGHT: Weekly planner panel -->
-          <div class="mp-planner-panel">
-            <div class="mp-panel-tabs">
-              <button class="mp-panel-tab active" id="mp-tab-plan" onclick="showPlannerTab('plan')"><span data-i18n="mp.weeklyPlan">Plan semanal</span></button>
-              <button class="mp-panel-tab" id="mp-tab-shop" onclick="showPlannerTab('shop')"><span data-i18n="mp.shoppingList">Lista de compras</span></button>
+          <!-- RIGHT: Week grid + shopping list -->
+          <div class="plan-week-col">
+            <div class="plan-week-header">
+              <div class="plan-section-label" data-i18n="mp.weeklyPlan">Plan semanal</div>
+              <div class="plan-week-actions">
+                <button class="plan-copy-btn" id="btn-copy-plan" onclick="copyWeekPlan()" title="Copy plan">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy plan
+                </button>
+                <button class="plan-copy-btn" id="btn-copy-list" onclick="copyShoppingList()" title="Copy list">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy list
+                </button>
+                <button class="plan-shop-toggle" id="mp-tab-shop" onclick="showPlannerTab(document.getElementById('mp-shop-view').style.display === 'none' ? 'shop' : 'plan')" data-i18n="mp.shoppingList">Lista de compras</button>
+              </div>
             </div>
-            <div class="mp-panel-body" id="mp-week-view"></div>
-            <div class="mp-panel-body" id="mp-shop-view" style="display:none;">
+            <div id="mp-week-view"></div>
+            <div id="mp-shop-view" style="display:none;">
               <div id="mp-shopping-content"></div>
             </div>
           </div>
+
         </div>
+
+        <!-- hidden stubs so existing JS still finds these elements -->
+        <div id="mp-phase-desc" style="display:none;"></div>
+        <div id="mp-combo-area" style="display:none;"></div>
+        <div id="mp-section-hdr" style="display:none;"></div>
+        <div id="mp-tab-plan" style="display:none;"></div>
+        <div id="mp-movement-placeholder" style="display:none;"></div>
       </div>
 
-      <!-- LIBRARIES -->
-      <div id="view-libraries" style="display:none;">
-        <div class="section-title">Libraries</div>
-        <div style="background:#fff; border-radius:12px; padding:2rem; border:1px solid var(--color-border-tertiary); color:var(--color-text-secondary); font-size:14px; line-height:1.7;">
-          Libraries coming soon — this is where curated knowledge collections will live (supplements, foods, protocols).
-        </div>
-      </div>
-
-      <!-- NUGGETS -->
-      <div id="view-nuggets" style="display:none;">
-        <div class="section-title">Nuggets</div>
-        <div style="background:#fff; border-radius:12px; padding:2rem; border:1px solid var(--color-border-tertiary); color:var(--color-text-secondary); font-size:14px; line-height:1.7;">
-          Nuggets coming soon — key insights and principles from the program, tagged and searchable.
-        </div>
-      </div>
 
   </div><!-- /.content -->
 
@@ -539,10 +722,9 @@
   let selectedMealRecipes = new Set();
   let _mealPhaseCache = {};
   const MP_DAYS = ['mon','tue','wed','thu','fri','sat','sun'];
-  const MP_MEALS = ['breakfast','lunch','dinner','snack'];
   let weekPlan = {};
-  let activePlanSlot = null;
-  (function initWeekPlan() { MP_DAYS.forEach(d => { weekPlan[d] = {}; MP_MEALS.forEach(m => weekPlan[d][m] = null); }); })();
+  let activePlanSlot = null; // just a day key e.g. 'mon'
+  (function initWeekPlan() { MP_DAYS.forEach(d => { weekPlan[d] = []; }); })();
 
   // ── PERSISTENCE ──
   function saveMealPlanState() {
@@ -551,6 +733,165 @@
       localStorage.setItem('sana_selectedRecipes', JSON.stringify([...selectedMealRecipes]));
       localStorage.setItem('sana_mealPhase', String(currentMealPhase));
     } catch(e) {}
+    if (typeof updateHomeWeekStat === 'function') updateHomeWeekStat();
+  }
+
+  // ── DRAG & DROP ──
+  let _dragKey = null;
+  function dragRecipeStart(e, key, el) {
+    _dragKey = key;
+    e.dataTransfer.effectAllowed = 'copy';
+    e.dataTransfer.setData('text/plain', key);
+    setTimeout(() => el.classList.add('dragging'), 0);
+  }
+  function dragRecipeEnd(el) {
+    el.classList.remove('dragging');
+    _dragKey = null;
+  }
+  function dropRecipeOnDay(e, day) {
+    e.preventDefault();
+    e.currentTarget.classList.remove('drag-over');
+    const key = _dragKey || e.dataTransfer.getData('text/plain');
+    if (!key || !recipes[key]) return;
+    weekPlan[day].push(key);
+    saveMealPlanState();
+    renderWeeklyPlan();
+  }
+
+  // ── COPY ──
+  function copyWeekPlan() {
+    const DAY_LABELS = {
+      es: { mon:'Lunes', tue:'Martes', wed:'Miércoles', thu:'Jueves', fri:'Viernes', sat:'Sábado', sun:'Domingo' },
+      en: { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday', sun:'Sunday' }
+    };
+    const CAT_LABELS_COPY = {
+      es: { breakfast:'Desayuno', lunch:'Comida', dinner:'Cena', snack:'Snack', drink:'Bebida' },
+      en: { breakfast:'Breakfast', lunch:'Lunch', dinner:'Dinner', snack:'Snack', drink:'Drink' }
+    };
+    const now = new Date();
+    const dateStr = now.toLocaleDateString(currentLang === 'es' ? 'es-MX' : 'en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    let lines = [currentLang === 'es' ? `Plan semanal — ${dateStr}` : `Week Plan — ${dateStr}`, ''];
+    MP_DAYS.forEach(day => {
+      const dayRecipes = weekPlan[day] || [];
+      if (dayRecipes.length === 0) return;
+      lines.push(DAY_LABELS[currentLang][day]);
+      dayRecipes.forEach(key => {
+        const r = recipes[key];
+        if (!r) return;
+        const name = currentLang === 'es' ? (r.name_es || key) : (r.name_en || key);
+        const cat = CAT_LABELS_COPY[currentLang][r.category] || r.category || '';
+        lines.push(`  ${cat ? cat + ' · ' : ''}${name}`);
+      });
+      lines.push('');
+    });
+    const text = lines.join('\n').trim();
+    navigator.clipboard.writeText(text).then(() => flashCopied('btn-copy-plan'));
+  }
+
+  function copyShoppingList() {
+    const keys = new Set();
+    MP_DAYS.forEach(d => (weekPlan[d] || []).forEach(k => keys.add(k)));
+    selectedMealRecipes.forEach(k => keys.add(k));
+    if (keys.size === 0) { return; }
+    const items = [];
+    const seen = new Set();
+    keys.forEach(k => {
+      const r = recipes[k];
+      if (!r) return;
+      (r[`ingredients_${currentLang}`] || []).forEach(g => {
+        (g.items || []).forEach(item => {
+          if (!seen.has(item)) { seen.add(item); items.push(item); }
+        });
+      });
+    });
+    const n = keys.size;
+    const header = currentLang === 'es' ? `Lista de compras (${n} receta${n !== 1 ? 's' : ''})` : `Shopping List (${n} recipe${n !== 1 ? 's' : ''})`;
+    const text = header + '\n\n' + items.map(i => `• ${i}`).join('\n');
+    navigator.clipboard.writeText(text).then(() => flashCopied('btn-copy-list'));
+  }
+
+  function flashCopied(btnId) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    const orig = btn.innerHTML;
+    btn.classList.add('copied');
+    btn.innerHTML = btn.innerHTML.replace(/Copy\s+\w+/, currentLang === 'es' ? '¡Copiado!' : 'Copied!');
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 2000);
+  }
+
+  // ── PHASE INFO POPOVER ──
+  const PHASE_INFO = {
+    1: {
+      name: { es: 'Reboot', en: 'Reboot' },
+      duration: { es: '2 semanas', en: '2 weeks' },
+      desc: {
+        es: 'Elimina el azúcar, granos refinados y alimentos inflamatorios. Restablece tu metabolismo con proteína, verduras y grasas saludables.',
+        en: 'Eliminate sugar, refined grains, and inflammatory foods. Reset your metabolism with protein, vegetables, and healthy fats.'
+      },
+      bars: [
+        { label: { es: 'Proteína', en: 'Protein' },   pct: 40, color: '#1D9E75' },
+        { label: { es: 'Verdura',  en: 'Vegetables' }, pct: 35, color: '#5BC8A0' },
+        { label: { es: 'Grasa',    en: 'Fat' },        pct: 20, color: '#A8DFC8' },
+        { label: { es: 'Fruta',    en: 'Fruit' },      pct:  5, color: '#D4F0E6' },
+      ]
+    },
+    2: {
+      name: { es: 'Burn', en: 'Burn' },
+      duration: { es: '2 semanas', en: '2 weeks' },
+      desc: {
+        es: 'Mantén la base de Reboot y añade pequeñas porciones de carbohidratos complejos y más fruta. Tu cuerpo ya quema grasa de forma eficiente.',
+        en: 'Keep the Reboot foundation and add small portions of complex carbs and more fruit. Your body is now efficiently burning fat.'
+      },
+      bars: [
+        { label: { es: 'Proteína', en: 'Protein' },    pct: 35, color: '#1D9E75' },
+        { label: { es: 'Verdura',  en: 'Vegetables' },  pct: 30, color: '#5BC8A0' },
+        { label: { es: 'Grasa',    en: 'Fat' },          pct: 20, color: '#A8DFC8' },
+        { label: { es: 'Carb',     en: 'Carb' },         pct: 10, color: '#FFD580' },
+        { label: { es: 'Fruta',    en: 'Fruit' },         pct:  5, color: '#D4F0E6' },
+      ]
+    },
+    3: {
+      name: { es: 'Maintain', en: 'Maintain' },
+      duration: { es: 'Indefinido', en: 'Ongoing' },
+      desc: {
+        es: 'Estilo de vida equilibrado. Puedes incluir más variedad — granos integrales, legumbres y fruta — mientras mantienes los hábitos saludables.',
+        en: 'Balanced lifestyle phase. You can include more variety — whole grains, legumes, and fruit — while keeping healthy habits in place.'
+      },
+      bars: [
+        { label: { es: 'Proteína', en: 'Protein' },    pct: 30, color: '#1D9E75' },
+        { label: { es: 'Verdura',  en: 'Vegetables' },  pct: 25, color: '#5BC8A0' },
+        { label: { es: 'Grasa',    en: 'Fat' },          pct: 20, color: '#A8DFC8' },
+        { label: { es: 'Carb',     en: 'Carb' },         pct: 15, color: '#FFD580' },
+        { label: { es: 'Fruta',    en: 'Fruit' },         pct: 10, color: '#D4F0E6' },
+      ]
+    }
+  };
+  let _phaseInfoTimer = null;
+  function showPhaseInfo(phase, anchorEl) {
+    clearTimeout(_phaseInfoTimer);
+    const pop = document.getElementById('phase-popover');
+    if (!pop) return;
+    const info = PHASE_INFO[phase];
+    const lang = currentLang;
+    const barsHTML = info.bars.map(b => `
+      <div class="phase-pop-row">
+        <span class="phase-pop-label">${b.label[lang]}</span>
+        <div class="phase-pop-bar-wrap"><div class="phase-pop-bar" style="width:${b.pct}%;background:${b.color}"></div></div>
+        <span class="phase-pop-pct">${b.pct}%</span>
+      </div>`).join('');
+    pop.innerHTML = `
+      <div class="phase-pop-name">${info.name[lang]}</div>
+      <div class="phase-pop-duration">${info.duration[lang]}</div>
+      <div class="phase-pop-desc">${info.desc[lang]}</div>
+      <div class="phase-pop-chart">${barsHTML}</div>`;
+    pop.classList.add('visible');
+  }
+  function keepPhaseInfo() { clearTimeout(_phaseInfoTimer); }
+  function hidePhaseInfo() {
+    _phaseInfoTimer = setTimeout(() => {
+      const pop = document.getElementById('phase-popover');
+      if (pop) pop.classList.remove('visible');
+    }, 120);
   }
 
   function loadMealPlanState() {
@@ -561,8 +902,16 @@
       if (wp) {
         const parsed = JSON.parse(wp);
         MP_DAYS.forEach(d => {
-          if (!parsed[d]) parsed[d] = {};
-          MP_MEALS.forEach(m => { if (parsed[d][m] === undefined) parsed[d][m] = null; });
+          // Support both old {breakfast:..} and new [] format
+          if (!parsed[d]) { parsed[d] = []; }
+          else if (!Array.isArray(parsed[d])) {
+            // Migrate from old slot format: collect non-null values
+            const arr = [];
+            ['breakfast','lunch','dinner','snack'].forEach(m => {
+              if (parsed[d][m]) arr.push(parsed[d][m]);
+            });
+            parsed[d] = arr;
+          }
         });
         weekPlan = parsed;
       }
@@ -618,20 +967,14 @@
   function showView(name, phase) {
     document.querySelectorAll('[id^="view-"]').forEach(el => el.style.display = 'none');
     document.getElementById(`view-${name}`).style.display = 'block';
+    document.body.style.background = name === 'learn' ? '#F9F8F6' : '#FFFFFF';
     if (name === 'mealplan') renderMealPlan();
 
     // Update top nav active state
     document.querySelectorAll('.topnav-item[data-view]').forEach(el => el.classList.remove('active'));
-    const viewToNav = { home:'home', recipes:'recipes', mealplan:'mealplan', modules:'modules', lesson:'modules', nuggets:'nuggets', 'recipe-detail':'recipes' };
+    const viewToNav = { home:'home', recipes:'recipes', mealplan:'mealplan', learn:'learn', 'recipe-detail':'recipes' };
     const activeView = viewToNav[name] || name;
     document.querySelectorAll(`.topnav-item[data-view="${activeView}"]`).forEach(el => el.classList.add('active'));
-
-    // Drawer: open for lesson/modules, close for everything else
-    if (name === 'lesson' || name === 'modules') {
-      openDrawer();
-    } else {
-      closeDrawer();
-    }
 
     if (name === 'recipes') {
       currentPhase = phase || null;
@@ -695,8 +1038,21 @@
     });
   }
 
+  function showLearnOverview() {
+    showView('learn');
+    document.getElementById('learn-overview').style.display = 'block';
+    document.getElementById('learn-lesson').style.display = 'none';
+    document.querySelectorAll('.nav-module[data-key]').forEach(el => el.classList.remove('active'));
+    window.scrollTo(0, 0);
+  }
+
   async function showLesson(module, lesson) {
-    showView('lesson');
+    // Ensure the learn view is visible
+    if (document.getElementById('view-learn').style.display === 'none') {
+      showView('learn');
+    }
+    document.getElementById('learn-overview').style.display = 'none';
+    document.getElementById('learn-lesson').style.display = 'block';
     const key = `${module}-${lesson}`;
     currentLessonIdx = lessonOrder.indexOf(key);
 
@@ -934,7 +1290,7 @@ function filterCategory(cat, btn) {
     currentMealCat = null;
     selectedMealRecipes.clear();
     activePlanSlot = null;
-    MP_DAYS.forEach(d => { weekPlan[d] = {}; MP_MEALS.forEach(m => weekPlan[d][m] = null); });
+    MP_DAYS.forEach(d => { weekPlan[d] = []; });
     const indicator = document.getElementById('mp-slot-indicator');
     if (indicator) indicator.classList.remove('visible');
     saveMealPlanState();
@@ -1020,17 +1376,15 @@ function filterCategory(cat, btn) {
       const name = currentLang === 'es' ? (r.name_es || k) : (r.name_en || k);
       const img = r.images && r.images[0] ? `${GITHUB}/photos/${r.images[0]}` : '';
       const sel = selectedMealRecipes.has(k) ? ' selected' : '';
-      const pills = equivPillsHTML(r.equiv || {});
       const cat = r.category;
       const catLabel = cat && CAT_LABELS[cat] ? CAT_LABELS[cat][currentLang] : '';
       const catLine = catLabel ? `<div class="cat-label ${cat}">${catLabel}</div>` : '';
-      return `<div class="mp-recipe-card${sel}" data-key="${k.replace(/"/g,'&quot;')}" onclick="toggleMealRecipe(this,'${k.replace(/'/g,"\\'")}')">
+      return `<div class="mp-recipe-card${sel}" data-key="${k.replace(/"/g,'&quot;')}" draggable="true" ondragstart="dragRecipeStart(event,'${k.replace(/'/g,"\\'")}',this)" ondragend="dragRecipeEnd(this)" onclick="toggleMealRecipe(this,'${k.replace(/'/g,"\\'")}')">
         <div class="mp-check-mark">✓</div>
         ${img ? `<img class="mp-card-img" src="${img}" loading="lazy" alt="">` : `<div class="mp-card-img"></div>`}
         <div class="mp-card-body">
           ${catLine}
           <div class="mp-card-name">${name}</div>
-          ${pills ? `<div class="mp-equiv-pills" style="margin-top:4px;">${pills}</div>` : ''}
         </div>
       </div>`;
     }).join('');
@@ -1040,7 +1394,7 @@ function filterCategory(cat, btn) {
 
   function toggleMealRecipe(el, key) {
     if (activePlanSlot) {
-      weekPlan[activePlanSlot.day][activePlanSlot.meal] = key;
+      weekPlan[activePlanSlot].push(key);
       saveMealPlanState();
       clearActivePlanSlot();
       renderMealPlan();
@@ -1058,15 +1412,12 @@ function filterCategory(cat, btn) {
     if (shopView && shopView.style.display !== 'none') buildAndShowShoppingList();
   }
 
-  function setActivePlanSlot(day, meal) {
-    if (activePlanSlot && activePlanSlot.day === day && activePlanSlot.meal === meal) {
+  function setActivePlanSlot(day) {
+    if (activePlanSlot === day) {
       clearActivePlanSlot();
       return;
     }
-    activePlanSlot = { day, meal };
-    // Auto-filter category chips to match the slot's meal type
-    const btn = document.querySelector(`#mp-cat-chips .meal-tab.${meal}`);
-    if (btn) filterMealCat(meal, btn);
+    activePlanSlot = day;
     // Show indicator banner
     const indicator = document.getElementById('mp-slot-indicator');
     if (indicator) {
@@ -1075,14 +1426,9 @@ function filterCategory(cat, btn) {
         es: { mon:'Lunes', tue:'Martes', wed:'Miércoles', thu:'Jueves', fri:'Viernes', sat:'Sábado', sun:'Domingo' },
         en: { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday', sun:'Sunday' }
       };
-      const MEAL_LABELS = {
-        es: { breakfast:'Desayuno', lunch:'Comida', dinner:'Cena', snack:'Snack' },
-        en: { breakfast:'Breakfast', lunch:'Lunch', dinner:'Dinner', snack:'Snack' }
-      };
       const dl = DAY_LABELS[currentLang][day];
-      const ml = MEAL_LABELS[currentLang][meal];
       document.getElementById('mp-slot-indicator-text').textContent =
-        currentLang === 'es' ? `Seleccionando para: ${dl} · ${ml}` : `Selecting for: ${dl} · ${ml}`;
+        currentLang === 'es' ? `Añadiendo a: ${dl}` : `Adding to: ${dl}`;
       document.getElementById('mp-indicator-cancel').textContent = currentLang === 'es' ? 'Cancelar' : 'Cancel';
     }
     renderWeeklyPlan();
@@ -1095,9 +1441,9 @@ function filterCategory(cat, btn) {
     renderWeeklyPlan();
   }
 
-  function removeFromSlot(e, day, meal) {
+  function removeFromSlot(e, day, idx) {
     e.stopPropagation();
-    weekPlan[day][meal] = null;
+    weekPlan[day].splice(idx, 1);
     saveMealPlanState();
     renderWeeklyPlan();
     const shopView = document.getElementById('mp-shop-view');
@@ -1105,16 +1451,18 @@ function filterCategory(cat, btn) {
   }
 
   function showPlannerTab(tab) {
-    const planTab = document.getElementById('mp-tab-plan');
-    const shopTab = document.getElementById('mp-tab-shop');
     const weekView = document.getElementById('mp-week-view');
     const shopView = document.getElementById('mp-shop-view');
-    if (!planTab || !weekView) return;
-    planTab.classList.toggle('active', tab === 'plan');
-    shopTab.classList.toggle('active', tab === 'shop');
-    weekView.style.display = tab === 'plan' ? 'block' : 'none';
-    shopView.style.display = tab === 'shop' ? 'block' : 'none';
-    if (tab === 'shop') buildAndShowShoppingList();
+    const shopToggle = document.getElementById('mp-tab-shop');
+    if (!weekView) return;
+    const showShop = tab === 'shop';
+    weekView.style.display = showShop ? 'none' : 'block';
+    shopView.style.display = showShop ? 'block' : 'none';
+    if (shopToggle) {
+      const t = i18n[currentLang] || i18n.es;
+      shopToggle.textContent = showShop ? (t['mp.weeklyPlan'] || 'Plan semanal') : (t['mp.shoppingList'] || 'Lista de compras');
+    }
+    if (showShop) buildAndShowShoppingList();
   }
 
   function getWeekDates() {
@@ -1135,12 +1483,12 @@ function filterCategory(cat, btn) {
     const weekView = document.getElementById('mp-week-view');
     if (!weekView) return;
     const DAY_LABELS = {
-      es: { mon:'lunes', tue:'martes', wed:'miércoles', thu:'jueves', fri:'viernes', sat:'sábado', sun:'domingo' },
+      es: { mon:'Lunes', tue:'Martes', wed:'Miércoles', thu:'Jueves', fri:'Viernes', sat:'Sábado', sun:'Domingo' },
       en: { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday', fri:'Friday', sat:'Saturday', sun:'Sunday' }
     };
     const MONTH_ES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
     const MONTH_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const MEAL_LABELS = {
+    const CAT_LABELS = {
       es: { breakfast:'Desayuno', lunch:'Comida', dinner:'Cena', snack:'Snack' },
       en: { breakfast:'Breakfast', lunch:'Lunch', dinner:'Dinner', snack:'Snack' }
     };
@@ -1151,37 +1499,36 @@ function filterCategory(cat, btn) {
       const d = weekDates[dayIdx];
       const dn = d.getDate();
       const isToday = d.toDateString() === todayStr;
-      const todayBadge = isToday ? ` <span style="font-size:9px;background:var(--green);color:#fff;padding:1px 6px;border-radius:10px;font-weight:700;letter-spacing:0.04em;vertical-align:middle;">${currentLang === 'es' ? 'hoy' : 'today'}</span>` : '';
+      const isActive = activePlanSlot === day;
+      const todayBadge = isToday ? ` <span class="mp-today-badge">${currentLang === 'es' ? 'hoy' : 'today'}</span>` : '';
       const dayLabel = currentLang === 'es'
-        ? `${DAY_LABELS.es[day]} <span style="font-weight:400;opacity:0.7;">${dn} ${MONTH_ES[d.getMonth()]}</span>${todayBadge}`
-        : `${DAY_LABELS.en[day]} <span style="font-weight:400;opacity:0.7;">${MONTH_EN[d.getMonth()]} ${ordinalSuffix(dn)}</span>${todayBadge}`;
-      html += `<div class="mp-week-day"><div class="mp-day-label">${dayLabel}</div>`;
-      MP_MEALS.forEach(meal => {
-        const recipeKey = weekPlan[day][meal];
-        const isActive = activePlanSlot && activePlanSlot.day === day && activePlanSlot.meal === meal;
-        const slotClass = isActive ? ' slot-active' : '';
-        const mealLabel = MEAL_LABELS[currentLang][meal];
-        if (recipeKey && recipes[recipeKey]) {
-          const r = recipes[recipeKey];
-          const name = currentLang === 'es' ? (r.name_es || recipeKey) : (r.name_en || recipeKey);
-          html += `<div class="mp-slot${slotClass}" onclick="setActivePlanSlot('${day}','${meal}')">
-            <span class="mp-slot-dot ${meal}"></span>
-            <span class="mp-slot-mealname">${mealLabel}</span>
-            <span class="mp-slot-recipe-name" title="${name}">${name}</span>
-            <span class="mp-slot-remove" onclick="removeFromSlot(event,'${day}','${meal}')">×</span>
-          </div>`;
-        } else {
-          html += `<div class="mp-slot${slotClass}" onclick="setActivePlanSlot('${day}','${meal}')">
-            <span class="mp-slot-dot ${meal}"></span>
-            <span class="mp-slot-mealname">${mealLabel}</span>
-            <span class="mp-slot-empty">—</span>
-            <span class="mp-slot-add">+</span>
-          </div>`;
-        }
+        ? `${DAY_LABELS.es[day]} <span class="mp-day-date">${dn} ${MONTH_ES[d.getMonth()]}</span>${todayBadge}`
+        : `${DAY_LABELS.en[day]} <span class="mp-day-date">${MONTH_EN[d.getMonth()]} ${ordinalSuffix(dn)}</span>${todayBadge}`;
+      const dayClass = isActive ? ' day-active' : '';
+      html += `<div class="mp-week-day${dayClass}" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="dropRecipeOnDay(event,'${day}')">`;
+      html += `<div class="mp-day-header">
+        <span class="mp-day-label">${dayLabel}</span>
+        <button class="mp-day-add-btn${isActive ? ' active' : ''}" onclick="setActivePlanSlot('${day}')">+</button>
+      </div>`;
+      const dayRecipes = weekPlan[day] || [];
+      dayRecipes.forEach((key, idx) => {
+        const r = recipes[key];
+        if (!r) return;
+        const name = currentLang === 'es' ? (r.name_es || key) : (r.name_en || key);
+        const cat = r.category || '';
+        const catLabel = CAT_LABELS[currentLang][cat] || cat;
+        html += `<div class="mp-day-recipe">
+          <span class="mp-day-recipe-cat">${catLabel}</span>
+          <span class="mp-day-recipe-name" title="${name}">${name}</span>
+          <button class="mp-day-recipe-remove" onclick="removeFromSlot(event,'${day}',${idx})">×</button>
+        </div>`;
       });
+      if (isActive) {
+        html += `<div class="mp-day-selecting">${currentLang === 'es' ? 'Elige una receta ↑' : 'Pick a recipe ↑'}</div>`;
+      }
       html += `</div>`;
     });
-    const hasAny = MP_DAYS.some(d => MP_MEALS.some(m => weekPlan[d][m]));
+    const hasAny = MP_DAYS.some(d => (weekPlan[d] || []).length > 0);
     if (!hasAny) {
       html += `<div class="mp-empty-state">${currentLang === 'es'
         ? 'Toca <strong>+</strong> junto a un día para asignar recetas a tu semana.'
@@ -1193,9 +1540,9 @@ function filterCategory(cat, btn) {
   function buildAndShowShoppingList() {
     const content = document.getElementById('mp-shopping-content');
     if (!content) return;
-    // Collect keys: week plan slots + unassigned selected
+    // Collect keys: week plan entries + unassigned selected
     const keys = new Set();
-    MP_DAYS.forEach(d => MP_MEALS.forEach(m => { if (weekPlan[d][m]) keys.add(weekPlan[d][m]); }));
+    MP_DAYS.forEach(d => (weekPlan[d] || []).forEach(k => keys.add(k)));
     selectedMealRecipes.forEach(k => keys.add(k));
     if (keys.size === 0 && currentMealPhase !== 3) {
       content.innerHTML = `<div class="mp-empty-state">${currentLang === 'es'
@@ -1241,9 +1588,14 @@ function filterCategory(cat, btn) {
       'phase.1': 'Reboot',
       'phase.2': 'Burn',
       'phase.3': 'Maintain',
-      'nav.library': 'Biblioteca',
+      'nav.plan': 'Plan',
+      'nav.learn': 'Aprender',
       'nav.metabolicReset': 'Reset Metabólico',
-      'nav.nuggets': 'Nuggets',
+      'learn.group1': 'Comenzando',
+      'learn.group2': 'Teoría',
+      'learn.group3': 'Medición',
+      'learn.group4': 'Nutrición',
+      'learn.group5': '¿Qué sigue?',
       'module1.group': 'Módulo 1 — Comenzando',
       'module1.courseGuide': 'Guía del curso',
       'module1.platformNav': 'Tour de la plataforma',
@@ -1271,15 +1623,28 @@ function filterCategory(cat, btn) {
       'module5.lesson': '¿Qué sigue?',
       'home.welcome': 'Bienvenida,',
       'home.sub': 'Tu bienestar, todo en un solo lugar.',
-      'home.quick1label': 'Recetas',
-      'home.quick1title': '164 recetas bilingües',
-      'home.quick2label': 'Plan de comidas',
-      'home.quick2title': 'Organiza tu semana',
-      'home.quick3label': 'Reset Metabólico',
-      'home.quick3title': '19 lecciones',
       'home.recentRecipes': 'Recetas recientes',
+      'home.notes': 'Mis notas',
+      'notes.placeholder': 'Escribe una nota… (Cmd+Enter para guardar)',
+      'notes.save': 'Guardar',
       'tab.all': 'Todas',
       'nav.mealPlan': 'Plan de comidas',
+      'home.thisWeek': 'Esta semana',
+      'home.recipesPlanned': 'recetas planificadas',
+      'home.movementComingSoon': 'Ejercicio próximamente',
+      'home.planWeek': 'Planifica tu semana →',
+      'plan.focusLabel': 'Esta semana me enfoco en',
+      'plan.goal.bloodsugar': 'Azúcar en sangre',
+      'plan.goal.loseweight': 'Bajar de peso',
+      'plan.goal.muscle': 'Ganar músculo',
+      'plan.goal.upperbody': 'Tren superior',
+      'plan.goal.lowerbody': 'Tren inferior',
+      'plan.phaseLabel': 'Fase',
+      'plan.movement': 'Ejercicio',
+      'plan.movementSoon': 'Próximamente — agrega rutinas de ejercicio a tu semana',
+      'plan.subtitle': 'Organiza tu semana de comidas',
+      'plan.recipes': 'Recetas',
+      'learn.book': 'Libro 1',
       'cat.all': 'Todas',
       'cat.breakfast': 'Desayuno',
       'cat.lunch': 'Comida',
@@ -1298,9 +1663,14 @@ function filterCategory(cat, btn) {
       'phase.1': 'Reboot',
       'phase.2': 'Burn',
       'phase.3': 'Maintain',
-      'nav.library': 'Library',
+      'nav.plan': 'Plan',
+      'nav.learn': 'Learn',
       'nav.metabolicReset': 'Metabolic Reset',
-      'nav.nuggets': 'Nuggets',
+      'learn.group1': 'Getting started',
+      'learn.group2': 'Theory',
+      'learn.group3': 'Measuring',
+      'learn.group4': 'Nutrition',
+      'learn.group5': "What's next",
       'module1.group': 'Module 1 — Getting started',
       'module1.courseGuide': 'Course guide',
       'module1.platformNav': 'Platform tour',
@@ -1328,13 +1698,10 @@ function filterCategory(cat, btn) {
       'module5.lesson': 'What comes next',
       'home.welcome': 'Welcome,',
       'home.sub': 'Your wellness, all in one place.',
-      'home.quick1label': 'Recipes',
-      'home.quick1title': '164 bilingual recipes',
-      'home.quick2label': 'Meal Plan',
-      'home.quick2title': 'Organize your week',
-      'home.quick3label': 'Metabolic Reset',
-      'home.quick3title': '19 lessons',
       'home.recentRecipes': 'Recent recipes',
+      'home.notes': 'My Notes',
+      'notes.placeholder': 'Write a note… (Cmd+Enter to save)',
+      'notes.save': 'Save',
       'tab.all': 'All',
       'nav.mealPlan': 'Meal Plan',
       'cat.all': 'All',
@@ -1346,6 +1713,22 @@ function filterCategory(cat, btn) {
       'search.placeholder': 'Search recipe or ingredient…',
       'mp.weeklyPlan': 'Weekly Plan',
       'mp.shoppingList': 'Shopping List',
+      'home.thisWeek': 'This week',
+      'home.recipesPlanned': 'recipes planned',
+      'home.movementComingSoon': 'Movement coming soon',
+      'home.planWeek': 'Plan your week →',
+      'plan.focusLabel': 'This week I\'m focusing on',
+      'plan.goal.bloodsugar': 'Blood sugar',
+      'plan.goal.loseweight': 'Lose weight',
+      'plan.goal.muscle': 'Build muscle',
+      'plan.goal.upperbody': 'Upper body',
+      'plan.goal.lowerbody': 'Lower body',
+      'plan.phaseLabel': 'Phase',
+      'plan.movement': 'Movement',
+      'plan.movementSoon': 'Coming soon — add workout routines to your week',
+      'plan.subtitle': 'Organize your week',
+      'plan.recipes': 'Recipes',
+      'learn.book': 'Book 1',
     }
   };
 
@@ -1393,7 +1776,88 @@ function filterCategory(cat, btn) {
     el.textContent = new Date().toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   })();
 
+  // Update home week stat counter from planned recipes
+  function updateHomeWeekStat() {
+    const el = document.getElementById('hw-recipes');
+    if (!el) return;
+    let count = 0;
+    Object.values(weekPlan).forEach(day => { count += Array.isArray(day) ? day.length : 0; });
+    el.textContent = count;
+  }
+  updateHomeWeekStat();
+
+  // Goal chip toggle
+  document.querySelectorAll('.plan-goal-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+    });
+  });
+
   loadRecipes();
+
+  // ── NOTES ──
+  let notes = [];
+
+  function loadNotes() {
+    try {
+      const saved = localStorage.getItem('sana_notes');
+      if (saved) notes = JSON.parse(saved);
+    } catch(e) { notes = []; }
+    renderNotes();
+  }
+
+  function saveNotes() {
+    try { localStorage.setItem('sana_notes', JSON.stringify(notes)); } catch(e) {}
+  }
+
+  function saveNote() {
+    const input = document.getElementById('notes-input');
+    if (!input) return;
+    const text = input.value.trim();
+    if (!text) return;
+    notes.unshift({ id: Date.now(), text, date: new Date().toISOString() });
+    saveNotes();
+    renderNotes();
+    input.value = '';
+    input.style.height = 'auto';
+  }
+
+  function deleteNote(id) {
+    notes = notes.filter(n => n.id !== id);
+    saveNotes();
+    renderNotes();
+  }
+
+  function notesKeydown(e) {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      saveNote();
+    }
+  }
+
+  function renderNotes() {
+    const list = document.getElementById('notes-list');
+    if (!list) return;
+    if (notes.length === 0) {
+      list.innerHTML = `<p class="notes-empty">${currentLang === 'es' ? 'Tus notas aparecerán aquí.' : 'Your notes will appear here.'}</p>`;
+      return;
+    }
+    const MONTHS_ES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+    list.innerHTML = notes.map(n => {
+      const d = new Date(n.date);
+      const dateStr = currentLang === 'es'
+        ? `${d.getDate()} ${MONTHS_ES[d.getMonth()]} ${d.getFullYear()}`
+        : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      const escaped = n.text.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      return `<div class="note-card">
+        <button class="note-delete" onclick="deleteNote(${n.id})" title="Delete">×</button>
+        <div class="note-text">${escaped}</div>
+        <div class="note-date">${dateStr}</div>
+      </div>`;
+    }).join('');
+  }
+
+  loadNotes();
 </script>
 </body>
 </html>
