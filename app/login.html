@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+</head>
+<body>
+  <h2>Sign in to Sana</h2>
+  <input type="email" id="email" placeholder="Enter your email" />
+  <button onclick="sendMagicLink()">Send Magic Link</button>
+  <p id="message"></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabase = window.supabase.createClient(
+      'https://faxzrjqqkyjwbvsedria.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZheHpyanFxa3lqd2J2c2VkcmlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxOTg4MzYsImV4cCI6MjA5Mzc3NDgzNn0.hYZPssWOmbtIe2RjIaNlEDTQToTYief2tz6oJoql8Ng'
+    )
+
+    async function sendMagicLink() {
+      const email = document.getElementById('email').value
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          emailRedirectTo: 'https://elaine-keller.github.io/Sana/app/auth-callback.html'
+        }
+      })
+      if (!error) {
+        document.getElementById('message').textContent = 'Check your email for the magic link!'
+      } else {
+        document.getElementById('message').textContent = 'Something went wrong, try again.'
+      }
+    }
+  </script>
+</body>
+</html>
