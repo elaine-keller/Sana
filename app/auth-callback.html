@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signing in...</title>
+</head>
+<body>
+  <p>Signing you in...</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabase = window.supabase.createClient(
+      'https://faxzrjqqkyjwbvsedria.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZheHpyanFxa3lqd2J2c2VkcmlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxOTg4MzYsImV4cCI6MjA5Mzc3NDgzNn0.hYZPssWOmbtIe2RjIaNlEDTQToTYief2tz6oJoql8Ng'
+    )
+
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' && session) {
+        window.location.href = '/Sana/app/index.html'
+      }
+    })
+  </script>
+</body>
+</html>
