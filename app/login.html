@@ -1,14 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sign In</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sana – Sign In</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #F5F5F5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .auth-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .auth-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #111111;
+      text-align: center;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.03em;
+    }
+    .auth-logo em { font-style: italic; }
+    .auth-tagline {
+      font-size: 13px;
+      color: #444444;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .auth-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #444444;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .auth-input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #CCCCCC;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: 'Lato', sans-serif;
+      color: #111111;
+      margin-bottom: 1.25rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .auth-input:focus { border-color: #1D9E75; }
+    .auth-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: #111111;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .auth-btn:hover { background: #333333; }
+    .auth-btn:disabled { background: #999999; cursor: not-allowed; }
+    .auth-error {
+      color: #cc0000;
+      font-size: 13px;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+    .auth-success {
+      color: #1D9E75;
+      font-size: 13px;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h2>Sign in to Sana</h2>
-  <input type="email" id="email" placeholder="Enter your email" />
-  <button onclick="sendMagicLink()">Send Magic Link</button>
-  <p id="message"></p>
+  <div class="auth-card">
+    <div class="auth-logo">S<em>ana</em></div>
+    <p class="auth-tagline">Save your week plan & notes</p>
+    <label class="auth-label">Email</label>
+    <input class="auth-input" id="magic-email" type="email" 
+      placeholder="you@example.com" autocomplete="email">
+    <button class="auth-btn" id="magic-btn" onclick="doMagicLink()">
+      Send Magic Link
+    </button>
+    <div class="auth-error" id="magic-error"></div>
+    <div class="auth-success" id="magic-success"></div>
+  </div>
 
   <script>
     const { createClient } = supabase
@@ -17,19 +112,22 @@
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZheHpyanFxa3lqd2J2c2VkcmlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgxOTg4MzYsImV4cCI6MjA5Mzc3NDgzNn0.hYZPssWOmbtIe2RjIaNlEDTQToTYief2tz6oJoql8Ng'
     )
 
-    async function sendMagicLink() {
-      const email = document.getElementById('email').value
+    async function doMagicLink() {
+      const email = document.getElementById('magic-email').value.trim()
+      const btn = document.getElementById('magic-btn')
+      const errEl = document.getElementById('magic-error')
+      const okEl = document.getElementById('magic-success')
+      errEl.textContent = ''; okEl.textContent = ''
+      btn.disabled = true; btn.textContent = 'Sending…'
       const { error } = await client.auth.signInWithOtp({
         email,
         options: {
           emailRedirectTo: 'https://elaine-keller.github.io/Sana/app/auth-callback.html'
         }
       })
-      if (!error) {
-        document.getElementById('message').textContent = 'Check your email for the magic link!'
-      } else {
-        document.getElementById('message').textContent = error.message
-      }
+      btn.disabled = false; btn.textContent = 'Send Magic Link'
+      if (error) { errEl.textContent = error.message; return }
+      okEl.textContent = 'Check your email for the magic link!'
     }
   </script>
 </body>
